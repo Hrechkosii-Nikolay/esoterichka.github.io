@@ -2,9 +2,6 @@
 @media print {
   body {
     display: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
   }
 }
 @font-face {
@@ -27,6 +24,12 @@
   opacity: 0;
   height: 0;
   overflow: hidden;
+}
+
+* {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 h1,
@@ -687,9 +690,6 @@ summary {
   font-weight: 500;
   padding-top: 15px;
   padding-bottom: 15px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 summary::before {

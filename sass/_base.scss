@@ -1,7 +1,7 @@
 @media print {
   body {
     display: none;
-    appearance: none;
+   
   }
 }
 
@@ -34,6 +34,10 @@ font-display: swap
   opacity: 0;
   height: 0;
   overflow: hidden;
+}
+
+*{
+  appearance: none;
 }
 
 h1,
