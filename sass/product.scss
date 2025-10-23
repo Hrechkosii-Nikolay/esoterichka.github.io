@@ -1,0 +1,324 @@
+@import './vars';
+@import './base';
+@import './header';
+@import './contacts';
+@import './footer';
+
+@media print {
+  body {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: 'FuturaPT-Light';
+  src: url('../fonts/FuturaPT-Light.ttf');
+}
+
+@font-face {
+  font-family: 'FuturaPT-Book';
+  src: url('../fonts/FuturaPT-Book.ttf');
+}
+
+.is-hidden{
+  position: absolute;
+  left: -99999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'FuturaPT-Book';
+  text-align: center;
+
+  text-transform: uppercase;
+  font-weight: 300;
+  color: $main-color;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+body {
+  // user-select: none;
+
+  font-family: 'FuturaPT-light';
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+
+  
+  background-color: $main-bg-cl;
+  font-size: 17px;
+  color: $main-txt-cl;
+}
+
+main > section:not(:first-child) {
+  padding: 15px 0;
+  
+  @media screen and (min-width: 768px) {
+    padding: 25px 0;
+  }
+
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 20px;
+
+  margin: 0 auto;
+}
+
+
+/* Button Base */
+.base-btn {
+  min-width: 110px;
+
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 14px 33px;
+  text-transform: uppercase;
+  outline: 0;
+
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  
+  border: $main-border;
+  border-radius: $border-radius;
+
+  vertical-align: middle;
+  text-align: center;
+
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+
+    background-color: $hover-btn-cl;
+    color: $main-bg-cl;
+  }
+}
+
+.title {
+  text-align: center;
+
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 25px;
+  
+  @media (min-width: 768px) {
+    font-size: 30px;
+    
+  }
+}
+
+.section-txt {
+  margin-bottom: 60px;
+  text-align: center;
+}
+.section-logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 80px;
+  
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 20px;
+    width: 102px;
+    
+  }
+}
+
+
+/* ----- BTN back-to-top ----- */
+
+.back-to-top {
+  display: grid;
+  place-content: center;
+
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+
+
+  border: $main-border;
+
+  transition: 300ms;
+  display: none;
+  
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+  &:hover,
+  &:focus {
+    box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+    border: 1px solid $main-txt-cl;
+    background-color: $hover-btn-cl;
+    scale: 0.9;
+  }
+  
+  &:hover .back-icon,
+  &:focus .back-icon {
+    stroke: $main-bg-cl;
+  }
+}
+
+.back-to-top--show {
+  display: grid;
+}
+
+.back-icon {
+  stroke: $main-txt-cl;
+  transition: 300ms;
+}
+
+.is-hidden{
+  position: absolute;
+  left: -99999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+
+/* HERO-TARO */
+
+.hero-taro {
+  min-height: 600px;
+
+  margin: 0 auto;
+  padding: 20px 0 20px;
+  background-color: $main-txt-cl;
+  
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  @media screen and (min-width: 1024px) {
+    padding: 50px 0 50px;
+  }
+  
+  
+  &-title{
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.3em;
+    
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 1014px) {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+.hero-taro.taro{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/hero-taro.webp) ;
+}
+
+.hero-taro.taro-year{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/taro-year.jpg) ;
+}
+.hero-taro.taro-month{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/taro-month.jpg) ;
+}
+.hero-taro.kids-matrusa{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/kids-matrusa.webp) ;
+}
+.hero-taro.brends-matrusa{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/brends-matrusa.jpg) ;
+}
+.hero-taro.love-matrusa{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/love-matrusa.webp) ;
+}
+.hero-taro.year-matrusa{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/year-matrusa.webp) ;
+}
+.hero-taro.data-matrusa{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%,rgba(255, 255, 255, 0.7) 100%), url(../img/data-matrusa.webp) ;
+}
+.hero-taro.matrusa-doli{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%,rgba(255, 255, 255, 0.75) 100%), url(../img/matrusa-doli.webp) ;
+}
+.hero-taro.svichku-ochuschenna{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%,rgba(255, 255, 255, 0.75) 100%), url(../img/svichku-ochuschenna.webp) ;
+}
+.hero-taro.svichku-pokraschenna{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%,rgba(255, 255, 255, 0.75) 100%), url(../img/svichku-pokraschenna.webp) ;
+}
+.hero-taro.svichku-zahust{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%,rgba(255, 255, 255, 0.75) 100%), url(../img/svichku-zahust.webp) ;
+}
+.hero-taro.svichku{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%,rgba(255, 255, 255, 0.75) 100%), url(../img/svichku.webp) ;
+}
+
+  .taro-item {
+    margin-bottom: 8px;
+    align-items: baseline;
+  } 
+
+  .taro-item::before{
+    content:'\2724';
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero-taro-txt{
+    text-align: center;
+    text-wrap: pretty;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .taro-list{
+    padding-left: 15px;
+    
+    margin-bottom: 25px;
+  }
+
+  
+
+
+
+

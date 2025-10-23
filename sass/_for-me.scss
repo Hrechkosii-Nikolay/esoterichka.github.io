@@ -1,0 +1,178 @@
+/* ---- FOR ME ---- */
+
+.wrap-for-me {
+  line-height: 1.3em;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    
+  }
+}
+
+.for-me {
+  background-image: url(../img/bg-for-me.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  
+  &-img{
+    border: $main-border;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    display: block;
+
+   max-width: 100%;
+    
+    @media screen and (max-width: 420px) {
+      margin-bottom: 20px;
+      width: 330px;
+      
+      
+    }
+    @media screen and (min-width: 768px) {
+      max-width: 290px;
+
+      height: auto;
+  align-self: flex-start; 
+    
+      
+    }
+    @media screen and (min-width: 1024px) {
+      width: 360px;
+
+      
+    }
+  }
+  
+  &-list {
+    margin-bottom: 20px;
+
+    text-align: justify;
+    text-indent: 25px;
+  }
+
+  &-item{
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    position: absolute;
+    width: 85%;
+    padding: 15px;
+    margin: 0 auto;
+
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: flex-start;
+      padding: 15px 30px 15px 15px;
+     
+      
+    }
+  }
+  &-item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: stretch; 
+    gap: 40px;
+      
+    }
+  }
+
+
+  &-item:not(:last-child){
+margin-bottom: 15px;
+  }
+
+  &-btn{
+    // margin-top: 20px;
+    
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin: 0 auto;      
+    }
+    
+  }
+}
+
+.for-me-item > div {
+  display: flex;
+  flex-direction: column; /* елементи йдуть зверху вниз */
+  
+}
+.for-me-item > div .for-me-btn {
+  margin-top: auto; // кнопка піде вниз
+}
+
+
+.subject-list{
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  
+
+  @media screen and (min-width: 768px) {
+
+    
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+      display: flex;
+      // gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    
+      font-size: 15px;
+  }
+}
+.subject-list>li{
+  padding: 5px;
+  border: 0.5px solid $main-txt-cl;
+  border-radius: 15px;
+
+  @media screen and (min-width: 768px){
+    padding: 15px;
+    border: none;
+  }
+
+}
+@media screen and (max-width: 767px){
+  .subject-list>li:not(:last-child){
+    margin-bottom: 10px;
+}
+}
+.subject-card-title{
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    margin-top: 20px;
+    
+
+    
+  }
+  
+}
+
+.subject-card-txt:not(:last-child){
+  margin-bottom: 15px;
+    }
+
+    .subject-txt{
+      padding: 15px;
+    }
+
+    .subject-txt:hover{
+
+      color: $main-color;;
+    }

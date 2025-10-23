@@ -1,0 +1,108 @@
+
+/* Прибираємо стандартні маркери */
+summary::-webkit-details-marker {
+  display: none; /* Chrome, Safari */
+}
+summary::marker {
+  content: ""; /* Firefox */
+}
+
+/* Стиль summary */
+summary {
+  position: relative;
+  padding-left: 1.5em; /* відступ під стрілку */
+  cursor: pointer;
+  font-weight: 500;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+summary::before {
+  content: "\279F";
+  position: absolute;
+  left: 5px;
+  top: 15px;
+  font-size: 1.1em;
+  transition: transform 0.6s ease;
+  transform: rotate(90deg); /* вправо */
+}
+
+/* коли відкрито */
+details[open] summary::before {
+  transform: rotate(-90deg); /* вниз */
+}
+
+/* Контейнер для FAQ */
+.faq > div {
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .faq > div {
+    margin-top: 64px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Стиль FAQ item */
+.faq-item {
+  margin-bottom: 10px;
+  border: 0.5px solid $main-txt-cl;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover{
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+}
+
+.faq-item > p{
+  padding: 0 15px 15px 25px;
+}
+
+/* Колір summary при відкритті */
+.faq-item[open] summary {
+  color: $main-color;
+}
+
+/* Контент всередині faq-item (<p>) з анімацією */
+.faq-item > *:not(summary) {
+  overflow: hidden;
+  transition: height 0.8s ease;
+  height: 0;
+  margin: 0;
+}
+
+/* Текст та кнопка під FAQ */
+.question-txt {
+  margin-bottom: 24px;
+  
+  @media screen and (max-width: 767px) {
+text-align: center;
+}}
+
+@media screen and (min-width: 768px) {
+  .question-txt {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .question-txt {
+    max-width: 70%;
+  }
+}
+
+.question-btn {
+  @media screen and (max-width: 767px) {
+    display: block;
+    margin: 0 auto;
+  }
+}

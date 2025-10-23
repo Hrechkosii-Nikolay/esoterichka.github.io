@@ -1,0 +1,100 @@
+/* CLIENTS */
+
+.clients{
+  background-image: url(../img/bg-clients.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+
+
+
+  &-list {
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      
+    }
+  }
+  
+  &-item {
+    padding: 35px;
+    
+    max-width: 440px;
+    border: $main-border;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: $border-radius;
+
+    display: block;
+    margin: 15px auto;
+
+    position: relative;
+  }
+
+  &-img{
+    display: block;
+    margin: 0 auto;
+    
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: $secondary-txt-cl;
+  }
+  
+  &-name {
+    font-size: 18px;
+    font-weight: 600;
+    // margin-bottom: 6px;
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  &-location {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: $secondary-txt-cl;
+  }
+
+  &-story{
+    text-align: justify;
+    // position: relative;
+  }
+
+  &-story::before{
+    content: "";
+    display: inline-flex;
+    position: absolute;
+    left: 35px;
+    top: 210px;
+    width: 35px;
+    height: 35px;
+    background-image: url("../img/icons/quotes.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    // transform: rotate(90deg);
+  }
+
+  &-story::after{
+    content: "";
+    display: inline-flex;
+    position: absolute;
+    right: 35px;
+    bottom: 15px;
+    width: 35px;
+    height: 35px;
+    background-image: url("../img/icons/quotes.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transform: rotate(180deg);
+  }
+
+}

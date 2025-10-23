@@ -1,0 +1,226 @@
+// /* SKILLS */
+
+// .skills {
+
+
+//   background-image: url(../img/bg-skills.svg);
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   // background-position-y: 55px;
+//   // background-size: cover;
+//   background-size: contain;
+
+//   &-item{
+//     flex: 0 0 calc(25% - 15px); /* 4 у ряд */
+//     box-sizing: border-box;
+    
+//   }
+
+//   &-img {
+//     display: block;
+//     margin: 0 auto;
+
+//     border: $main-border;
+//     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+//     border-radius: $border-radius;
+//   }
+
+
+  // &-item:not(:last-child){
+  //   margin-bottom: 15px;
+
+  // }
+
+//   @media screen and (min-width: 768px) {
+    
+//       // &-list {
+//       //   display: flex;
+//       //   flex-wrap: wrap;
+//       //   justify-content: space-around;
+//       // }
+    
+    
+//   }
+
+//   @media screen and (min-width: 1240px) {
+    
+//       &-list {
+//         display: flex;
+//         flex-wrap: nowrap;
+//         // gap: 20px;
+//         justify-content: center;
+
+//         transition: transform 0.5s ease;
+//       }
+      
+//       // &-item:nth-child(-n+4) {
+//       //   margin-bottom: 5px;
+//       // }
+    
+//   }
+  
+
+// }
+
+// .skills-wrapper{
+//   overflow: hidden;
+// }
+
+// .skills-slider{
+//   position: relative;
+// }
+
+// .slider-btn {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   width: 40px;
+//   height: 40px;
+//   border: none;
+//   border-radius: 50%;
+//   background: rgba(0,0,0,0.4);
+//   color: #fff;
+//   font-size: 24px;
+//   cursor: pointer;
+//   z-index: 20000000;
+// }
+
+// .prev { left: 10px; }
+// .next { right: 10px; }
+
+// .slider-btn:hover { background: rgba(0,0,0,0.6); }
+
+// @media (max-width: 1024px) {
+//   .skills-item { flex: 0 0 33.33%; } /* 3 в ряд */
+// }
+// @media (max-width: 768px) {
+//   .skills-item { flex: 0 0 50%; } /* 2 в ряд */
+// }
+// @media (max-width: 480px) {
+//   .skills-item { flex: 0 0 100%; } /* 1 в ряд */
+// }
+
+.skills {
+  background-image: url(../img/bg-skills.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.skills-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.skills-list {
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.skills-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // gap: 20px;
+  flex: 0 0 100%; /* кожна сторінка займає всю ширину */
+}
+
+.skills-item {
+  flex: 0 0 calc(25% - 15px);
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.skills-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* кнопки */
+.skills-slider {
+  position: relative;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: $main-bg-cl;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  &:hover{
+    box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+    border: 0.5px solid $main-txt-cl;
+    background-color: $main-color;
+    scale: 0.95;
+  }
+}
+
+
+.next-icon,
+.prev-icon {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+vertical-align: middle;
+padding: 0;
+}
+
+.next-icon{
+  transform: translate(2px, -1px);
+}
+.prev-icon {
+  transform: translate(-2px, -1px);
+}
+
+.slider-btn:hover .next-icon,
+.slider-btn:hover .prev-icon {
+display: inline-flex;
+
+fill: $main-bg-cl;
+}
+
+
+
+
+
+
+.prev { left: 0px; }
+.next { right: 0px; }
+
+
+.prev,
+.next {
+  // display: none;
+}
+
+@media (min-width: 768px) {
+  .prev,
+  .next {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills-item { flex: 0 0 calc(33.33% - 15px); }
+}
+@media (max-width: 768px) {
+  .skills-item { flex: 0 0 calc(50% - 10px); }
+}
+@media (max-width: 480px) {
+  .skills-item { flex: 0 0 100%; }
+}

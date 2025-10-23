@@ -1,0 +1,207 @@
+@media print {
+  body {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: 'FuturaPT-Light';
+  src: url("../fonts/FuturaPT-Light.woff2") format("woff2"),
+       url("../fonts/FuturaPT-Light.woff") format("woff"),
+       url('../fonts/FuturaPT-Light.ttf') format("truetype");
+font-weight: normal;
+font-style: normal;
+font-display: swap
+}
+
+
+@font-face {
+  font-family: 'FuturaPT-Book';
+  src: url("../fonts/FuturaPT-Book.woff2") format("woff2"),
+       url("../fonts/FuturaPT-Book.woff") format("woff"),
+       url('../fonts/FuturaPT-Book.ttf') format("truetype");
+font-weight: normal;
+font-style: normal;
+font-display: swap
+}
+
+
+
+.is-hidden{
+  position: absolute;
+  left: -99999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo-txt {
+  
+  font-family: 'FuturaPT-Book';
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: $main-color;
+
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+body {
+  // user-select: none;
+  font-family: 'FuturaPT-Light';
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  
+  background-color: $main-bg-cl;
+  font-size: 17px;
+  color: $main-txt-cl;
+}
+
+main > section:not(:first-child) {
+  padding: 15px 0;
+  
+  @media screen and (min-width: 768px) {
+    padding: 25px 0;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 35px 0;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 20px;
+
+  margin: 0 auto;
+}
+
+
+/* Button Base */
+.base-btn {
+  display: inline-block;
+  width: 254px;
+  text-align: center;
+  vertical-align: middle;
+
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 17px 30px;
+  text-transform: uppercase;
+  outline: 0;
+  
+  background-color: transparent;
+  border: $icon-border;
+  border-radius: $border-radius-btn;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+    background-color: $main-color;
+    color: $main-bg-cl;
+  }
+}
+
+.title {
+  text-align: center;
+
+  font-weight: 600;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  font-size: 25px;
+  
+  @media (min-width: 768px) {
+    font-size: 30px;
+    
+  }
+}
+
+.section-txt {
+  margin-bottom: 60px;
+  text-align: center;
+}
+.section-logo {
+  display: block;
+  margin: 0 auto;
+  // margin-bottom: 10px;
+  width: 75px;
+  
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 15px;
+    width: 90px;
+    
+  }
+}
+
+
+/* ----- BTN back-to-top ----- */
+
+.back-to-top {
+  display: grid;
+  place-content: center;
+
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+
+  width: 65px;
+  min-height: 65px;
+  border-radius: 50%;
+
+
+  border: $main-border;
+
+  transition: 300ms;
+  display: none;
+  
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+  &:hover,
+  &:focus {
+    box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+    border: 1px solid $main-txt-cl;
+    background-color: $main-color;
+    scale: 0.9;
+    
+    
+    
+  }
+  
+  &:hover .back-icon,
+  &:focus .back-icon {
+    stroke: $main-bg-cl;
+  }
+}
+
+.back-to-top--show {
+  display: grid;
+}
+
+.back-icon {
+  stroke: $main-txt-cl;
+  transition: 300ms;
+}
+
