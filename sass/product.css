@@ -2,6 +2,9 @@
 @media print {
   body {
     display: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
   }
 }
 @font-face {
