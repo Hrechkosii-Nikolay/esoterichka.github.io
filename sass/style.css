@@ -657,6 +657,14 @@ header {
   align-items: center;
   gap: 10px;
   margin: 0 auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+@media screen and (max-width: 767px) {
+  .download-btn {
+    color: rgb(255, 140, 0);
+  }
 }
 
 .download-btn:hover {
@@ -667,6 +675,11 @@ header {
 .download-icon {
   stroke: #2a2a2a;
   fill: none;
+}
+@media screen and (max-width: 767px) {
+  .download-icon {
+    stroke: #2a2a2a;
+  }
 }
 
 .download-btn:hover .download-icon {

@@ -93,6 +93,12 @@
   align-items: center;
   gap: 10px;
   margin: 0 auto;
+  appearance: none;
+  
+
+  @media screen and (max-width: 767px){
+    color: $main-color;
+  }
 }
 
 .download-btn:hover{
@@ -102,7 +108,11 @@
 .download-icon{
   stroke: $main-txt-cl;
   fill: none;
+  @media screen and (max-width: 767px){
+    stroke: $main-txt-cl;
+  }
 }
 .download-btn:hover .download-icon{
   stroke: $main-color;
+  
 }
