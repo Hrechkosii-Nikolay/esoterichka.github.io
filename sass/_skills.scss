@@ -134,10 +134,20 @@
 }
 
 .skills-img {
-  width: 100%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: block;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+     width: 100%;
 }
+}
+// @media (max-width: 767px) {
+//   .skills-img { 
+//     display: block;
+//     margin: 0 auto;}
+// }
 
 /* кнопки */
 .skills-slider {
@@ -202,11 +212,6 @@ fill: $main-bg-cl;
 .prev { left: 0px; }
 .next { right: 0px; }
 
-
-.prev,
-.next {
-  // display: none;
-}
 
 @media (min-width: 768px) {
   .prev,
