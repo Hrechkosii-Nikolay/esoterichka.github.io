@@ -87,6 +87,9 @@ main > section:not(:first-child) {
 
 /* Button Base */
 .base-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   display: inline-block;
   width: 254px;
   text-align: center;

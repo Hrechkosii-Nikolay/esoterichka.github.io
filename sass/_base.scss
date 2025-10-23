@@ -99,6 +99,7 @@ main > section:not(:first-child) {
 
 /* Button Base */
 .base-btn {
+  appearance: none;
   display: inline-block;
   width: 254px;
   text-align: center;
