@@ -61,6 +61,12 @@ ul {
   list-style: none;
 }
 
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 body {
   font-family: "FuturaPT-Light";
   font-weight: 200;
