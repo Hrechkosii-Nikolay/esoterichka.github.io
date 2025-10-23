@@ -118,6 +118,7 @@ main > section:not(:first-child) {
   box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
   background-color: rgb(255, 140, 0);
   color: #ffffff;
+  cursor: pointer;
 }
 
 .title {
@@ -620,6 +621,7 @@ header {
 .work-item:hover, .work-item:focus {
   transform: scale(1.01);
   box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  cursor: pointer;
 }
 
 .work-item::after {
@@ -650,6 +652,9 @@ header {
   }
 }
 .download-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   background-color: inherit;
   padding: 10px;
@@ -657,9 +662,6 @@ header {
   align-items: center;
   gap: 10px;
   margin: 0 auto;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 @media screen and (max-width: 767px) {
   .download-btn {

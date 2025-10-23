@@ -118,6 +118,7 @@ main > section:not(:first-child) {
   box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
   background-color: rgb(255, 140, 0);
   color: #ffffff;
+  cursor: pointer;
 }
 
 .title {

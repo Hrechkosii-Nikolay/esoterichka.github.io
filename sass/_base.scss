@@ -129,6 +129,7 @@ main > section:not(:first-child) {
     box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
     background-color: $main-color;
     color: $main-bg-cl;
+    cursor: pointer;
   }
 }
 

@@ -51,6 +51,7 @@
   &:hover, &:focus{
     transform: scale(1.01);
     box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+    cursor: pointer;
   }
  
 }
@@ -86,6 +87,7 @@
 }
 
 .download-btn{
+  appearance: none;
   border: none;
   background-color: inherit;
   padding: 10px;
@@ -93,7 +95,6 @@
   align-items: center;
   gap: 10px;
   margin: 0 auto;
-  appearance: none;
   
 
   @media screen and (max-width: 767px){
