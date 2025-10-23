@@ -9,9 +9,11 @@ summary::marker {
 
 /* Стиль summary */
 summary {
+  cursor: pointer;
+  appearance: none;
+  list-style: none;
   position: relative;
   padding-left: 1.5em; /* відступ під стрілку */
-  cursor: pointer;
   font-weight: 500;
   padding-top: 15px;
   padding-bottom: 15px;
