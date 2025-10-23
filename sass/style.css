@@ -404,11 +404,13 @@ header {
     letter-spacing: 2px;
   }
 }
+.hero-btn {
+  border-color: #ffffff;
+}
 @media screen and (min-width: 1024px) {
   .hero-btn {
     display: block;
     margin: 0 auto;
-    border-color: #ffffff;
   }
 }
 

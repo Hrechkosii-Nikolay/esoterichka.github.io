@@ -62,10 +62,10 @@
   }
   
   &-btn {
+    border-color: $main-bg-cl;
     @media screen and (min-width: 1024px) {
       display: block;
       margin: 0 auto;
-      border-color: $main-bg-cl;
     }
   }
   
