@@ -44,14 +44,17 @@ display: none;
 @media screen and (max-width: 1139px) {
   position: absolute;
   top: 60px;
+  top: 0px;
   right: 0;
-  
+  height: 100vh;
+
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  background-color: #ffffffc0;
+  background-color: rgb(255, 140, 0);
 
   padding: 25px;
-  border-radius: $border-radius;
+  padding-top: 50px;
+  // border-radius: $border-radius;
   border: $main-border;
   
 }
@@ -63,7 +66,6 @@ display: none;
 
   position: absolute;
   bottom: -800px;                   /* тепер воно прив’язане до низу header */
-  // bottom: 30px;                   /* тепер воно прив’язане до низу header */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -141,11 +143,12 @@ display: none;
   padding: 0;
   border: none;
   background-color: transparent;
-  stroke: $main-txt-cl;
+  stroke: $main-bg-cl;
 
   position: absolute;
   top: 5px;
   right: 15px;
+
 
   @media screen and (min-width: 1139px) {
     display: none;

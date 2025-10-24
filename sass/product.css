@@ -231,12 +231,14 @@ header {
   .menu-list {
     position: absolute;
     top: 60px;
+    top: 0px;
     right: 0;
+    height: 100vh;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.7529411765);
+    background-color: rgb(255, 140, 0);
     padding: 25px;
-    border-radius: 15px;
+    padding-top: 50px;
     border: none;
   }
 }
@@ -309,7 +311,7 @@ header {
   padding: 0;
   border: none;
   background-color: transparent;
-  stroke: #2a2a2a;
+  stroke: #ffffff;
   position: absolute;
   top: 5px;
   right: 15px;
