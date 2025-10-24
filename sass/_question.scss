@@ -13,18 +13,20 @@ summary {
   appearance: none;
   list-style: none;
   position: relative;
-  padding-left: 1.5em; /* відступ під стрілку */
+  padding-left: 45px;
   font-weight: 500;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+ 
   
 }
 
 summary::before {
   content: "\279F";
   position: absolute;
-  left: 5px;
-  top: 15px;
+  left: 20px;
+  top: 20px;
   font-size: 1.1em;
   transition: transform 0.6s ease;
   transform: rotate(90deg); /* вправо */
@@ -67,7 +69,9 @@ details[open] summary::before {
 }
 
 .faq-item > p{
-  padding: 0 15px 15px 25px;
+  padding: 0 25px 25px 25px;
+  color: #2a2a2a;
+  color: $secondary-txt-cl;
 }
 
 /* Колір summary при відкритті */
