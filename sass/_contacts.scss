@@ -5,7 +5,7 @@
   text-align: start;
 }
 .contacts-wrap-txt {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 
   @media screen and (min-width: 1024px) {
     max-width: calc((100% - 25px) / 2);
@@ -73,7 +73,7 @@
   min-width: calc((100% - 25px) / 2);
 
   &-list {
-    margin-bottom: 22px;
+    margin-bottom: 30px;
 
     @media screen and (min-width: 1024px) {
       display: flex;
@@ -93,20 +93,20 @@
 
   &-label {
     position: absolute;
-    top: 3px;
-    left: 10px;
+    top: 10px;
+    left: 16px;
     color: $secondary-txt-cl;
     transition: 300ms;
   }
 
   &-input {
     @media screen and (max-width: 1023px) {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       display: block;
       width: 100%;
     }
 
-    padding: 5px;
+    padding: 12px 16px;
     border: $main-border;
     background-color: $main-bg-cl;
     outline: none;
@@ -124,14 +124,14 @@
 
   &-input:focus ~ &-label,
   &-input:not(:placeholder-shown) ~ &-label {
-    top: -23px;
+    top: -25px;
     color: $main-txt-cl;
     font-size: 15.5px;
   }
 
   &-message {
     resize: none;
-    padding: 5px;
+    padding: 12px 16px; 
 
     @media screen and (max-width: 767px) {
       height: 200px;

@@ -90,13 +90,14 @@ body {
 }
 
 main > section:not(:first-child) {
+// main > section {
   padding: 15px 0;
   
   @media screen and (min-width: 768px) {
     padding: 25px 0;
   }
   @media screen and (min-width: 1024px) {
-    padding: 35px 0;
+    padding: 60px 0;
   }
 }
 
@@ -143,12 +144,12 @@ main > section:not(:first-child) {
   text-align: center;
 
   font-weight: 600;
-  margin-bottom: 35px;
+  margin-bottom: 50px;
   text-transform: uppercase;
   font-size: 25px;
   
   @media (min-width: 768px) {
-    font-size: 30px;
+    font-size: 35px;
     
   }
 }

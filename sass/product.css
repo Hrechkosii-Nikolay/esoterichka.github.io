@@ -87,7 +87,7 @@ main > section:not(:first-child) {
 }
 @media screen and (min-width: 1024px) {
   main > section:not(:first-child) {
-    padding: 35px 0;
+    padding: 60px 0;
   }
 }
 
@@ -130,13 +130,13 @@ main > section:not(:first-child) {
 .title {
   text-align: center;
   font-weight: 600;
-  margin-bottom: 35px;
+  margin-bottom: 50px;
   text-transform: uppercase;
   font-size: 25px;
 }
 @media (min-width: 768px) {
   .title {
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 
@@ -377,7 +377,7 @@ header {
 }
 
 .contacts-wrap-txt {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 @media screen and (min-width: 1024px) {
   .contacts-wrap-txt {
@@ -443,7 +443,7 @@ header {
   min-width: calc((100% - 25px) / 2);
 }
 .form-list {
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 1024px) {
   .form-list {
@@ -463,13 +463,13 @@ header {
 }
 .form-label {
   position: absolute;
-  top: 3px;
-  left: 10px;
+  top: 10px;
+  left: 16px;
   color: #777779;
   transition: 300ms;
 }
 .form-input {
-  padding: 5px;
+  padding: 12px 16px;
   border: none;
   background-color: #ffffff;
   outline: none;
@@ -480,7 +480,7 @@ header {
 }
 @media screen and (max-width: 1023px) {
   .form-input {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     display: block;
     width: 100%;
   }
@@ -489,18 +489,18 @@ header {
   border-color: rgba(28, 52, 234, 0.506);
 }
 .form-input:not(:-moz-placeholder) ~ .form-label {
-  top: -23px;
+  top: -25px;
   color: #2a2a2a;
   font-size: 15.5px;
 }
 .form-input:focus ~ .form-label, .form-input:not(:placeholder-shown) ~ .form-label {
-  top: -23px;
+  top: -25px;
   color: #2a2a2a;
   font-size: 15.5px;
 }
 .form-message {
   resize: none;
-  padding: 5px;
+  padding: 12px 16px;
 }
 @media screen and (max-width: 767px) {
   .form-message {
