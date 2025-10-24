@@ -1131,12 +1131,12 @@ details[open] summary::before {
 }
 .form-input:not(:-moz-placeholder) ~ .form-label {
   top: -25px;
-  color: #2a2a2a;
+  color: rgb(255, 140, 0);
   font-size: 15.5px;
 }
 .form-input:focus ~ .form-label, .form-input:not(:placeholder-shown) ~ .form-label {
   top: -25px;
-  color: #2a2a2a;
+  color: rgb(255, 140, 0);
   font-size: 15.5px;
 }
 .form-message {

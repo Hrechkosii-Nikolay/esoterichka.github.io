@@ -125,7 +125,8 @@
   &-input:focus ~ &-label,
   &-input:not(:placeholder-shown) ~ &-label {
     top: -25px;
-    color: $main-txt-cl;
+    // color: $main-txt-cl;
+    color: $main-color;
     font-size: 15.5px;
   }
 
