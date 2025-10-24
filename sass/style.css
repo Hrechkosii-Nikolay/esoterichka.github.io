@@ -115,6 +115,7 @@ main > section:not(:first-child) {
   background-color: transparent;
   border: 0.5px solid #2a2a2a;
   border-radius: 76px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: inherit;
@@ -382,7 +383,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  margin-top: -76px;
+  margin-top: -69px;
 }
 @media screen and (min-width: 1024px) {
   .hero {
