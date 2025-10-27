@@ -494,7 +494,7 @@ header {
   margin-bottom: 15px;
   aspect-ratio: 3/4;
   border: none;
-  border: 0.5px solid #fff;
+  border: 0.5px solid rgb(255, 140, 0);
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -519,13 +519,13 @@ header {
   content: "";
   position: absolute;
   inset: 0; /* скорочено: top: 0; right: 0; bottom: 0; left: 0; */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 25%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 25%);
   z-index: 1;
   transition: opacity 0.3s ease;
 }
 @media screen and (max-width: 768px) {
   .work-item a::after {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 70%);
   }
 }
 
