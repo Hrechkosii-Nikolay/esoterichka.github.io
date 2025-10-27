@@ -206,11 +206,7 @@ display: none;
 }
 
 
-
-
-
-
-/* HERO */
+/* ------HERO------- */
 
 .hero {
   text-align: center;
@@ -250,10 +246,8 @@ display: none;
   &-txt {
     text-transform: uppercase;
     margin-bottom: 20px;
-    // color: $main-txt-cl;
     color: $main-bg-cl;
     font-weight: 300;
-    // text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     
     @media screen and (min-width: 1024px) {
       margin-bottom: 20px;
@@ -261,7 +255,7 @@ display: none;
       display: inline-block; 
       align-items: center;
       // width: 715px;
-      letter-spacing: 2px;
+      // letter-spacing: 2px;
       
     }
   }

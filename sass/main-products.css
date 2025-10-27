@@ -380,7 +380,7 @@ header {
   stroke: rgb(255, 140, 0);
 }
 
-/* HERO */
+/* ------HERO------- */
 .hero {
   text-align: center;
   min-height: 96vh;
@@ -420,7 +420,6 @@ header {
     font-size: 20px;
     display: inline-block;
     align-items: center;
-    letter-spacing: 2px;
   }
 }
 .hero-btn {
