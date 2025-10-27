@@ -62,24 +62,31 @@
   }
  
 }
-.work-item > a {
-  position: absolute;
-  inset: 0; /* покриває весь блок */
-  z-index: 2;
-}
+// .work-item > a {
+//   position: absolute;
+//   inset: 0; /* покриває весь блок */
+//   z-index: 2;
+// }
 
-.work-item::after {
+.work-item a::after {
   content: "";
   position: absolute;
   inset: 0; /* скорочено: top: 0; right: 0; bottom: 0; left: 0; */
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.8) 0%,
     rgba(255, 255, 255, 0) 25%,
   );
   z-index: 1;
   transition: opacity 0.3s ease;
-}
+
+  @media screen and (max-width: 768px) {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(255, 255, 255, 0) 50%,
+    );
+}}
 .work-img {
   width: 100%;
   height: auto;
