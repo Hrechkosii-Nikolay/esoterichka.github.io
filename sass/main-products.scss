@@ -10,8 +10,6 @@
 header {
   padding-top: 5px;
   position: relative;
-  z-index: 999;
-  // height: 700px;
 }
 
 
@@ -51,21 +49,19 @@ display: none;
 
 //  --- Бургер меню --- //
 @media screen and (max-width: 1139px) {
-  position: absolute;
-  // top: 60px;
+  position:absolute;
+
   top: 0px;
   right: 0;
   height: 100vh;
 
-  // -webkit-backdrop-filter: blur(5px);
-  // backdrop-filter: blur(5px);
   background-color: rgb(255, 140, 0);
 
   padding: 25px;
   padding-top: 50px;
   // border-radius: $border-radius;
   border: $main-border;
-  
+  z-index: 999;
 }
 
 @media screen and (min-width: 1140px) {
@@ -74,14 +70,11 @@ display: none;
   margin: 0 auto;
 
   position: absolute;
-  // bottom: -800px;                   /* тепер воно прив’язане до низу header */
   left: 50%;
   transform: translateX(-50%);
 }
 
 }
-
-
 
 .menu-item {
   white-space: nowrap;
@@ -94,10 +87,6 @@ display: none;
   @media screen and (max-width: 1139px) {
     text-align: center;
     font-size: 22px;
-    // border-bottom: $main-border;
-    // border-top: $main-border;
-    // border-radius: $border-radius;
-    // padding: 5px 10px;
   
     &:not(:last-child) {
       margin-bottom: 25px;
@@ -157,15 +146,12 @@ display: none;
   position: absolute;
   top: 5px;
   right: 15px;
-
+  z-index: 10000;
 
   @media screen and (min-width: 1139px) {
-    display: none;
-    
-  }
-  
+    display: none; 
+  }  
 }
-
 
 .icon-plus{
   display: none;
@@ -176,26 +162,21 @@ display: none;
   @media screen and (min-width: 1139px) {
       display: flex;
       gap: 15px;
-      margin-left: auto; 
-    
+      margin-left: auto;  
   }
-
 }
 
 
-@media screen and (max-width: 1139px) {
-  
+@media screen and (max-width: 1139px) {  
   .menu-btn.is-open .icon-plus,
   .menu-list.is-open{
     display: block;
   }
 }
 
-
 .menu-btn.is-open .icon-menu{
   display: none;
 }
-
 
 .social-link{
   display: flex;
@@ -303,7 +284,7 @@ display: none;
 
 .work-subtitle {
   position: absolute;
-  z-index: 999999999;
+  z-index: 3;
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
@@ -323,6 +304,12 @@ display: none;
     bottom: 10px;
   }
 }
+
+.burger-menu {
+  position: fixed;
+  z-index: 1000;
+}
+
 
 .work-list {
   display: flex;
@@ -416,6 +403,13 @@ display: none;
   display: block;
   object-fit: cover;
 }
+
+.icon-plus {
+  position: relative;
+  z-index: 9999;
+}
+
+
 
 
 
