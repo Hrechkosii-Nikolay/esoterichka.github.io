@@ -175,7 +175,7 @@ main > section:not(:first-child) {
 }
 .back-to-top:hover, .back-to-top:focus {
   box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
-  border: 1px solid #2a2a2a;
+  border: 0.5px solid #2a2a2a;
   background-color: rgb(255, 140, 0);
   scale: 0.9;
 }
@@ -591,7 +591,7 @@ header {
 /* WORK */
 .work-subtitle {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
@@ -603,18 +603,26 @@ header {
   text-transform: uppercase;
   color: #ffffff;
 }
-
-.work-list {
-  margin-bottom: 50px;
-}
-@media screen and (min-width: 768px) {
-  .work-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+@media screen and (max-width: 500px) {
+  .work-subtitle {
+    font-size: 17px;
+    bottom: 10px;
   }
 }
 
+.work-list {
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* до 767px — 2 у ряд */
+  gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .work-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* від 768px — адаптивна сітка */
+    gap: 20px;
+  }
+}
 .work-item {
   position: relative;
   margin-bottom: 15px;
@@ -630,6 +638,12 @@ header {
   transform: scale(1.01);
   box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
   cursor: pointer;
+}
+
+.work-item > a {
+  position: absolute;
+  inset: 0; /* покриває весь блок */
+  z-index: 2;
 }
 
 .work-item::after {

@@ -2,17 +2,13 @@
 
 .work-subtitle {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
 
-  // background-color: rgba(221, 221, 221, 0.433);
-  // backdrop-filter: blur(2px);
-  // display: inline-block;
-  // padding: 8px;
-  // border-radius: 76px;
+
 
   font-size: 26px;
   font-weight: 300;
@@ -20,18 +16,27 @@
   text-align: center;
   text-transform: uppercase;
   color: $main-bg-cl;
+
+  @media screen and (max-width: 500px) {
+    font-size: 17px;
+    bottom: 10px;
+  }
 }
 
 .work-list {
   margin-bottom: 50px;
-
-   @media screen and (min-width: 768px) {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-     gap: 20px;
-    
-   }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* до 767px — 2 у ряд */
+  gap: 15px;
 }
+
+@media screen and (min-width: 768px) {
+  .work-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* від 768px — адаптивна сітка */
+    gap: 20px;
+  }
+}
+
 
 .work-item {
   position: relative;
@@ -46,6 +51,8 @@
   transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   border-radius: $border-radius;
+
+
   
   
   &:hover, &:focus{
@@ -55,6 +62,12 @@
   }
  
 }
+.work-item > a {
+  position: absolute;
+  inset: 0; /* покриває весь блок */
+  z-index: 2;
+}
+
 .work-item::after {
   content: "";
   position: absolute;
