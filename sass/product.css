@@ -616,13 +616,14 @@ header {
   font-size: 25px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 .hero-txt {
   text-align: center;
   text-wrap: pretty;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 20px;
   color: #ffffff;
   letter-spacing: 2.2px;

@@ -257,14 +257,15 @@ display: none;
     text-align: center;
     text-transform: uppercase;
 
-    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
   }
 
   &-txt{
     text-align: center;
     text-wrap: pretty;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 20px;
     // line-height: 1.5;
     color: $main-bg-cl;
