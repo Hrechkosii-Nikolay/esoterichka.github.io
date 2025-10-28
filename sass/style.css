@@ -1296,6 +1296,7 @@ details[open] summary::before {
   left: 10px;
   color: #777779;
   transition: 300ms;
+  pointer-events: none;
 }
 .modal-form-input {
   display: block;

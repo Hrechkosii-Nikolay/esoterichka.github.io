@@ -72,6 +72,7 @@
     
     color: $secondary-txt-cl;
     transition: 300ms;
+    pointer-events: none;
   }
   
   &-input {
