@@ -621,6 +621,7 @@ header {
 @media screen and (max-width: 500px) {
   .work-subtitle {
     font-size: 17px;
+    letter-spacing: 2px;
     bottom: 10px;
   }
 }
