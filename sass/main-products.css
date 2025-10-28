@@ -470,6 +470,7 @@ header {
   .work-subtitle {
     font-size: 14px;
     bottom: 10px;
+    letter-spacing: 2px;
   }
 }
 
