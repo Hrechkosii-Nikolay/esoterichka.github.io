@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media print {
   body {
     display: none;
@@ -686,7 +687,8 @@ header {
 }
 
 .taro-item::before {
-  content: "";
+  content: "➟";
+  color: rgb(255, 140, 0);
   display: inline-flex;
   width: 15px;
   height: 15px;
