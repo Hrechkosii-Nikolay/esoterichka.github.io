@@ -516,6 +516,7 @@ header {
   aspect-ratio: 3/4;
   border: none;
   border: 0.5px solid rgb(255, 140, 0);
+  border: 1px solid #ffffff;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
