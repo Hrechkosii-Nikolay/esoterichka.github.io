@@ -35,7 +35,11 @@
     <noscript><link rel="stylesheet" href="./css/product.min.css"></noscript>
 
 
-    <link rel="icon" href="./img/logo_white.svg"/>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" /> 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> 
+    <link rel="shortcut icon" href="/favicon.ico" /> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> 
+    <link rel="manifest" href="/site.webmanifest" />
     <script>
       function aload(t) {
         "use strict";
@@ -55,8 +59,9 @@
 
 
     <style>
-      body, h1, h2, p { margin: 0; padding: 0;}
-      .hero-title { font-size: 48px; font-weight: 700; line-height: 1.2; }
+          body, h1, h2, p { margin: 0; padding: 0;}
+          .hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.2;}
+          .hero{margin-top: -69px;};
     </style>
 
 
@@ -80,10 +85,16 @@
       <div class="container">
         <nav>
           <a class="logo-link" href="./index.html">
-            <img class="logo" src="./img/logo_dark.svg" width="64" height="64" alt="Логотип таролога Анастасії" />
-           
+            <img
+              class="logo"
+              src="./img/logo_white.svg"
+              width="64"
+              height="64"
+              alt="Логотип таролога Анастасії"
+            />
+
             <p class="logo-txt">
-              таролог <br />
+              езотерик <br />
               анастасія
             </p>
           </a>
@@ -92,28 +103,80 @@
             <li class="menu-item"><a href="./index.html#work">Послуги</a></li>
             <li class="menu-item"><a href="#contacts">Контакти</a></li>
           </ul>
-          <button class="menu-btn" type="button" data-menu-btn aria-expanded="false">
-            <svg class="" width="35" height="35" aria-label="Перемикач мобільного меню">
-              <use class="icon-plus" href="./img/icons/menu-icons.svg#plus"></use>
-              <use class="icon-menu" href="./img/icons/menu-icons.svg#burger-menu"></use>
+          <button
+            class="menu-btn"
+            type="button"
+            data-menu-btn
+            aria-expanded="false"
+          >
+            <svg
+              class=""
+              width="35"
+              height="35"
+              aria-label="Перемикач мобільного меню"
+            >
+              <use
+                class="icon-plus"
+                href="./img/icons/menu-icons.svg#plus"
+              ></use>
+              <use
+                class="icon-menu"
+                href="./img/icons/menu-icons.svg#burger-menu"
+              ></use>
             </svg>
           </button>
+          <ul class="social-list">
+            <li class="social-item">
+              <a 
+              class="social-link" 
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://instagram.com/hrechkosii_anastasiia"
+              >
+                <svg class="social-icon" width="20" height="20">
+                  <use href="./img/icons/svg-sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item">
+              <a 
+              class="social-link"    
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://t.me/nastiia_esoterichka"
+              >
+                <svg class="social-icon" width="20" height="20">
+                  <use href="./img/icons/svg-sprite.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item">
+              <a class="social-link"  
+              target="_blank"
+              rel="noopener noreferrer" 
+              href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
+                <svg class="social-icon" width="20" height="20">
+                  <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
     <main>
-      <section class="section hero-taro taro">
+      <section class="section hero taro">
         <div class="container">
-          <h1 class="hero-taro-title">Таролог <span class="is-hidden">у Києві</span>– Ваш Провідник у Світ Таро</h1>
-          <p  class="hero-taro-txt">
+          <h1 class="hero-title">Таролог <span class="is-hidden">у Києві</span>– Ваш Провідник у Світ Таро</h1>
+          <p class="hero-txt">
             Шукаєте професійного таролога у Києві чи онлайн-консультацію з будь-якої точки України? 
           </p>
-          <p class="hero-taro-txt">
+          <p class="hero-txt">
             Я – Анастасія, досвідчений таролог, готова допомогти вам знайти відповіді на важливі питання. </p> 
             <p class="is-hidden">Мої консультації доступні для мешканців Києва, Львова, Дніпра, Полтави, Одеси, Черкас, Вінниці та інших міст України.</p>
           </p> 
-          <h2>Послуги таролога онлайн та офлайн</h2>
-          <p class="hero-taro-txt">Звертаючись до мене, ви отримаєте індивідуальний підхід, точні розклади Таро та щиру підтримку. </p>
+          <h2 class="hero-subtitle">Послуги таролога онлайн та офлайн</h2>
+          <p class="hero-txt">Звертаючись до мене, ви отримаєте індивідуальний підхід, точні розклади Таро та щиру підтримку. </p>
         <ul class="taro-list">
           <li class="taro-item">
           Гадання на картах Таро онлайн – зручний формат консультацій незалежно від вашої локації
@@ -131,7 +194,7 @@
             Гадання по фото – дистанційна діагностика через енергетику фотографії
           </li>
         </ul>
-        <h3>Найкращий таролог України для жінок та чоловіків</h3>
+        <h3 class="hero-subtitle">Найкращий таролог України для жінок та чоловіків</h3>
         <ul class="taro-list">
           <li class="taro-item">
             Я працюю з клієнтами будь-якої статі та віку, допомагаючи розібратися в життєвих питаннях
@@ -143,7 +206,7 @@
             Таролог для чоловіків – консультації на тему кар’єри, фінансів, бізнесу та самопізнання
           </li>
         </ul>
-        <h3>Переваги моїх консультацій</h3>
+        <h3 class="hero-subtitle">Переваги моїх консультацій</h3>
         <ul class="taro-list">
           <li class="taro-item">
             Точність і глибина розкладів – використовую перевірені методики гадання
@@ -188,18 +251,19 @@
           <li class="taro-item">Таролог Вінниця онлайн.</li>
           
         </ul>
-        <h3> Вартість послуги </h3>
+        <h3 class="hero-subtitle"> Вартість послуги </h3>
         <ul class="taro-list">
           <li class="taro-item">
-            Перше питання - 250 грн.
+            
+            Перше питання - <span class="main-color">250 грн.</span>
           </li>
           <li class="taro-item">
-            Кожне наступне питання – 150 грн.
+            Кожне наступне питання – <span class="main-color">150 грн.</span> 
           </li>
         </ul>
-        <h3>Як записатися на консультацію?</h3>
-        <p class="hero-taro-txt">Записатися на консультацію легко – просто зв’яжіться зі мною за телефоном або через соціальні мережі. </p>
-         <p class="hero-taro-txt"> Я допоможу вам знайти відповіді на ваші питання та спрямую вас на шлях гармонії.</p>
+        <h3 class="hero-subtitle">Як записатися на консультацію?</h3>
+        <p class="hero-txt">Записатися на консультацію легко – просто зв’яжіться зі мною за телефоном або через соціальні мережі. </p>
+         <p class="hero-txt"> Я допоможу вам знайти відповіді на ваші питання та спрямую вас на шлях гармонії.</p>
         </div>
       </section>
       <section class="section contacts" id="contacts">
@@ -214,43 +278,59 @@
           <h2 class="title">Контакти</h2>
           <div class="contacts-wrap">
             <div class="contacts-wrap-txt">
-              <p class="contacts-txt section-txt">
-                Залиште свій запит зручним для вас способом, і я обов'язково з вами зв'яжуся. Проводжу консультації онлайн для клієнтів по всьому світу. Разом ми проведемо діагностику та розробимо план дій. Звертайтеся зараз!
+              <p class="contacts-txt">
+                Залиште свій запит зручним для вас способом, і я обов'язково з
+                вами зв'яжуся. Проводжу консультації онлайн для клієнтів по
+                всьому світу. Разом ми проведемо діагностику та розробимо план
+                дій. Звертайтеся зараз!
               </p>
-                <ul class="contacts-list">
-                  <li class="contacts-item icon-phone">
-                    <a class="contacts-link" href="tel:+380963252021">
-                      <svg class="contacts-icon" width="20" height="20">
-                        <use href="./img/icons/svg-sprite.svg#phone"></use>
-                      </svg>
-                      +38 (096) 325-20-21</a
-                    >
-                  </li>
-                  <li class="contacts-item icon-instagram">
-                    <a
-                      class="contacts-link"
-                      target="_blanc"
-                      href="https://instagram.com/hrechkosii_anastasiia"
-                    >
-                      <svg class="contacts-icon" width="20" height="20">
-                        <use href="./img/icons/svg-sprite.svg#instagram"></use>
-                      </svg>
-                      @hrechkosii_anastasiia</a
-                    >
-                  </li>
-                  <li class="contacts-item icon-telegram">
-                    <a
-                      class="contacts-link"
-                      target="_blanc"
-                      href="https://t.me/nastiia_esoterichka"
-                    >
-                      <svg class="contacts-icon" width="20" height="20">
-                        <use href="./img/icons/svg-sprite.svg#telegram"></use>
-                      </svg>
-                      @nastiia_esoterichka</a
-                    >
-                  </li>
-                </ul>
+              <ul class="contacts-list">
+                <li class="contacts-item icon-phone is-hidden">
+                  <a class="contacts-link" href="tel:+380963252021">
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#phone"></use>
+                    </svg>
+                    +38 (096) 325-20-21</a
+                  >
+                </li>
+                <li class="contacts-item icon-instagram">
+                  <a
+                    class="contacts-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://instagram.com/hrechkosii_anastasiia"
+                  >
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#instagram"></use>
+                    </svg>
+                    @hrechkosii_anastasiia</a
+                  >
+                </li>
+                <li class="contacts-item icon-telegram">
+                  <a
+                    class="contacts-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://t.me/nastiia_esoterichka"
+                  >
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#telegram"></use>
+                    </svg>
+                    @nastiia_esoterichka</a
+                  >
+                </li>
+                <li class="contacts-item icon-telegram">
+                  <a class="contacts-link"  
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+                    </svg>
+                    @nastiia_esoterichka
+                  </a>
+                </li>
+              </ul>
             </div>
             <form action="telegram.php" method="post" class="form" id="form">
               <ul class="form-list form-list--top">
@@ -258,9 +338,11 @@
                   <input
                     class="form-input"
                     type="text"
+                    pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
                     name="user_name"
                     id="input-name"
                     placeholder=" "
+                    title="Тільки літери"
                   />
                   <label class="form-label" for="input-name">Ім'я</label>
                 </li>
@@ -268,13 +350,10 @@
                   <input
                     class="form-input input-age"
                     name="user_age"
-                    type="number"
-                    min="16"
-                    max="100"
                     id="input-age"
                     placeholder=" "
                   />
-                  <label class="form-label" for="input-age">Вік</label>
+                  <label class="form-label" for="input-age">Дата народження</label>
                 </li>
                 <li class="form-item">
                   <input
@@ -305,23 +384,27 @@
                 Відправити
               </button>
             </form>
+            
           </div>
-            <div class="map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d954.8323676741995!2d30.38066052941027!3d50.399962186606935!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1733505058026!5m2!1sru!2sua"
-                loading="lazy"
-                title="Локація таролога на Google Maps"
-                allowfullscreen=""
-              ></iframe>
-            </div>
+          <div class="map">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d367.12559147207116!2d30.514834770157368!3d50.460137935556546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce42382f6833%3A0xd8de0df414f096b7!2z0JDQvdC00YDQtdC10LLRgdC60LjQuSDRgdC_0YPRgdC6LCAxM9CRLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1756712755688!5m2!1sru!2sua" 
+              loading="lazy"
+              title="Локація таролога на Google Maps"
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade"
+              width="600"
+              height="450"
+            ></iframe>
+          </div>
         </div>
-        
-          <div class="back-to-top">
-            <svg class="back-icon" width="35" height="35">
-              <use href="./img/icons/svg-sprite.svg#back3"></use>
-            </svg>
-          </div>
-      </section>
+
+        <div class="back-to-top">
+          <svg class="back-icon" width="35" height="35">
+            <use href="./img/icons/svg-sprite.svg#back3"></use>
+          </svg>
+        </div>
+      </section> 
     </main>
     <footer class="footer">
       <div class="container">
@@ -344,5 +427,6 @@
 <script defer type="module" src="./js/inputmask.js"></script>
 <script defer type="module" src="./js/valid-tel.js"></script>
 <script defer type="module" src="./js/menu-btn.js"></script>
+<script src="./js/dataInputMask.js" type="module" defer></script>
   </body>
 </html>

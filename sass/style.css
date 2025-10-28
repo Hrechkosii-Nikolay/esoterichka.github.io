@@ -18,6 +18,20 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "FuturaPT-Medium";
+  src: url("../fonts/FuturaPT-Medium.woff2") format("woff2"), url("../fonts/FuturaPT-Medium.woff") format("woff"), url("../fonts/FuturaPT-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FuturaPT-Bold";
+  src: url("../fonts/FuturaPT-Bold.woff2") format("woff2"), url("../fonts/FuturaPT-Bold.woff") format("woff"), url("../fonts/FuturaPT-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .is-hidden {
   position: absolute;
   left: -99999px;
@@ -37,7 +51,7 @@ h2,
 h3,
 h4,
 .logo-txt {
-  font-family: "FuturaPT-Book";
+  font-family: "FuturaPT-Medium";
   font-weight: 300;
   letter-spacing: 5px;
   color: rgb(255, 140, 0);
@@ -1027,6 +1041,7 @@ details[open] summary::before {
 
 /* ----- Contacts ----- */
 .contacts-txt {
+  margin-bottom: 60px;
   text-align: start;
 }
 
