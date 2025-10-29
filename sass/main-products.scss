@@ -1,7 +1,7 @@
 @import './vars';
 @import './base';
 // @import './header';
-// @import './contacts';
+@import './contacts';
 @import './footer';
 
 
@@ -210,7 +210,7 @@ display: none;
 
 .hero {
   text-align: center;
-  min-height: 96vh;
+  min-height: 100vh;
   // min-height: 100%;
   margin: 0 auto;
   background-color: $main-txt-cl;
@@ -221,53 +221,99 @@ display: none;
   color: $main-bg-cl;
 
   // margin-top: -69px;
-  padding-bottom: 50px;
-
-
-  &-title {
-    min-height: 58px;
-    font-size: 50px;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding-top: 100px;
-    // margin-bottom: 50px;
-    color: $main-bg-cl;
-    
-  
-    @media (min-width: 768px) {
-      font-size: 56px;
-      padding-top: 130px;
-      margin-bottom: 35px;
-    }
-
-  
+  padding: 20px 0 20px;
+  @media screen and (min-width: 1024px) {
+    padding: 50px 0 50px;
   }
-  
-  &-txt {
-    font-family: 'FuturaPT-Book';
+
+
+  &-title{
+    font-size: 28px;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    color: $main-bg-cl;
-    font-weight: 300;
+    margin-bottom: 15px;
+    padding-top: 70px;
+    text-align: center;
+    line-height: 1.3em;
     
-    @media screen and (min-width: 1024px) {
+
+    @media (min-width: 768px) {
+      font-size: 32px;
       margin-bottom: 20px;
-      font-size: 20px;
-      display: inline-block; 
-      align-items: center;
-      // width: 715px;
-      // letter-spacing: 2px;
+    }
+    @media (min-width: 1014px) {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+  }
+  // &-title {
+  //   min-height: 58px;
+  //   font-size: 50px;
+  //   font-weight: 900;
+  //   text-transform: uppercase;
+  //   padding-top: 100px;
+  //   // margin-bottom: 50px;
+  //   color: $main-bg-cl;
+    
+  
+  //   @media (min-width: 768px) {
+  //     font-size: 56px;
+  //     padding-top: 130px;
+  //     margin-bottom: 35px;
+  //   }
+  // }
+
+  &-subtitle{
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+    
+
+
+  }
+
+  &-txt{
+    text-align: center;
+    text-wrap: pretty;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 20px;
+    // line-height: 1.5;
+    color: $main-bg-cl;
+    letter-spacing: 2.2px;
+    @media (max-width: 767px) {
+      font-size: 14px;
       
     }
   }
   
-  &-btn {
-    border-color: $main-bg-cl;
-    @media screen and (min-width: 1024px) {
-      display: block;
-      margin: 0 auto;
-    }
-  }
+  // &-txt {
+  //   font-family: 'FuturaPT-Book';
+  //   text-transform: uppercase;
+  //   margin-bottom: 20px;
+  //   color: $main-bg-cl;
+  //   font-weight: 300;
+    
+  //   @media screen and (min-width: 1024px) {
+  //     margin-bottom: 20px;
+  //     font-size: 20px;
+  //     display: inline-block; 
+  //     align-items: center;
+  //     // width: 715px;
+  //     // letter-spacing: 2px;
+      
+  //   }
+  // }
+  
+  // &-btn {
+  //   border-color: $main-bg-cl;
+  //   @media screen and (min-width: 1024px) {
+  //     display: block;
+  //     margin: 0 auto;
+  //   }
+  // }
 }
 
 .main-color{
@@ -298,6 +344,10 @@ display: none;
     font-size: 14px;
     bottom: 10px;
     letter-spacing: 2px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 14px;
+   
   }
 }
 
@@ -330,14 +380,14 @@ display: none;
 /* десктоп — 4 у ряд */
 @media screen and (min-width: 1024px) {
   .work-item {
-    flex: 0 1 calc(25% - 22.5px);
+    flex: 0 1 calc(15% - 22.5px);
   }
 }
 
 /* великі екрани — 6 у ряд */
 @media screen and (min-width: 1400px) {
   .work-item {
-    flex: 0 1 calc(20% - 25px); /* 1/6 мінус половина gap */
+    flex: 0 1 calc(16.666px - 25px); /* 1/6 мінус половина gap */
   }
 }
 
@@ -406,10 +456,42 @@ display: none;
   z-index: 9999;
 }
 
+// <------------------------------->
+
+
+.taro-item {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: baseline;
+  color: $main-bg-cl;
+  font-size: 18px;
+} 
+
+.taro-item::before{
+  content:'\279F';
+  color: $main-color;
+  display: inline-flex;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.taro-item > p{
+  display: block;
+}
 
 
 
+.taro-list{
+  padding-left: 15px;
+  
+  margin-bottom: 55px;
+}
 
+.main-color{
+  color: $main-color;
+  font-size: 25px;
+}
 
 
 
