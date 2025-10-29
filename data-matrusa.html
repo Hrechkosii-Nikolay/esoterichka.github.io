@@ -11,6 +11,23 @@
     content="Прогнозування подій, матриця долі онлайн, вибір сприятливих дат, прогноз матриці долі Київ, тарологічний прогноз, консультація матриця долі" />
   <title>Матриця долі – Прогнозування подій та дат - esoterichka.com.ua</title>
 
+         <!-- 🌐 Open Graph -->
+         <meta property="og:type" content="website">
+         <meta property="og:url" content="https://esoterichka.com.ua/">
+         <meta property="og:title" content="Таролог у Києві – консультації з Таро, матриця долі, нумерологія, програмні свічки">
+         <meta property="og:description" content="Консультації таролога у Києві. Таро-розклади, матриця долі, нумерологія для гармонії у житті. Запишіться на сеанс онлайн або офлайн!">
+         <meta property="og:image" content="https://esoterichka.com.ua/img/hero.webp">
+         <meta property="og:locale" content="uk_UA">
+         <meta property="og:site_name" content="esoterichka.com.ua">
+             <!-- 🐦 Twitter Card -->
+         <meta name="twitter:card" content="summary_large_image">
+         <meta name="twitter:title" content="Таролог у Києві – консультації Таро, матриця долі, нумерологія">
+         <meta name="twitter:description" content="Таро, нумерологія, матриця долі, програмні свічки – відкрий гармонію у своєму житті.">
+         <meta name="twitter:image" content="https://esoterichka.com.ua/img/hero.webp">
+         <!-- 📱 Mobile -->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="theme-color" content="#d7c1a3">
+
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
     as="style" onload="this.onload=null;this.rel='stylesheet'"
     integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
@@ -25,9 +42,39 @@
   <noscript>
     <link rel="stylesheet" href="./css/product.min.css">
   </noscript>
-  <link rel="icon" href="./img/logo_white.svg" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" /> 
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> 
+  <link rel="shortcut icon" href="/favicon.ico" /> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> 
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <script>
+    function aload(t) {
+      "use strict";
+      var e = "data-aload";
+      return (
+        (t = t || window.document.querySelectorAll("[" + e + "]")),
+        void 0 === t.length && (t = [t]),
+        [].forEach.call(t, function (t) {
+          (t["LINK" !== t.tagName ? "src" : "href"] = t.getAttribute(e)),
+            t.removeAttribute(e);
+        }),
+        t
+      );
+    }
+  </script>
+
+<style>
+  body, h1, h2, p { margin: 0; padding: 0;}
+  .hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.2;}
+  .hero{margin-top: -69px;};
+</style>
+
+  <link rel="amphtml" href="https://esoterichka.com.ua/amp.html" />
   <link rel="canonical" href="https://esoterichka.com.ua/index.html" />
-        <!-- Google tag (gtag.js) -->
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SHD550S58"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -44,32 +91,84 @@
     <div class="container">
       <nav>
         <a class="logo-link" href="./index.html">
-          <img class="logo" src="./img/logo_dark.svg" width="64" height="64" alt="Логотип таролога Анастасії" />
+          <img class="logo" src="./img/logo_white.svg" width="64" height="64" alt="Логотип таролога Анастасії" />
           <p class="logo-txt">
-            таролог <br />
+            езотерик <br />
             анастасія
           </p>
         </a>
         <ul class="menu-list">
           <li class="menu-item"><a href="./index.html">Головна</a></li>
           <li class="menu-item"><a href="./index.html#work">Послуги</a></li>
-          <li class="menu-item"><a href="#contacts">Контакти</a></li>
+          <li class="menu-item"><a href="./index.html#contacts">Контакти</a></li>
         </ul>
-        <button class="menu-btn" type="button" data-menu-btn aria-expanded="false">
-          <svg class="" width="35" height="35" aria-label="Перемикач мобільного меню">
-            <use class="icon-plus" href="./img/icons/menu-icons.svg#plus"></use>
-            <use class="icon-menu" href="./img/icons/menu-icons.svg#burger-menu"></use>
+        <button
+          class="menu-btn"
+          type="button"
+          data-menu-btn
+          aria-expanded="false"
+        >
+          <svg
+            class=""
+            width="35"
+            height="35"
+            aria-label="Перемикач мобільного меню"
+          >
+            <use
+              class="icon-plus"
+              href="./img/icons/menu-icons.svg#plus"
+            ></use>
+            <use
+              class="icon-menu"
+              href="./img/icons/menu-icons.svg#burger-menu"
+            ></use>
           </svg>
         </button>
+        <ul class="social-list">
+          <li class="social-item">
+            <a 
+            class="social-link" 
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://instagram.com/hrechkosii_anastasiia"
+            >
+              <svg class="social-icon" width="20" height="20">
+                <use href="./img/icons/svg-sprite.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a 
+            class="social-link"    
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://t.me/nastiia_esoterichka"
+            >
+              <svg class="social-icon" width="20" height="20">
+                <use href="./img/icons/svg-sprite.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link"  
+            target="_blank"
+            rel="noopener noreferrer" 
+            href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
+              <svg class="social-icon" width="20" height="20">
+                <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
   <main>
-    <section class="section hero-taro data-matrusa">
+    <section class="section hero matrusa">
 
       <div class="container">
-        <h1 class="hero-taro-title">Матриця долі – Прогнозування подій та важливих дат</h1>
-        <p class="hero-taro-txt">
+        <h1 class="hero-title">Матриця долі – Прогнозування подій та важливих дат</h1>
+        <p class="hero-txt">
           Дізнайтеся, які дні будуть найсприятливішими для важливих рішень, нових починань та досягнень.
           Прогнозування за допомогою матриці долі дозволяє зазирнути у майбутнє та обрати найкращі моменти для роботи,
           бізнесу, стосунків та інших сфер життя.
@@ -79,7 +178,7 @@
           особисті та професійні досягнення, уникати непередбачуваних ситуацій та впевнено рухатися до своїх цілей.
         </p>
 
-        <h2>Що включає прогнозування подій?</h2>
+        <h2 class="hero-subtitle">Що включає прогнозування подій?</h2>
         <ul class="taro-list">
           <li class="taro-item">Визначення сприятливих періодів для бізнесу та кар'єри;</li>
           <li class="taro-item">Аналіз важливих життєвих подій (шлюби, подорожі, нові проекти);</li>
@@ -92,28 +191,28 @@
           <li class="taro-item">Підказки щодо вирішення конфліктів та складних ситуацій;</li>
           <li class="taro-item">Визначення періодів для особистісного зростання та саморозвитку.</li>
         </ul>
-        <h3>Як проходить консультація?</h3>
-        <p class="hero-taro-txt">
+        <h3 class="hero-subtitle">Як проходить консультація?</h3>
+        <p class="hero-txt">
           Ви отримуєте індивідуальний аналіз на основі вашої дати народження та запитів. Я допоможу вам побачити основні
           тенденції найближчого часу та спланувати важливі події.
         </p>
-        <h3>Замовити прогнозування подій</h3>
-        <p class="hero-taro-txt">
+        <h3 class="hero-subtitle">Замовити прогнозування подій</h3>
+        <p class="hero-txt">
           Прогнозування подій та вибір дат за матрицею долі доступний для замовлення онлайн та під час особистих
           зустрічей у Києві. Замовити консультацію можна через форму зв'язку або за телефоном.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Наші консультації допоможуть вам краще планувати життя та уникати небажаних ситуацій. Завдяки глибокому
           аналізу матриці долі ви зможете не тільки передбачити події, а й використати ці знання для досягнення гармонії
           та успіху у житті.
         </p>
-        <h3>Чому важливо прогнозувати події?</h3>
-        <p class="hero-taro-txt">
+        <h3 class="hero-subtitle">Чому важливо прогнозувати події?</h3>
+        <p class="hero-txt">
           Прогнозування подій за допомогою матриці долі дозволяє не тільки уникнути несприятливих моментів, але й вчасно
           скористатися можливостями. Кожна людина має свої цикли злетів та спадів, і знання цих періодів допоможе вам
           приймати виважені рішення.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Завдяки цьому ви зможете:
         </p>
         <ul class="taro-list">
@@ -122,47 +221,45 @@
           <li class="taro-item">Підвищити рівень фінансової стабільності;</li>
           <li class="taro-item">Розвивати нові навички та таланти у сприятливі періоди.</li>
         </ul>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Якщо ви хочете досягти нових висот та відкрити перед собою нові горизонти, матриця долі стане вашим надійним
           інструментом для досягнення цілей.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Якщо ви прагнете до стабільності та успіху, матриця долі стане вашим вірним помічником на цьому шляху.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Ви прагнете досягти нових висот, відкрити нові горизонти чи забезпечити стабільність і успіх у своєму житті?
           Матриця долі стане вашим надійним інструментом на цьому шляху.
         </p>
-        <h3>Важливість планування та передбачення</h3>
-        <p class="hero-taro-txt">
+        <h3 class="hero-subtitle">Важливість планування та передбачення</h3>
+        <p class="hero-txt">
           У сучасному світі знання ключових моментів та подій дозволяє значно підвищити рівень впевненості у своїх
           силах. Прогнозування подій допомагає знизити рівень стресу, оскільки ви заздалегідь знаєте, до чого
           готуватися. Це дозволяє уникати поспішних рішень та гарантує, що всі важливі події будуть під вашим контролем.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Крім того, правильне прогнозування дозволяє скористатися найкращими можливостями для зростання, розширення
           бізнесу або особистих досягнень. Кожна дата або подія є частиною вашого унікального життєвого шляху, і знання
           про них допомагає створити гармонійне та успішне життя.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Якщо ви прагнете до стабільності та успіху, матриця долі стане вашим вірним помічником на цьому шляху.
         </p>
-        <h3>Історія з практики</h3>
-        <p class="hero-taro-txt">
-          Одного разу до нас звернулася клієнтка, яка відчувала невпевненість у своїх кар'єрних рішеннях. Використовуючи
-          матрицю долі, ми визначили сприятливий період для нових проєктів. Протягом цього часу вона змогла успішно
+        <h3 class="hero-subtitle">Історія з практики</h3>
+        <p class="hero-txt">
+          Одного разу до мене звернулася клієнтка, яка відчувала невпевненість у своїх кар'єрних рішеннях. Використовуючи
+          матрицю долі, я визначила сприятливий період для нових проєктів. Протягом цього часу вона змогла успішно
           відкрити власний бізнес, який швидко став прибутковим. Унікальність цього випадку полягала в тому, що знання
           про сприятливі дати допомогло уникнути ризиків та максимізувати можливості для зростання.
         </p>
       </div>
-      <h3> Вартість послуги </h3>
+      <h3 class="hero-subtitle"> Вартість послуги </h3>
       <ul class="taro-list">
         <li class="taro-item">
-          800 грн.
+          <span class="main-color">1400 грн.</span>
         </li>
       </ul>
-
-
       <h3 class="is-hidden">Де я проводжу консультації?</h3>
       <ul class="taro-list is-hidden">
         <li class="taro-item">Прогнозування подій та дат Софіївська Борщагівка онлайн.</li>
@@ -192,43 +289,75 @@
         <li class="taro-item">Прогнозування подій та дат Черкаси онлайн.</li>
         <li class="taro-item">Прогнозування подій та дат Вінниця онлайн.</li>        
       </ul>
-      <h3>Як записатися на консультацію?</h3>
-      <p class="hero-taro-txt">Записатися на консультацію легко – просто зв’яжіться зі мною за телефоном або через
+      <h3 class="hero-subtitle">Як записатися на консультацію?</h3>
+      <p class="hero-txt">Записатися на консультацію легко – просто зв’яжіться зі мною за телефоном або через
         соціальні мережі. </p>
-      <p class="hero-taro-txt"> Я допоможу вам знайти відповіді на ваші питання та спрямую вас на шлях гармонії.</p>
+      <p class="hero-txt"> Я допоможу вам знайти відповіді на ваші питання та спрямую вас на шлях гармонії.</p>
       </div>
     </section>
     <section class="section contacts" id="contacts">
       <div class="container">
-        <img class="section-logo" src="./img/logo_dark.svg" alt="" width="102" height="102" />
+        <img
+          class="section-logo"
+          src="./img/logo_dark.svg"
+          alt=""
+          width="102"
+          height="102"
+        />
         <h2 class="title">Контакти</h2>
         <div class="contacts-wrap">
           <div class="contacts-wrap-txt">
-            <p class="contacts-txt section-txt">
-              Залиште свій запит зручним для вас способом, і я обов'язково з вами зв'яжуся. Проводжу консультації онлайн
-              для клієнтів по всьому світу. Разом ми проведемо діагностику та розробимо план дій. Звертайтеся зараз!
+            <p class="contacts-txt">
+              Залиште свій запит зручним для вас способом, і я обов'язково з
+              вами зв'яжуся. Проводжу консультації онлайн для клієнтів по
+              всьому світу. Разом ми проведемо діагностику та розробимо план
+              дій. Звертайтеся зараз!
             </p>
             <ul class="contacts-list">
-              <li class="contacts-item icon-phone">
+              <li class="contacts-item icon-phone is-hidden">
                 <a class="contacts-link" href="tel:+380963252021">
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#phone"></use>
                   </svg>
-                  +38 (096) 325-20-21</a>
+                  +38 (096) 325-20-21</a
+                >
               </li>
               <li class="contacts-item icon-instagram">
-                <a class="contacts-link" target="_blanc" href="https://instagram.com/hrechkosii_anastasiia">
+                <a
+                  class="contacts-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://instagram.com/hrechkosii_anastasiia"
+                >
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#instagram"></use>
                   </svg>
-                  @hrechkosii_anastasiia</a>
+                  @hrechkosii_anastasiia</a
+                >
               </li>
               <li class="contacts-item icon-telegram">
-                <a class="contacts-link" target="_blanc" href="https://t.me/nastiia_esoterichka">
+                <a
+                  class="contacts-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://t.me/nastiia_esoterichka"
+                >
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#telegram"></use>
                   </svg>
-                  @nastiia_esoterichka</a>
+                  @nastiia_esoterichka</a
+                >
+              </li>
+              <li class="contacts-item icon-telegram">
+                <a class="contacts-link"  
+                target="_blank"
+                rel="noopener noreferrer" 
+                href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
+                  <svg class="contacts-icon" width="20" height="20">
+                    <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+                  </svg>
+                  @nastiia_esoterichka
+                </a>
               </li>
             </ul>
           </div>
@@ -238,9 +367,11 @@
                 <input
                   class="form-input"
                   type="text"
+                  pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
                   name="user_name"
                   id="input-name"
                   placeholder=" "
+                  title="Тільки літери"
                 />
                 <label class="form-label" for="input-name">Ім'я</label>
               </li>
@@ -248,13 +379,10 @@
                 <input
                   class="form-input input-age"
                   name="user_age"
-                  type="number"
-                  min="16"
-                  max="100"
                   id="input-age"
                   placeholder=" "
                 />
-                <label class="form-label" for="input-age">Вік</label>
+                <label class="form-label" for="input-age">Дата народження</label>
               </li>
               <li class="form-item">
                 <input
@@ -285,11 +413,18 @@
               Відправити
             </button>
           </form>
+          
         </div>
         <div class="map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d954.8323676741995!2d30.38066052941027!3d50.399962186606935!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1733505058026!5m2!1sru!2sua"
-            loading="lazy" title="Локація таролога на Google Maps" allowfullscreen=""></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d367.12559147207116!2d30.514834770157368!3d50.460137935556546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce42382f6833%3A0xd8de0df414f096b7!2z0JDQvdC00YDQtdC10LLRgdC60LjQuSDRgdC_0YPRgdC6LCAxM9CRLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1756712755688!5m2!1sru!2sua" 
+            loading="lazy"
+            title="Локація таролога на Google Maps"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+            width="600"
+            height="450"
+          ></iframe>
         </div>
       </div>
 
@@ -298,7 +433,7 @@
           <use href="./img/icons/svg-sprite.svg#back3"></use>
         </svg>
       </div>
-    </section>
+    </section> 
   </main>
   <footer class="footer">
     <div class="container">
@@ -306,21 +441,31 @@
     </div>
   </footer>
   <script>
-    ['pagehide', 'visibilitychange'].forEach(event => {
-      window.addEventListener(event, () => {
-        if (typeof socket !== 'undefined' && socket.readyState === WebSocket.OPEN) {
+    // Перевіряємо, чи socket створено
+    if (typeof socket !== 'undefined') {
+  
+      // Подія pagehide — спрацьовує при закритті/перезавантаженні сторінки (особливо в Safari)
+      window.addEventListener('pagehide', () => {
+        if (socket.readyState === WebSocket.OPEN) {
           socket.close();
         }
-
       });
-    });
-
+  
+      // Подія visibilitychange — коли сторінка стає невидимою (перехід на іншу вкладку, згортання тощо)
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden' && socket.readyState === WebSocket.OPEN) {
+          socket.close();
+        }
+      });
+    }
   </script>
+  
   <script defer type="module" src="./js/backToTop.js"></script>
   <script defer type="module" src="https://unpkg.com/imask"></script>
   <script defer type="module" src="./js/inputmask.js"></script>
   <script defer type="module" src="./js/valid-tel.js"></script>
   <script defer type="module" src="./js/menu-btn.js"></script>
+  <script defer type="module" src="./js/dataInputMask.js"></script>
 </body>
 
 </html>

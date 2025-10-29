@@ -311,16 +311,25 @@
       </div>
     </footer>
     <script>
-      ['pagehide', 'visibilitychange'].forEach(event => {
-        window.addEventListener(event, () => {
-          if (typeof socket !== 'undefined' && socket.readyState === WebSocket.OPEN) {
-        socket.close();
-      }
-      
+      // Перевіряємо, чи socket створено
+      if (typeof socket !== 'undefined') {
+    
+        // Подія pagehide — спрацьовує при закритті/перезавантаженні сторінки (особливо в Safari)
+        window.addEventListener('pagehide', () => {
+          if (socket.readyState === WebSocket.OPEN) {
+            socket.close();
+          }
         });
-      });
-      
-      </script>
+    
+        // Подія visibilitychange — коли сторінка стає невидимою (перехід на іншу вкладку, згортання тощо)
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'hidden' && socket.readyState === WebSocket.OPEN) {
+            socket.close();
+          }
+        });
+      }
+    </script>
+    
 <script defer type="module" src="./js/backToTop.js"></script>
 <script defer type="module" src="https://unpkg.com/imask"></script>
 <script defer type="module" src="./js/inputmask.js"></script>
