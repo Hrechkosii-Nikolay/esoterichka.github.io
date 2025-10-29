@@ -275,6 +275,7 @@ display: none;
   }
 
   &-txt{
+    font-family: 'FuturaPT-Book';
     text-align: center;
     text-wrap: pretty;
     text-transform: uppercase;
@@ -314,6 +315,13 @@ display: none;
   //     margin: 0 auto;
   //   }
   // }
+}
+
+.hero.matrusa{
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(../img/hero-matrusa.webp) ;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-color{
