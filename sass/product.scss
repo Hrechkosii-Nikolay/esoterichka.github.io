@@ -320,6 +320,7 @@ display: none;
 }
 
   .taro-item {
+    display: flex;
     margin-bottom: 5px;
     align-items: baseline;
     color: $main-bg-cl;
@@ -332,6 +333,11 @@ display: none;
     display: inline-flex;
     width: 15px;
     height: 15px;
+    margin-right: 5px;
+  }
+
+  .taro-item > p{
+    display: block;
   }
 
 

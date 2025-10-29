@@ -29,7 +29,11 @@
   </noscript>
 
 
-  <link rel="icon" href="./img/logo_white.svg" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" /> 
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> 
+  <link rel="shortcut icon" href="/favicon.ico" /> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> 
+  <link rel="manifest" href="/site.webmanifest" />
   <script>
     function aload(t) {
       "use strict";
@@ -48,23 +52,11 @@
 
 
 
-  <style>
-    body,
-    h1,
-    h2,
-    p {
-      margin: 0;
-      padding: 0;
-    }
-
-    .hero-title {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-  </style>
-
-
+<style>
+  body, h1, h2, p { margin: 0; padding: 0;}
+  .hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.2;}
+  .hero{margin-top: -69px;};
+</style>
 
   <link rel="amphtml" href="https://esoterichka.com.ua/amp.html" />
   <link rel="canonical" href="https://esoterichka.com.ua/index.html" />
@@ -86,99 +78,140 @@
     <div class="container">
       <nav>
         <a class="logo-link" href="./index.html">
-          <img class="logo" src="./img/logo_dark.svg" width="64" height="64" alt="Логотип таролога Анастасії" />
-
+          <img class="logo" src="./img/logo_white.svg" width="64" height="64" alt="Логотип таролога Анастасії" />
           <p class="logo-txt">
-            таролог <br />
+            езотерик <br />
             анастасія
           </p>
         </a>
         <ul class="menu-list">
           <li class="menu-item"><a href="./index.html">Головна</a></li>
           <li class="menu-item"><a href="./index.html#work">Послуги</a></li>
-          <li class="menu-item"><a href="#contacts">Контакти</a></li>
+          <li class="menu-item"><a href="./index.html#contacts">Контакти</a></li>
         </ul>
-        <button class="menu-btn" type="button" data-menu-btn aria-expanded="false">
-          <svg class="" width="35" height="35" aria-label="Перемикач мобільного меню">
-            <use class="icon-plus" href="./img/icons/menu-icons.svg#plus"></use>
-            <use class="icon-menu" href="./img/icons/menu-icons.svg#burger-menu"></use>
+        <button
+          class="menu-btn"
+          type="button"
+          data-menu-btn
+          aria-expanded="false"
+        >
+          <svg
+            class=""
+            width="35"
+            height="35"
+            aria-label="Перемикач мобільного меню"
+          >
+            <use
+              class="icon-plus"
+              href="./img/icons/menu-icons.svg#plus"
+            ></use>
+            <use
+              class="icon-menu"
+              href="./img/icons/menu-icons.svg#burger-menu"
+            ></use>
           </svg>
         </button>
+        <ul class="social-list">
+          <li class="social-item">
+            <a 
+            class="social-link" 
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://instagram.com/hrechkosii_anastasiia"
+            >
+              <svg class="social-icon" width="20" height="20">
+                <use href="./img/icons/svg-sprite.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a 
+            class="social-link"    
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://t.me/nastiia_esoterichka"
+            >
+              <svg class="social-icon" width="20" height="20">
+                <use href="./img/icons/svg-sprite.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link"  
+            target="_blank"
+            rel="noopener noreferrer" 
+            href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
+              <svg class="social-icon" width="20" height="20">
+                <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
   <main>
-    <section class="section hero-taro taro-month">
+    <section class="section hero taro">
       <div class="container">
-        <h1 class="hero-taro-title">Прогноз на місяць – Відкрийте двері до нових можливостей</h1>
-        <p class="hero-taro-txt">
+        <h1 class="hero-title">Прогноз на місяць – Відкрийте двері до нових можливостей</h1>
+        <p class="hero-txt">
           Прагнете дізнатися, що вас очікує протягом найближчого місяця? Прогноз на місяць допоможе вам краще зрозуміти
           енергетику прийдешніх подій та підготуватися до важливих змін.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Я, Анастасія, професійний таролог, пропоную унікальні розклади, які допоможуть вам побачити приховані
           можливості та уникнути непередбачуваних труднощів. Щомісячний прогноз дозволяє вам відчути гармонію з
           космічними ритмами та отримати практичні рекомендації для кожного життєвого аспекту.
         </p>
-        <p class="hero-taro-txt">
+        <p class="hero-txt">
           Кожен місяць приносить нові виклики та можливості. Знаючи, які енергії будуть домінувати, ви зможете
           ефективніше керувати своїм життям і ухвалювати виважені рішення.
         </p>
 
-        <h2>Чому важливо робити прогноз на місяць?</h2>
-        <p class="hero-taro-txt">
-          Щомісячний прогноз дозволяє вам бути готовими до будь-яких змін, які можуть вплинути на ваше життя. Це чудова
-          можливість оцінити перспективи, спланувати важливі події та прийняти обдумані рішення. Розклади на місяць
-          допомагають уникнути непередбачуваних ситуацій та налаштувати себе на позитивний лад.
-        </p>
-        <p class="hero-taro-txt">
-          Прогноз охоплює різні сфери життя – від особистих відносин і здоров'я до фінансів та кар'єри. Таким чином, ви
-          отримуєте комплексне бачення прийдешнього періоду та можете використовувати цей інструмент для ефективного
-          планування.
-        </p>
-        <p class="hero-taro-txt">
-          Окрім передбачення подій, розклад на місяць допомагає віднайти внутрішній баланс, даючи змогу сфокусуватися на
-          своїх цілях та пріоритетах. Цей підхід сприяє гармонії у відносинах, підвищенню продуктивності та особистому
-          розвитку.
-        </p>
-        <h2>Як використовувати прогноз на місяць?</h2>
-        <p class="hero-taro-txt">
-          Після отримання прогнозу я рекомендую уважно ознайомитися з кожною його частиною та записати важливі моменти.
-          Використовуйте цей прогноз для планування ключових подій місяця, прийняття рішень у складних ситуаціях та
-          аналізу потенційних можливостей.
-        </p>
-        <p class="hero-taro-txt">
-          Якщо ви стикаєтесь із сумнівами або труднощами, зверніться до мене за консультацією. Ми разом детально
-          розберемо кожен аспект прогнозу та знайдемо оптимальне рішення для вашої ситуації.
-        </p>
-        <p class="hero-taro-txt">
-          Розклад на місяць може стати вашою «картою» для успішного проходження викликів та досягнення нових вершин. Він
-          допомагає побачити загальну картину та виявити потенційні перешкоди, дозволяючи адаптувати свої плани та
-          стратегії.
-        </p>
-        <h2>Переваги моїх прогнозів</h2>
+        <h2 class="hero-subtitle">Чому важливо робити прогноз на місяць?</h2>
         <ul class="taro-list">
-          <li class="taro-item">Детальний аналіз усіх сфер життя.</li>
-          <li class="taro-item">Унікальні розклади, засновані на вашій енергетиці.</li>
-          <li class="taro-item">Підтримка та консультації після отримання прогнозу.</li>
-          <li class="taro-item">Впевненість у завтрашньому дні та зниження стресу.</li>
-          <li class="taro-item">Можливість отримання персоналізованих порад щодо вашого бізнесу, фінансів та особистих
-            стосунків.</li>
-          <li class="taro-item">Планування ключових етапів місяця з урахуванням астрологічних аспектів.</li>
+          <li class="taro-item"><p>Щомісячний прогноз дозволяє вам бути готовими до будь-яких змін, які можуть вплинути на ваше життя. Це чудова можливість оцінити перспективи, спланувати важливі події та прийняти обдумані рішення. Розклади на місяць допомагають уникнути непередбачуваних ситуацій та налаштувати себе на позитивний лад</p></li>
+          <li class="taro-item"><p>Прогноз охоплює різні сфери життя – від особистих відносин і здоров'я до фінансів та кар'єри. Таким чином, ви отримуєте комплексне бачення прийдешнього періоду та можете використовувати цей інструмент для ефективного планування.</p></li>
+          <li class="taro-item"><p>Окрім передбачення подій, розклад на місяць допомагає віднайти внутрішній баланс, даючи змогу сфокусуватися на своїх цілях та пріоритетах. Цей підхід сприяє гармонії у відносинах, підвищенню продуктивності та особистому розвитку.</p></li>
         </ul>
-        <h3> Вартість послуги </h3>
+
+        <h2 class="hero-subtitle">Як використовувати прогноз на місяць?</h2>
         <ul class="taro-list">
           <li class="taro-item">
-            Базовий - 555 грн.
+            <p>Після отримання прогнозу я рекомендую уважно ознайомитися з кожною його частиною та записати важливі моменти.
+            Використовуйте цей прогноз для планування ключових подій місяця, прийняття рішень у складних ситуаціях та
+            аналізу потенційних можливостей.</p>
           </li>
           <li class="taro-item">
-            Детальний - 999 грн.
+            <p>Якщо ви стикаєтесь із сумнівами або труднощами, зверніться до мене за консультацією. Ми разом детально
+              розберемо кожен аспект прогнозу та знайдемо оптимальне рішення для вашої ситуації.</p>
+          </li>
+          <li class="taro-item">
+            <p>Розклад на місяць може стати вашою «картою» для успішного проходження викликів та досягнення нових вершин. Він
+              допомагає побачити загальну картину та виявити потенційні перешкоди, дозволяючи адаптувати свої плани та
+              стратегії.</p>
           </li>
         </ul>
-        <h3>Як записатися на консультацію?</h3>
-        <p class="hero-taro-txt">Записатися на консультацію легко – просто зв’яжіться зі мною за телефоном або через
+
+        <h3 class="hero-subtitle">Переваги моїх прогнозів</h3>
+        <ul class="taro-list">
+          <li class="taro-item"><p>Детальний аналіз усіх сфер життя.</p></li>
+          <li class="taro-item"><p>Унікальні розклади, засновані на вашій енергетиці.</p></li>
+          <li class="taro-item"><p>Підтримка та консультації після отримання прогнозу.</p></li>
+          <li class="taro-item"><p>Впевненість у завтрашньому дні та зниження стресу.</p></li>
+          <li class="taro-item"><p>Можливість отримання персоналізованих порад щодо вашого бізнесу, фінансів та особистих стосунків.</p></li>
+          <li class="taro-item"><p>Планування ключових етапів місяця з урахуванням астрологічних аспектів.</p></li>
+        </ul>
+
+        <h3 class="hero-subtitle"> Вартість послуги </h3>
+        <ul class="taro-list">
+          <li class="taro-item"><p>Базовий - <span class="main-color">555 грн.</span></p></li>
+          <li class="taro-item"><p>Детальний - <span  class="main-color">999 грн.</span></p></li>
+        </ul>
+        <h3 class="hero-subtitle">Як записатися на консультацію?</h3>
+        <p class="hero-txt">Записатися на консультацію легко – просто зв’яжіться зі мною за телефоном або через
           соціальні мережі. </p>
-        <p class="hero-taro-txt"> Я допоможу вам знайти відповіді на ваші питання та спрямую вас на шлях гармонії.</p>
+        <p class="hero-txt"> Я допоможу вам знайти відповіді на ваші питання та спрямую вас на шлях гармонії.</p>
       </div>
 
 
@@ -214,35 +247,67 @@
     </section>
     <section class="section contacts" id="contacts">
       <div class="container">
-        <img class="section-logo" src="./img/logo_dark.svg" alt="" width="102" height="102" />
+        <img
+          class="section-logo"
+          src="./img/logo_dark.svg"
+          alt=""
+          width="102"
+          height="102"
+        />
         <h2 class="title">Контакти</h2>
         <div class="contacts-wrap">
           <div class="contacts-wrap-txt">
-            <p class="contacts-txt section-txt">
-              Залиште свій запит зручним для вас способом, і я обов'язково з вами зв'яжуся. Проводжу консультації онлайн
-              для клієнтів по всьому світу. Разом ми проведемо діагностику та розробимо план дій. Звертайтеся зараз!
+            <p class="contacts-txt">
+              Залиште свій запит зручним для вас способом, і я обов'язково з
+              вами зв'яжуся. Проводжу консультації онлайн для клієнтів по
+              всьому світу. Разом ми проведемо діагностику та розробимо план
+              дій. Звертайтеся зараз!
             </p>
             <ul class="contacts-list">
-              <li class="contacts-item icon-phone">
+              <li class="contacts-item icon-phone is-hidden">
                 <a class="contacts-link" href="tel:+380963252021">
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#phone"></use>
                   </svg>
-                  +38 (096) 325-20-21</a>
+                  +38 (096) 325-20-21</a
+                >
               </li>
               <li class="contacts-item icon-instagram">
-                <a class="contacts-link" target="_blanc" href="https://instagram.com/hrechkosii_anastasiia">
+                <a
+                  class="contacts-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://instagram.com/hrechkosii_anastasiia"
+                >
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#instagram"></use>
                   </svg>
-                  @hrechkosii_anastasiia</a>
+                  @hrechkosii_anastasiia</a
+                >
               </li>
               <li class="contacts-item icon-telegram">
-                <a class="contacts-link" target="_blanc" href="https://t.me/nastiia_esoterichka">
+                <a
+                  class="contacts-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://t.me/nastiia_esoterichka"
+                >
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#telegram"></use>
                   </svg>
-                  @nastiia_esoterichka</a>
+                  @nastiia_esoterichka</a
+                >
+              </li>
+              <li class="contacts-item icon-telegram">
+                <a class="contacts-link"  
+                target="_blank"
+                rel="noopener noreferrer" 
+                href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
+                  <svg class="contacts-icon" width="20" height="20">
+                    <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+                  </svg>
+                  @nastiia_esoterichka
+                </a>
               </li>
             </ul>
           </div>
@@ -252,9 +317,11 @@
                 <input
                   class="form-input"
                   type="text"
+                  pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
                   name="user_name"
                   id="input-name"
                   placeholder=" "
+                  title="Тільки літери"
                 />
                 <label class="form-label" for="input-name">Ім'я</label>
               </li>
@@ -262,13 +329,10 @@
                 <input
                   class="form-input input-age"
                   name="user_age"
-                  type="number"
-                  min="16"
-                  max="100"
                   id="input-age"
                   placeholder=" "
                 />
-                <label class="form-label" for="input-age">Вік</label>
+                <label class="form-label" for="input-age">Дата народження</label>
               </li>
               <li class="form-item">
                 <input
@@ -299,11 +363,18 @@
               Відправити
             </button>
           </form>
+          
         </div>
         <div class="map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d954.8323676741995!2d30.38066052941027!3d50.399962186606935!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1733505058026!5m2!1sru!2sua"
-            loading="lazy" title="Локація таролога на Google Maps" allowfullscreen=""></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d367.12559147207116!2d30.514834770157368!3d50.460137935556546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce42382f6833%3A0xd8de0df414f096b7!2z0JDQvdC00YDQtdC10LLRgdC60LjQuSDRgdC_0YPRgdC6LCAxM9CRLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1756712755688!5m2!1sru!2sua" 
+            loading="lazy"
+            title="Локація таролога на Google Maps"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+            width="600"
+            height="450"
+          ></iframe>
         </div>
       </div>
 
@@ -312,7 +383,7 @@
           <use href="./img/icons/svg-sprite.svg#back3"></use>
         </svg>
       </div>
-    </section>
+    </section> 
   </main>
   <footer class="footer">
     <div class="container">
@@ -335,6 +406,7 @@
   <script defer type="module" src="./js/inputmask.js"></script>
   <script defer type="module" src="./js/valid-tel.js"></script>
   <script defer type="module" src="./js/menu-btn.js"></script>
+  <script defer type="module" src="./js/dataInputMask.js"></script>
 </body>
 
 </html>

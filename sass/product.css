@@ -680,6 +680,7 @@ header {
 }
 
 .taro-item {
+  display: flex;
   margin-bottom: 5px;
   align-items: baseline;
   color: #ffffff;
@@ -692,6 +693,11 @@ header {
   display: inline-flex;
   width: 15px;
   height: 15px;
+  margin-right: 5px;
+}
+
+.taro-item > p {
+  display: block;
 }
 
 .taro-list {
