@@ -628,11 +628,13 @@ header {
   margin-bottom: 15px;
   font-size: 20px;
   color: #ffffff;
-  letter-spacing: 2.2px;
 }
 @media (max-width: 767px) {
   .hero-txt {
     font-size: 14px;
+    text-align: justify;
+    -moz-text-align-last: left;
+         text-align-last: left;
   }
 }
 

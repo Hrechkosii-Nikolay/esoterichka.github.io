@@ -262,6 +262,7 @@ display: none;
   }
 
   &-txt{
+    font-family: 'FuturaPT-Book';
     text-align: center;
     text-wrap: pretty;
     text-transform: uppercase;
@@ -272,6 +273,8 @@ display: none;
     letter-spacing: 2.2px;
     @media (max-width: 767px) {
       font-size: 14px;
+      text-align: justify;
+  text-align-last: left;
       
     }
   }
