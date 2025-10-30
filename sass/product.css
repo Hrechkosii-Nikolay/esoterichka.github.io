@@ -666,6 +666,7 @@ header {
   align-items: baseline;
   color: #ffffff;
   font-size: 18px;
+  text-align: start;
 }
 
 .taro-item::before {

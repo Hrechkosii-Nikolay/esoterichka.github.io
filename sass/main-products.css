@@ -787,6 +787,7 @@ p.center-txt {
   align-items: baseline;
   color: #ffffff;
   font-size: 18px;
+  text-align: start;
 }
 
 .taro-item::before {
@@ -804,7 +805,7 @@ p.center-txt {
 
 .taro-list {
   padding-left: 15px;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
 }
 
 .main-color {
