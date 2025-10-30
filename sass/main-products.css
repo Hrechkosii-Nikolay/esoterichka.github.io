@@ -32,12 +32,11 @@
   font-style: normal;
   font-display: swap;
 }
-.is-hidden {
+.is-fan {
   position: absolute;
   left: -99999px;
   opacity: 0;
   height: 0;
-  overflow: hidden;
 }
 
 * {

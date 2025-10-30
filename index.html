@@ -193,7 +193,7 @@
     <main>
       <section class="section hero">
         <div class="container">
-          <h1 class="is-hidden">Таролог у Києві – консультації з Таро</h1>
+          <h1 class="is-fan">Таролог у Києві – консультації з Таро</h1>
           <h2 class="hero-title">твій особистий езотерик</h2>
           <p class="hero-txt section-txt">
             Іноді потрібен хтось, хто допоможе знайти відповіді <br>в складних
@@ -874,7 +874,7 @@
                 дій. Звертайтеся зараз!
               </p>
               <ul class="contacts-list">
-                <li class="contacts-item icon-phone is-hidden">
+                <li class="contacts-item icon-phone is-fan">
                   <a class="contacts-link" href="tel:+380963252021">
                     <svg class="contacts-icon" width="20" height="20">
                       <use href="./img/icons/svg-sprite.svg#phone"></use>
@@ -1065,7 +1065,7 @@
           </form>
           <div class="modal-contacts"> 
             <ul class="contacts-list">
-              <li class="contacts-item icon-phone is-hidden">
+              <li class="contacts-item icon-phone is-fan">
                 <a class="contacts-link" href="tel:+380963252021">
                   <svg class="contacts-icon" width="20" height="20">
                     <use href="./img/icons/svg-sprite.svg#phone"></use>
@@ -1165,8 +1165,9 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Таролог Анастасія Київ",
-    "description": "Консультації таролога у Києві – розклади Таро, матриця долі, нумерологія, програмні свічки.",
+    "name": "Таролог Анастасія — консультації Таро у Києві та онлайн",
+    "alternateName": "Esoterichka",
+    "description": "Таролог Анастасія у Києві. Розклади Таро на ситуацію, кохання, роботу, рік. Онлайн-консультації по Україні. Також нумерологія, матриця долі, програмні свічки.",
     "image": "https://esoterichka.com.ua/img/logo_dark.svg",
     "url": "https://esoterichka.com.ua",
     "telephone": "+380963252021",
@@ -1181,39 +1182,61 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "50.4501",
-      "longitude": "30.5234"
+      "latitude": 50.4501,
+      "longitude": 30.5234
     },
-    "openingHours": "Mo-Fr 10:00-20:00",
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Київ"
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "10:00",
+      "closes": "20:00"
     },
-    "serviceType": "Консультації з Таро, нумерологія, руни",
+    "areaServed": ["Київ","Софіївська Борщагівка","Петропавлівська Борщагівка","Борщагівка","Вишневе","Львів","Харків","Дніпро","Одеса","Запоріжжя","Полтава","Чернігів","Суми","Херсон","Миколаїв","Житомир","Рівне","Луцьк","Тернопіль","Івано-Франківськ","Ужгород","Хмельницький","Чернівці","Кропивницький","Черкаси","Вінниця"
+    ],
+    "serviceType": [
+      "Розклади Таро",
+      "Нумерологія",
+      "Матриця долі",
+      "Руни",
+      "Програмні свічки"
+    ],
     "sameAs": [
       "https://instagram.com/hrechkosii_anastasiia",
       "https://t.me/nastiia_esoterichka"
     ],
-    "priceCurrency": "UAH",
+    "currenciesAccepted": "UAH",
+    "paymentAccepted": ["Готівка", "Банківський переказ", "Онлайн-оплата"],
     "price": "1500"
   }
   </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "url": "https://esoterichka.com.ua/",
-        "logo": "https://esoterichka.com.ua/img/logo_dark.svg",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+380963252021",
-            "contactType": "customer service",
-            "areaServed": "UA"
-          }
-        ]
-      }
-    </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Esoterichka",
+    "url": "https://esoterichka.com.ua/",
+    "logo": "https://esoterichka.com.ua/img/logo_dark.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+380963252021",
+      "contactType": "Customer Support",
+      "areaServed": "UA",
+      "availableLanguage": ["Ukrainian"]
+    },
+    "sameAs": [
+      "https://instagram.com/hrechkosii_anastasiia",
+      "https://t.me/nastiia_esoterichka"
+    ]
+  }
+  </script>
+  
   </body>
 </html>
 
