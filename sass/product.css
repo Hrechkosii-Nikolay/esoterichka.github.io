@@ -685,4 +685,13 @@ header {
 .taro-list {
   padding-left: 15px;
   margin-bottom: 55px;
+}
+
+.to-start {
+  text-align: start;
+}
+@media (min-width: 768px) {
+  .to-start {
+    font-size: 17px;
+  }
 }/*# sourceMappingURL=product.css.map */

@@ -335,4 +335,14 @@ display: none;
     margin-bottom: 55px;
   }
 
+  .to-start{
+    text-align: start;
+    @media (min-width: 768px) {
+      font-size: 17px;
+
+      
+    }
+
+  }
+
   // <-------------------------------------->
