@@ -104,6 +104,11 @@ main > section:not(:first-child) {
   }
 }
 
+.section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
 .container {
   max-width: 1440px;
   padding: 0 20px;
@@ -656,8 +661,8 @@ header {
   background-repeat: no-repeat;
 }
 
-.hero.brends-matrusa {
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../img/brends-matrusa.jpg);
+.hero.runy {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../img/hero-runy.jpg);
 }
 
 .taro-item {

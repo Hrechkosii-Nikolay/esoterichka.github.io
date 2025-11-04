@@ -95,7 +95,6 @@ button{
 
 body {
   // user-select: none;
-
   font-family: 'FuturaPT-Light';
   font-weight: 200;
   letter-spacing: 1px;
@@ -118,6 +117,12 @@ main > section:not(:first-child) {
     padding: 60px 0;
   }
 }
+
+.section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
 
 .container {
   max-width: 1440px;

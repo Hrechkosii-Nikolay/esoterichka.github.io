@@ -12,15 +12,27 @@
   background-repeat: no-repeat;
   color: $main-bg-cl;
 
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
 
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInHero 1s ease-out forwards;
+  @keyframes fadeInHero {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-  margin-top: -69px;
-  // @media screen and (min-width: 768px) {
-    
-  // }
+  // margin-top: -69px;
+
   @media screen and (min-width: 1024px) {
-    margin-top: -69px;
-    min-height: 100vh;
+    // aspect-ratio: 16 / 9;
+    // margin-top: -69px;
+    // min-height: 100vh;
   }
 
   &-title {
@@ -47,9 +59,10 @@
     margin-bottom: 130px;
     // color: $main-txt-cl;
     color: $main-bg-cl;
-    font-weight: 300;
     // text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
-    
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "FuturaPT", sans-serif;
+
     @media screen and (min-width: 1024px) {
       margin-bottom: 160px;
       font-size: 20px;

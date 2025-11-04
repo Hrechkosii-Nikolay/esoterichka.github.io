@@ -33,7 +33,7 @@
       max-width: 290px;
 
       height: auto;
-  align-self: flex-start; 
+      align-self: flex-start; 
     
       
     }
@@ -46,13 +46,17 @@
   
   &-list {
     margin-bottom: 20px;
+    // margin-top: 15px;
 
     text-align: justify;
     text-indent: 25px;
+
+    position: relative;
+    min-height: 490px; /* підібрати під найвищий блок */
+    overflow: hidden;
   }
 
   &-item{
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -61,11 +65,13 @@
     width: 85%;
     padding: 15px;
     margin: 0 auto;
+    margin-top: 35px;
 
     border-radius: 35px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
     @media screen and (min-width: 768px) {
+      margin-top: 15px;
       display: flex;
       align-items: flex-start;
       padding: 15px 30px 15px 15px;
@@ -116,7 +122,7 @@ margin-bottom: 15px;
 .subject-list{
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   
 
   @media screen and (min-width: 768px) {

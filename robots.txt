@@ -1,32 +1,16 @@
 User-agent: *
-Disallow: /thank-you.html
-Disallow: /brends-matrusa.html
-Disallow: /data-matrusa.html
-Disallow: /kids-matrusa.html
-Disallow: /love-matrusa.html
-Disallow: /matrusa-doli.html
-Disallow: /svichku-ochuschenna.html
-Disallow: /svichku-pokraschenna.html
-Disallow: /svichku-zahust.html
-Disallow: /svichku.html
-Disallow: /taro-month.html
-Disallow: /taro-year.html
-Disallow: /taro.html
-Disallow: /year-matrusa.html
+# Дозволяємо індексацію всіх сторінок
+Allow: /
 
-# Додаткове блокування службових файлів
+# Блокуємо службові та технічні файли, які не мають індексуватись
 Disallow: /telegram.php
 Disallow: /js/
 Disallow: /css/
 Disallow: /img/
 Disallow: /fonts/
 
-
-# Дозволити індексацію основних сторінок
-Allow: /index.html
-
-# Вказати затримку між запитами
+# Затримка між запитами для зменшення навантаження
 Crawl-delay: 10
 
-# Карта сайту
+# Посилання на карту сайту
 Sitemap: https://esoterichka.com.ua/sitemap.xml

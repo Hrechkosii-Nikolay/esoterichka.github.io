@@ -4,84 +4,134 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Головна сторінка -->
   <url>
     <loc>https://esoterichka.com.ua/</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-11-04</lastmod>
     <priority>1.0</priority>
   </url>
+
+  <!-- Основні сторінки -->
   <url>
-    <loc>https://esoterichka.com.ua/amp.html</loc>
-    <lastmod>2025-08-22</lastmod>
+    <loc>https://esoterichka.com.ua/index.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Матриця долі -->
+  <url>
+    <loc>https://esoterichka.com.ua/main-matrusa-doli.html</loc>
+    <lastmod>2025-11-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://esoterichka.com.ua/brends-matrusa.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://esoterichka.com.ua/data-matrusa.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://esoterichka.com.ua/kids-matrusa.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://esoterichka.com.ua/love-matrusa.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/matrusa-doli.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/svichku-ochuschenna.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/svichku-pokraschenna.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/svichku-zahust.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/svichku.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/taro-month.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/taro-year.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/taro.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/thank-you.html</loc>
-    <lastmod>2025-08-22</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://esoterichka.com.ua/year-matrusa.html</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/za-zapytom-matrusa.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Таро -->
+  <url>
+    <loc>https://esoterichka.com.ua/main-taro.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/taro-na-misyats.html</loc>
+    <lastmod>2025-11-04</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://esoterichka.com.ua/taro-na-rik.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/taro-sfery-zhyttya.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/taro-vasha-sytuatsiya.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Руни -->
+  <url>
+    <loc>https://esoterichka.com.ua/main-runy.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/runy-braslet.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/runy-formula.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/runy-rozklad.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Свічки -->
+  <url>
+    <loc>https://esoterichka.com.ua/main-svichku.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/svichku-ochuschenna.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/svichku-pokraschenna.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/svichku-zahust.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Сторінка подяки -->
+  <url>
+    <loc>https://esoterichka.com.ua/thank-you.html</loc>
+    <lastmod>2025-11-04</lastmod>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

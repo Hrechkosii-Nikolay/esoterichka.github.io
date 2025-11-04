@@ -46,6 +46,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- <link rel="preconnect" href="https://unpkg.com" crossorigin> -->
     <noscript>
       <link
         rel="stylesheet"
@@ -55,12 +56,17 @@
         referrerpolicy="no-referrer"
       />
     </noscript>
-    <link
-      rel="preload"
-      href="./css/style.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
+    <!-- <link rel="preload" href="./css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /> -->
+    <link rel="preload" href="./css/style.min.css" as="style">
+    <link rel="stylesheet" href="./css/style.min.css">
+    
+    <link rel="preload" href="fonts/FuturaPT-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/FuturaPT-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/FuturaPT-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/FuturaPT-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
+
     <noscript>
       <link rel="stylesheet" href="./css/style.min.css" />
     </noscript>
@@ -72,6 +78,8 @@
     <link rel="manifest" href="/site.webmanifest" />
 
         <!-- Google tag (gtag.js) -->
+
+        
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SHD550S58"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -80,6 +88,7 @@
 
   gtag('config', 'G-5SHD550S58');
 </script>
+  
  <!-- Google tag (gtag.js) -->
 
     <script>
@@ -98,9 +107,11 @@
       }
     </script>
     <style>
+
       body, h1, h2, p { margin: 0; padding: 0;}
       .hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.2;}
-      .hero{margin-top: -69px;};
+      header { position: absolute; top: 0; width: 100%; z-index: 10; }
+    
     </style>
 
     <link rel="amphtml" href="https://esoterichka.com.ua/amp.html" />
@@ -213,7 +224,7 @@
           <img
           class="section-logo"
           src="./img/logo_dark.svg"
-          alt=""
+          alt="Чорний логотип Анастасії"
           width="102"
           height="102"
         />
@@ -229,11 +240,12 @@
           <ul class="for-me-list">
             <li class="for-me-item" id="card-1">
               <img
-                loading="lazy"
+              loading="lazy"
                 class="for-me-img"
                 src="./img/photo-amp-4.webp"
                 alt="Езотерик, нумеролог"
-                width="460"
+                width="330"
+                height="450"
               />
               <div>
                   <h3 class="subject-card-title" >Я — Анастасія</h3>
@@ -250,7 +262,8 @@
                 class="for-me-img"
                 src="./img/photo-amp.webp"
                 alt="Життєве призначення Анастасії"
-                width="560"
+                width="330"
+                height="450"
               />
               <div>
                 <h3 class="subject-card-title" >Моє покликання</h3>
@@ -267,7 +280,8 @@
                 class="for-me-img"
                 src="./img/photo-amp-2.webp"
                 alt="Програмні свічки ручної роботи"
-                width="560"
+                width="330"
+                height="450"
               />
               <div>
                 <h3 class="subject-card-title">Мої енергетичні інструменти</h3>
@@ -288,7 +302,8 @@
                 class="for-me-img"
                 src="./img/photo-amp-3.webp"
                 alt="Метод Матриця долі"
-                width="560"
+                width="330"
+                height="450"
               />
               <div>
                 <h3 class="subject-card-title">Метод "Матриця долі" та числа</h3>
@@ -306,7 +321,8 @@
                 class="for-me-img"
                 src="./img/photo-amp-5.webp"
                 alt="Подорож у світ Таро"
-                width="560"
+                width="330"
+                height="450"
               />
               <div>
                 <h3 class="subject-card-title">Мій шлях у світ Таро</h3>
@@ -323,7 +339,8 @@
                 class="for-me-img"
                 src="./img/photo-amp-6.webp"
                 alt="Відповіді на питання клієнтів"
-                width="560"
+                width="330"
+                height="450"
               />
               <div>
                 <h3 class="subject-card-title">Місце, де ви знайдете відповіді</h3>
@@ -351,57 +368,105 @@
           <ul class="work-list">
             <li class="work-item">
               <a href="./main-taro.html" target="_blank" rel="noopener noreferrer">
-                <img
-                class="work-img"
-                src="./img/works/work-1-amp.webp"
-                alt="Розклади таро в Києві"
-                width="250"
-                height="350"
-                fetchpriority="high"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/works/work-1-amp-360.webp 360w,
+                      ./img/works/work-1-amp-720.webp 720w,
+                      ./img/works/work-1-amp-1080.webp 1080w
+                    "
+                    sizes="(max-width: 768px) 100vw, 250px"
+                    type="image/webp"
+                  />
+                  <img
+                    class="work-img"
+                    src="./img/works/work-1-amp.webp"
+                    alt="Розклади таро в Києві"
+                    width="250"
+                    height="350"
+                    fetchpriority="high"
+                  />
+                </picture>
               </a>
               <h3 class="work-subtitle">розклади таро</h3>
             </li>
+          
             <li class="work-item">
               <h3 class="work-subtitle">матриця долі</h3>
               <a href="./main-matrusa-doli.html" target="_blank" rel="noopener noreferrer">
-                <img
-                  class="work-img"
-                  src="./img/works/work-2-amp.webp"
-                  alt="Матриця долі онлайн"
-                  width="250"
-                  height="350"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/works/work-2-amp-360.webp 360w,
+                      ./img/works/work-2-amp-720.webp 720w,
+                      ./img/works/work-2-amp-1080.webp 1080w
+                    "
+                    sizes="(max-width: 768px) 100vw, 250px"
+                    type="image/webp"
+                  />
+                  <img
+                    class="work-img"
+                    src="./img/works/work-2-amp.webp"
+                    alt="Матриця долі онлайн"
+                    width="250"
+                    height="350"
+                    loading="lazy"
+                  />
+                </picture>
               </a>
             </li>
+          
             <li class="work-item">
               <h3 class="work-subtitle">Програмні свічки</h3>
               <a href="./main-svichku.html" target="_blank" rel="noopener noreferrer">
-                <img
-                  class="work-img"
-                  src="./img/works/work-3-amp.webp"
-                  alt="Програмні свічки Київ"
-                  width="250"
-                  height="350"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/works/work-3-amp-360.webp 360w,
+                      ./img/works/work-3-amp-720.webp 720w,
+                      ./img/works/work-3-amp-1080.webp 1080w
+                    "
+                    sizes="(max-width: 768px) 100vw, 250px"
+                    type="image/webp"
+                  />
+                  <img
+                    class="work-img"
+                    src="./img/works/work-3-amp.webp"
+                    alt="Програмні свічки Київ"
+                    width="250"
+                    height="350"
+                    loading="lazy"
+                  />
+                </picture>
               </a>
             </li>
+          
             <li class="work-item">
               <h3 class="work-subtitle">Рунічний розклад</h3>
               <a href="./main-runy.html" target="_blank" rel="noopener noreferrer">
-                <img
-                  class="work-img"
-                  src="./img/works/work-4-amp.webp"
-                  alt="Руни рунічний розклад"
-                  width="250"
-                  height="350"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/works/work-4-amp-360.webp 360w,
+                      ./img/works/work-4-amp-720.webp 720w,
+                      ./img/works/work-4-amp-1080.webp 1080w
+                    "
+                    sizes="(max-width: 768px) 100vw, 250px"
+                    type="image/webp"
+                  />
+                  <img
+                    class="work-img"
+                    src="./img/works/work-4-amp.webp"
+                    alt="Руни рунічний розклад"
+                    width="250"
+                    height="350"
+                    loading="lazy"
+                  />
+                </picture>
               </a>
             </li>
           </ul>
+          
           <div class="work-txt-wrapper">
             <p class="section-txt">
               Я використовую глибокі знання езотерики, нумерології, Таро та
@@ -424,7 +489,7 @@
     <img
       class="section-logo"
       src="./img/logo_dark.svg"
-      alt=""
+      alt="Лого Езотерички"
       width="102"
       height="102"
     />
@@ -492,7 +557,7 @@
           <img
             class="section-logo"
             src="./img/logo_dark.svg"
-            alt=""
+            alt="Головний лого Анастасії"
             width="102"
             height="102"
           />
@@ -808,7 +873,7 @@
           <img
             class="section-logo"
             src="./img/logo_dark.svg"
-            alt=""
+            alt=" Логотип Таролога Анастасії"
             width="102"
             height="102"
           />
@@ -819,7 +884,7 @@
           </p>
           <ul class="clients-list">
             <li class="clients-item">
-              <img class="clients-img" src="./img/clients/client-1.jpg" width="150" height="150"  alt="">
+              <img class="clients-img" src="./img/clients/client-1.webp" width="150" height="150"  alt="Чоловік в окулярах та капелюсі">
               <p class="clients-name">Іван</p>
               <p class="clients-location">Київ</p>
               <p class="clients-story">
@@ -833,7 +898,7 @@
               </p>
             </li>
             <li class="clients-item">
-              <img class="clients-img" src="./img/clients/client-2.jpg" width="150" height="150" alt="">
+              <img class="clients-img" src="./img/clients/client-2.webp" width="150" height="150" alt="Дівчина з яскравою помадою">
               <p class="clients-name">Марія</p>
               <p class="clients-location">Буча</p>
               <p class="clients-story">
@@ -845,7 +910,7 @@
               </p>
             </li>
             <li class="clients-item">
-              <img class="clients-img" src="./img/clients/client-3.jpg" width="150" height="150" alt="">
+              <img class="clients-img" src="./img/clients/client-3.webp" width="150" height="150" alt="Рудоволоса дівчина яка посміхається">
               <p class="clients-name">Жанна</p>
               <p class="clients-location">Львів</p>
               <p class="clients-story">
@@ -864,7 +929,7 @@
           <img
             class="section-logo"
             src="./img/logo_dark.svg"
-            alt=""
+            alt="Логотіп Езотерички Анастасії"
             width="102"
             height="102"
           />
@@ -1145,17 +1210,27 @@
         });
       }
     </script>
-    <script src="./js/backToTop.js" type="module" defer></script>
-    <script src="https://unpkg.com/imask/dist/imask.min.js" type="module" defer></script>
-    <script src="./js/inputmask.js" type="module" defer></script>
-    <script src="./js/dataInputMask.js" type="module" defer></script>
-    <script src="./js/valid-tel.js" type="module" defer></script>
-    <script src="./js/close-modal.js" type="module" defer></script>
-    <script src="./js/noScrollModal.js" type="module" defer></script>
-    <script src="./js/menu-btn.js" type="module" defer></script>
-    <script src="./js/for-me-card.js" type="module" defer></script>
-    <script src="./js/question.js" type="module" defer></script>
-    <script src="./js/skills-slider.js" type="module" defer></script>
+    <!-- <script src="https://unpkg.com/imask@6.4.3/dist/imask.min.js" defer></script> -->
+    
+    <script defer src="./js/imask.js" type="module"></script>
+    <script defer src="./js/backToTop.js" type="module"></script>
+    <script defer src="./js/inputmask.js" type="module"></script>
+    <script defer src="./js/dataInputMask.js" type="module"></script>
+    <script defer src="./js/valid-tel.js" type="module"></script>
+    <script defer src="./js/close-modal.js" type="module"></script>
+    <script defer src="./js/noScrollModal.js" type="module"></script>
+    <script defer src="./js/menu-btn.js" type="module"></script>
+    <script defer src="./js/for-me-card.js" type="module"></script>
+    <script defer src="./js/question.js" type="module"></script>
+    <script defer src="./js/skills-slider.js" type="module"></script>
+
+    
+    <!-- <script src="js/all-js.js" defer></script> -->
+    
+    <!-- <script src="https://unpkg.com/imask/dist/imask.min.js" type="module" defer crossorigin></script> -->
+    <!-- <script src="./js/all-js.js" type="module" defer></script> -->
+    
+    
     <script>
       window.addEventListener('DOMContentLoaded', () => {
   const backdrop = document.querySelector('.backdrop');

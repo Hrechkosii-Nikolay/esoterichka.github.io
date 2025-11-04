@@ -308,11 +308,36 @@ p.center-txt{
   }
   
 }
-.hero.matrusa{
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(../img/hero-matrusa.webp) ;
+
+
+.hero{
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.hero.taro{
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(../img/hero-taro.webp) ;
+  // background-position: center bottom;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+}
+.hero.matrusa{
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(../img/hero-matrusa.webp) ;
+  // background-position: center bottom;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+}
+.hero.svichku{
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(../img/hero-svichku.webp) ;
+  // background-position: center bottom;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+}
+.hero.runy{
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(../img/hero-runy.webp) ;
+  // background-position: center bottom;
+  // background-size: cover;
+  // background-repeat: no-repeat;
 }
 
 .main-color{

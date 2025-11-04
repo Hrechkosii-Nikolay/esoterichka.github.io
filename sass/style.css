@@ -104,6 +104,11 @@ main > section:not(:first-child) {
   }
 }
 
+.section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
 .container {
   max-width: 1440px;
   padding: 0 20px;
@@ -261,7 +266,7 @@ header {
     gap: 15px;
     margin: 0 auto;
     position: absolute;
-    bottom: -800px; /* тепер воно прив’язане до низу header */
+    bottom: -800px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -396,12 +401,14 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  margin-top: -69px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInHero 1s ease-out forwards;
 }
-@media screen and (min-width: 1024px) {
-  .hero {
-    margin-top: -69px;
-    min-height: 100vh;
+@keyframes fadeInHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .hero-title {
@@ -425,6 +432,7 @@ header {
   margin-bottom: 130px;
   color: #ffffff;
   font-weight: 300;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "FuturaPT", sans-serif;
 }
 @media screen and (min-width: 1024px) {
   .hero-txt {
@@ -491,6 +499,9 @@ header {
   margin-bottom: 20px;
   text-align: justify;
   text-indent: 25px;
+  position: relative;
+  min-height: 490px; /* підібрати під найвищий блок */
+  overflow: hidden;
 }
 .for-me-item {
   opacity: 0;
@@ -501,11 +512,13 @@ header {
   width: 85%;
   padding: 15px;
   margin: 0 auto;
+  margin-top: 35px;
   border-radius: 35px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media screen and (min-width: 768px) {
   .for-me-item {
+    margin-top: 15px;
     display: flex;
     align-items: flex-start;
     padding: 15px 30px 15px 15px;
@@ -546,7 +559,7 @@ header {
 .subject-list {
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 @media screen and (min-width: 768px) {
   .subject-list {
