@@ -274,7 +274,7 @@ main > section:not(:first-child) {
   .contacts-wrap {
     display: flex;
     justify-content: space-between;
-    gap: 25px;
+    gap: 80px;
   }
 }
 

@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 
 # Блокуємо службові та технічні файли, які не мають індексуватись
+Disallow: /thank-you.html
 Disallow: /telegram.php
 Disallow: /js/
 Disallow: /css/
