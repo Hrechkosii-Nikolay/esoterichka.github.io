@@ -96,6 +96,8 @@
   object-fit: cover;
 }
 
+
+
 @media screen and (min-width: 768px) {
   .work-txt-wrapper{
     display: flex;
@@ -106,21 +108,25 @@
     max-width: 70%;
    text-align: start;
   }
+  
 }
 
 .download-btn{
   appearance: none;
   border: none;
   background-color: inherit;
-  padding: 10px;
+  // padding: 10px;
   display: flex;
-  align-items: center;
+  // align-items: flex-start;
   gap: 10px;
-  margin: 0 auto;
   
-
+  // height: 50px;
+  
+  
   @media screen and (max-width: 767px){
     color: $main-color;
+    width:220px;
+    margin: 0 auto;
   }
 }
 
@@ -132,7 +138,7 @@
   stroke: $main-txt-cl;
   fill: none;
   @media screen and (max-width: 767px){
-    stroke: $main-txt-cl;
+    stroke: $main-color;
   }
 }
 .download-btn:hover .download-icon{
