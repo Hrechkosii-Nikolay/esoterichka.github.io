@@ -25,7 +25,8 @@ RewriteRule ^index\.html$ https://esoterichka.com.ua/ [R=301,L]
 # 🧭 Canonical (дублікати без /)
 # ------------------------------
 
-# Видаляємо кінцевий слеш з URL, якщо це не директорія
+# Видаляємо кінцевий слеш з URL, якщо це не директорія і не головна сторінка
+RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^ %1 [R=301,L]
@@ -75,7 +76,7 @@ RewriteRule ^ %1 [R=301,L]
 
 <IfModule mod_headers.c>
   # 🚫 Захист від виконання iframe з інших сайтів
-  Header always set X-Frame-Options "SAMEORIGIN"
+  # Header always set X-Frame-Options "SAMEORIGIN"
 
   # 🧱 Захист від підміни MIME-типів
   Header always set X-Content-Type-Options "nosniff"
