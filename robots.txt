@@ -4,6 +4,7 @@ Allow: /
 
 # Блокуємо службові та технічні файли, які не мають індексуватись
 Disallow: /thank-you.html
+Disallow: /404.html
 Disallow: /telegram.php
 Disallow: /js/
 Disallow: /css/
