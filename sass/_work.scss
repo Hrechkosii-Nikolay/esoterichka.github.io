@@ -32,7 +32,7 @@
   gap: 15px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .work-list {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* від 768px — адаптивна сітка */
     gap: 20px;
@@ -64,11 +64,7 @@
   }
  
 }
-// .work-item > a {
-//   position: absolute;
-//   inset: 0; /* покриває весь блок */
-//   z-index: 2;
-// }
+
 
 .work-item a::after {
   content: "";
@@ -115,13 +111,8 @@
   appearance: none;
   border: none;
   background-color: inherit;
-  // padding: 10px;
   display: flex;
-  // align-items: flex-start;
   gap: 10px;
-  
-  // height: 50px;
-  
   
   @media screen and (max-width: 767px){
     color: $main-color;

@@ -47,6 +47,11 @@
   
     @media (min-width: 768px) {
       font-size: 56px;
+      padding-top: 250px;
+      margin-bottom: 35px;
+    }
+    @media (min-width: 1400px) {
+      font-size: 56px;
       padding-top: 330px;
       margin-bottom: 35px;
     }
@@ -56,15 +61,15 @@
   
   &-txt {
     text-transform: uppercase;
-    margin-bottom: 130px;
+    // margin-bottom: 130px;
     // color: $main-txt-cl;
     color: $main-bg-cl;
     // text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     font-weight: 300;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "FuturaPT", sans-serif;
 
-    @media screen and (min-width: 1024px) {
-      margin-bottom: 160px;
+    @media screen and (min-width: 1140px) {
+      // margin-bottom: 160px;
       font-size: 20px;
       display: inline-block; 
       align-items: center;

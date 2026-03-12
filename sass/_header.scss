@@ -8,6 +8,7 @@ header {
 
 nav {
 
+
   @media screen and (min-width: 1140px) {
     display: flex;
     align-items: center;
@@ -43,7 +44,6 @@ display: none;
 //  --- Бургер меню --- //
 @media screen and (max-width: 1139px) {
   position: absolute;
-  // top: 60px;
   top: 0px;
   right: 0;
   height: 100vh;
@@ -54,7 +54,7 @@ display: none;
 
   padding: 25px;
   padding-top: 50px;
-  // border-radius: $border-radius;
+
   border: $main-border;
   
 }
@@ -65,9 +65,14 @@ display: none;
   margin: 0 auto;
 
   position: absolute;
-  bottom: -800px;
+  bottom: -600px;
   left: 50%;
   transform: translateX(-50%);
+}
+@media screen and (min-width: 1400px) {
+
+  bottom: -800px;
+
 }
 
 }
@@ -79,6 +84,7 @@ display: none;
   text-transform: uppercase;
   font-weight: 300;
   color: $main-bg-cl;
+  // color: greenyellow;
 
   transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

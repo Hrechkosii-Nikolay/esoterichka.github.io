@@ -95,10 +95,15 @@ main > section:not(:first-child) {
 }
 @media screen and (min-width: 768px) {
   main > section:not(:first-child) {
-    padding: 25px 0;
+    padding: 20px 0;
   }
 }
 @media screen and (min-width: 1024px) {
+  main > section:not(:first-child) {
+    padding: 25px 0;
+  }
+}
+@media screen and (min-width: 1400px) {
   main > section:not(:first-child) {
     padding: 60px 0;
   }
@@ -149,13 +154,18 @@ main > section:not(:first-child) {
 .title {
   text-align: center;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-transform: uppercase;
   font-size: 25px;
 }
 @media (min-width: 768px) {
   .title {
     font-size: 35px;
+  }
+}
+@media (min-width: 1400px) {
+  .title {
+    margin-bottom: 50px;
   }
 }
 
@@ -266,9 +276,14 @@ header {
     gap: 15px;
     margin: 0 auto;
     position: absolute;
-    bottom: -800px;
+    bottom: -600px;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .menu-list {
+    bottom: -800px;
   }
 }
 
@@ -423,20 +438,25 @@ header {
 @media (min-width: 768px) {
   .hero-title {
     font-size: 56px;
+    padding-top: 250px;
+    margin-bottom: 35px;
+  }
+}
+@media (min-width: 1400px) {
+  .hero-title {
+    font-size: 56px;
     padding-top: 330px;
     margin-bottom: 35px;
   }
 }
 .hero-txt {
   text-transform: uppercase;
-  margin-bottom: 130px;
   color: #ffffff;
   font-weight: 300;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "FuturaPT", sans-serif;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1140px) {
   .hero-txt {
-    margin-bottom: 160px;
     font-size: 20px;
     display: inline-block;
     align-items: center;
@@ -565,11 +585,15 @@ header {
   .subject-list {
     max-width: 1000px;
     margin: 0 auto;
-    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     font-size: 15px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .subject-list {
+    margin-bottom: 50px;
   }
 }
 
@@ -645,7 +669,7 @@ header {
   gap: 15px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .work-list {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* від 768px — адаптивна сітка */
     gap: 20px;
