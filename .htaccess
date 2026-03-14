@@ -16,11 +16,13 @@ RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{THE_REQUEST} \s/+index\.html [NC]
 RewriteRule ^(.*?)(index\.html)?$ https://esoterichka.com.ua/$1 [R=301,L]
+RewriteRule ^amp\.html$ /amp/ [R=301,L]
 
 # Прибираємо слеш у кінці (окрім головної)
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 
 
 # # ------------------------------
