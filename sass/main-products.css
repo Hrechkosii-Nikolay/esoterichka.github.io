@@ -220,6 +220,37 @@ main > section:not(:first-child) {
   transition: 300ms;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.border-left {
+  border-left: 3px solid #eb7928;
+  padding-left: 15px;
+  color: #eb7928;
+}
+
+.border-top {
+  border-top: 3px solid #eb7928;
+  padding-top: 15px;
+  color: #eb7928;
+}
+
+.article-subtitle {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.article-subtitle.txt-left span {
+  font-size: 23px;
+}
+
 /* ----- Contacts ----- */
 .contacts-txt {
   margin-bottom: 60px;
