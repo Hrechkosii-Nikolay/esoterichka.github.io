@@ -73,7 +73,7 @@
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.8) 0%,
-    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 65%,
   );
   z-index: 1;
   transition: opacity 0.3s ease;
@@ -82,7 +82,7 @@
     background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.8) 0%,
-      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0) 60%,
     );
 }}
 .work-img {
@@ -118,6 +118,12 @@
     color: $main-color;
     width:220px;
     margin: 0 auto;
+  }
+}
+
+.download-btn.read{
+  @media screen and (max-width: 767px){
+    width:140px;
   }
 }
 

@@ -859,7 +859,7 @@ p.center-txt {
   content: "";
   position: absolute;
   inset: 0; /* скорочено: top: 0; right: 0; bottom: 0; left: 0; */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 25%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 60%);
   z-index: 1;
   transition: opacity 0.3s ease;
 }
