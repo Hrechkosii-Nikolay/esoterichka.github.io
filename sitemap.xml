@@ -8,7 +8,7 @@
   <!-- Головна сторінка -->
   <url>
     <loc>https://esoterichka.com.ua/</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <priority>1.0</priority>
   </url>
 
@@ -120,6 +120,36 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Статті блогу -->
+
+  <url>
+    <loc>https://esoterichka.com.ua/znanny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/istoriy-taro.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/chomu-taro-pratsiuie.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/yak-postavyty-pytannia-taro.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esoterichka.com.ua/zvidky-vzialasia-matrytsia-doli.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+
+
   <!-- Сторінка подяки -->
   <url>
     <loc>https://esoterichka.com.ua/thank-you.html</loc>
@@ -131,5 +161,4 @@
     <lastmod>2025-11-09</lastmod>
     <priority>0.2</priority>
   </url>
-
 </urlset>

@@ -12,7 +12,7 @@ Disallow: /img/
 Disallow: /fonts/
 
 # Затримка між запитами для зменшення навантаження
-Crawl-delay: 10
+# Crawl-delay: 10
 
 # Посилання на карту сайту
 Sitemap: https://esoterichka.com.ua/sitemap.xml
