@@ -1118,58 +1118,88 @@
                 </li>
               </ul>
             </div>
-            <form action="telegram.php" method="post" class="form" id="form">
-              <ul class="form-list form-list--top">
-                <li class="form-item">
-                  <input
-                    class="form-input"
-                    type="text"
-                    pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
-                    name="user_name"
-                    id="input-name"
-                    placeholder=" "
-                    title="Тільки літери"
-                  />
-                  <label class="form-label" for="input-name">Ім'я</label>
-                </li>
-                <li class="form-item">
-                  <input
-                    class="form-input input-age"
-                    name="user_age"
-                    id="input-age"
-                    placeholder=" "
-                  />
-                  <label class="form-label" for="input-age">Дата народження</label>
-                </li>
-                <li class="form-item">
-                  <input
-                    class="form-input input-tel"
-                    type="tel"
-                    name="user_phone"
-                    id="input-tel"
-                    placeholder=" "
-                  />
-                  <label class="form-label" for="input-tel">Телефон</label>
-                </li>
-              </ul>
-            
-              <ul class="form-list form-list--bottom">
-                <li class="form-item">
-                  <textarea
-                    class="form-input form-message"
-                    id="input-message"
-                    name="user_message"
-                    rows="5"
-                    placeholder=" "
-                  ></textarea>
-                  <label class="form-label" for="input-message">Ваше запитання</label>
-                </li>
-              </ul>
-            
-              <button class="form-btn base-btn" type="submit">
-                Відправити
-              </button>
-            </form>
+            <form
+            action="telegram.php"
+            method="post"
+            class="modal-form"
+            id="form"
+          >
+          
+            <ul class="modal-form-list">
+          
+              <li class="modal-form-item">
+                <input
+                  class="modal-form-input"
+                  type="text"
+                  pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+"
+                  name="user_name"
+                  id="input-name"
+                  placeholder=" "
+                  title="Тільки літери"
+                />
+                <label class="modal-form-label" for="input-name">Ім'я</label>
+              </li>
+          
+              <li class="modal-form-item">
+                <input
+                  class="modal-form-input input-age"
+                  name="user_age"
+                  id="input-age"
+                  placeholder=" "
+                />
+                <label class="modal-form-label" for="input-age">Дата народження</label>
+              </li>
+          
+              <li class="modal-form-item">
+                <input
+                  class="modal-form-input input-tel"
+                  type="tel"
+                  name="user_phone"
+                  id="input-tel"
+                  placeholder=" "
+                />
+                <label class="modal-form-label" for="input-tel">Телефон</label>
+              </li>
+          
+              <li class="modal-form-item">
+                <textarea
+                  class="modal-form-input"
+                  id="input-message"
+                  name="user_message"
+                  rows="5"
+                  placeholder=" "
+                ></textarea>
+                <label class="modal-form-label" for="input-message">
+                  Ваше запитання
+                </label>
+              </li>
+          
+            </ul>
+          
+            <!-- =========================
+                 ANTI-SPAM (HIDDEN)
+            ========================== -->
+          
+            <!-- Honeypot (боти його заповнюють) -->
+            <div style="position:absolute; left:-9999px; opacity:0;">
+              <input
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+          
+            <!-- Час створення форми -->
+            <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+          
+            <button class="modal-form-btn base-btn" type="submit">
+              Відправити
+            </button>
+          
+          </form>
+
+
             
           </div>
           <div class="map">
@@ -1199,60 +1229,87 @@
           </button>
           <h3 class="modal-txt">Зворотній зв'язок</h3>
           <form
-            action="telegram.php"
-            method="post"
-            class="modal-form"
-            id="form"
-          >
-            <ul class="modal-form-list">
-              <li class="modal-form-item">
-                <input
-                  class="modal-form-input"
-                  type="text"
-                  pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
-                  name="user_name"
-                  id="input-name"
-                  placeholder=" "
-                  title="Тільки літери"
-                />
-                <label class="modal-form-label" for="input-name">Ім'я</label>
-              </li>
-              <li class="modal-form-item">
-                <input
-                  class="modal-form-input input-age"
-                  name="user_age"
-                  id="input-age"
-                  placeholder=" "
-                />
-                <label class="modal-form-label" for="input-age">Дата народження</label>
-              </li>
-              <li class="modal-form-item">
-                <input
-                  class="modal-form-input input-tel"
-                  type="tel"
-                  name="user_phone"
-                  id="input-tel"
-                  placeholder=" "
-                />
-                <label class="modal-form-label" for="input-tel">Телефон</label>
-              </li>
-              <li class="modal-form-item">
-                <textarea
-                  class="modal-form-input"
-                  id="input-message"
-                  name="user_message"
-                  rows="5"
-                  placeholder=" "
-                ></textarea>
-                <label class="modal-form-label" for="input-message"
-                  >Ваше запитання</label
-                >
-              </li>
-            </ul>
-            <button class="modal-form-btn base-btn" type="submit">
-              Відправити
-            </button>
-          </form>
+          action="telegram.php"
+          method="post"
+          class="modal-form"
+          id="form"
+        >
+        
+          <ul class="modal-form-list">
+        
+            <li class="modal-form-item">
+              <input
+                class="modal-form-input"
+                type="text"
+                pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+"
+                name="user_name"
+                id="input-name"
+                placeholder=" "
+                title="Тільки літери"
+              />
+              <label class="modal-form-label" for="input-name">Ім'я</label>
+            </li>
+        
+            <li class="modal-form-item">
+              <input
+                class="modal-form-input input-age"
+                name="user_age"
+                id="input-age"
+                placeholder=" "
+              />
+              <label class="modal-form-label" for="input-age">Дата народження</label>
+            </li>
+        
+            <li class="modal-form-item">
+              <input
+                class="modal-form-input input-tel"
+                type="tel"
+                name="user_phone"
+                id="input-tel"
+                placeholder=" "
+              />
+              <label class="modal-form-label" for="input-tel">Телефон</label>
+            </li>
+        
+            <li class="modal-form-item">
+              <textarea
+                class="modal-form-input"
+                id="input-message"
+                name="user_message"
+                rows="5"
+                placeholder=" "
+              ></textarea>
+              <label class="modal-form-label" for="input-message">
+                Ваше запитання
+              </label>
+            </li>
+        
+          </ul>
+        
+          <!-- =========================
+               ANTI-SPAM (HIDDEN)
+          ========================== -->
+        
+          <!-- Honeypot (боти його заповнюють) -->
+          <div style="position:absolute; left:-9999px; opacity:0;">
+            <input
+              type="text"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+        
+          <!-- Час створення форми -->
+          <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+        
+          <button class="modal-form-btn base-btn" type="submit">
+            Відправити
+          </button>
+        
+        </form>
+
+
           <div class="modal-contacts"> 
             <ul class="contacts-list">
               <li class="contacts-item icon-phone is-fan">
