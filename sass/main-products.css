@@ -228,6 +228,10 @@ main > section:not(:first-child) {
   text-align: left;
 }
 
+.txt-accent {
+  color: #eb7928;
+}
+
 .border {
   border: 1px solid #eb7928;
   padding: 15px;
