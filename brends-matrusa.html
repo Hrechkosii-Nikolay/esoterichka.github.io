@@ -338,13 +338,14 @@
             <ul class="form-list form-list--top">
               <li class="form-item">
                 <input
-                  class="form-input"
+                  class="form-input input-name"
                   type="text"
                   pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
                   name="user_name"
                   id="input-name"
                   placeholder=" "
                   title="Тільки літери"
+                  required
                 />
                 <label class="form-label" for="input-name">Ім'я</label>
               </li>
@@ -354,6 +355,7 @@
                   name="user_age"
                   id="input-age"
                   placeholder=" "
+                  
                 />
                 <label class="form-label" for="input-age">Дата народження</label>
               </li>
@@ -372,22 +374,37 @@
             <ul class="form-list form-list--bottom">
               <li class="form-item">
                 <textarea
-                  class="form-input form-message"
+                  class="form-input form-message input-message"
                   id="input-message"
                   name="user_message"
                   rows="5"
                   placeholder=" "
+                  required
                 ></textarea>
                 <label class="form-label" for="input-message">Ваше запитання</label>
               </li>
             </ul>
+                    <!-- =========================
+                 ANTI-SPAM (HIDDEN)
+            ========================== -->
           
+            <!-- Honeypot (боти його заповнюють) -->
+            <div style="position:absolute; left:-9999px; opacity:0;">
+              <input
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+          
+            <!-- Час створення форми -->
+            <input type="hidden" name="form_time" value="<?php echo time(); ?>">
             <button class="form-btn base-btn" type="submit">
               Відправити
             </button>
-          </form>
-          
-        </div>
+          </form>    
+      </div>
         <div class="map">
           <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d367.12559147207116!2d30.514834770157368!3d50.460137935556546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce42382f6833%3A0xd8de0df414f096b7!2z0JDQvdC00YDQtdC10LLRgdC60LjQuSDRgdC_0YPRgdC6LCAxM9CRLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1756712755688!5m2!1sru!2sua" 
@@ -436,9 +453,9 @@
   <script defer type="module" src="./js/backToTop.js"></script>
   <script defer type="module" src="https://unpkg.com/imask"></script>
   <script defer type="module" src="./js/inputmask.js"></script>
-  <script defer type="module" src="./js/valid-tel.js"></script>
   <script defer type="module" src="./js/menu-btn.js"></script>
   <script defer type="module" src="./js/dataInputMask.js"></script>
+  <script defer type="module" src="./js/valid-tel.js"></script>
   <script defer type="module" src="./js/year.js"></script>
 
 

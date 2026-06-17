@@ -375,13 +375,14 @@
             <ul class="form-list form-list--top">
               <li class="form-item">
                 <input
-                  class="form-input"
+                  class="form-input input-name"
                   type="text"
                   pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+" 
                   name="user_name"
                   id="input-name"
                   placeholder=" "
                   title="Тільки літери"
+                  required
                 />
                 <label class="form-label" for="input-name">Ім'я</label>
               </li>
@@ -391,6 +392,7 @@
                   name="user_age"
                   id="input-age"
                   placeholder=" "
+                  
                 />
                 <label class="form-label" for="input-age">Дата народження</label>
               </li>
@@ -409,20 +411,36 @@
             <ul class="form-list form-list--bottom">
               <li class="form-item">
                 <textarea
-                  class="form-input form-message"
+                  class="form-input form-message input-message"
                   id="input-message"
                   name="user_message"
                   rows="5"
                   placeholder=" "
+                  required
                 ></textarea>
                 <label class="form-label" for="input-message">Ваше запитання</label>
               </li>
             </ul>
+                    <!-- =========================
+                 ANTI-SPAM (HIDDEN)
+            ========================== -->
           
+            <!-- Honeypot (боти його заповнюють) -->
+            <div style="position:absolute; left:-9999px; opacity:0;">
+              <input
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+          
+            <!-- Час створення форми -->
+            <input type="hidden" name="form_time" value="<?php echo time(); ?>">
             <button class="form-btn base-btn" type="submit">
               Відправити
             </button>
-          </form>
+          </form>  
           
         </div>
         <div class="map">

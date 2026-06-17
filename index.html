@@ -1121,7 +1121,7 @@
             <form
             action="telegram.php"
             method="post"
-            class="modal-form"
+            class="modal-form form"
             id="form"
           >
           
@@ -1129,13 +1129,14 @@
           
               <li class="modal-form-item">
                 <input
-                  class="modal-form-input"
+                  class="modal-form-input input-name"
                   type="text"
                   pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+"
                   name="user_name"
                   id="input-name"
                   placeholder=" "
                   title="Тільки літери"
+                  required
                 />
                 <label class="modal-form-label" for="input-name">Ім'я</label>
               </li>
@@ -1163,11 +1164,12 @@
           
               <li class="modal-form-item">
                 <textarea
-                  class="modal-form-input"
+                  class="modal-form-input input-message"
                   id="input-message"
                   name="user_message"
                   rows="5"
                   placeholder=" "
+                  required
                 ></textarea>
                 <label class="modal-form-label" for="input-message">
                   Ваше запитання
@@ -1231,7 +1233,7 @@
           <form
           action="telegram.php"
           method="post"
-          class="modal-form"
+          class="modal-form form"
           id="form"
         >
         
@@ -1239,13 +1241,14 @@
         
             <li class="modal-form-item">
               <input
-                class="modal-form-input"
+                class="modal-form-input input-name"
                 type="text"
                 pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+"
                 name="user_name"
                 id="input-name"
                 placeholder=" "
                 title="Тільки літери"
+                required
               />
               <label class="modal-form-label" for="input-name">Ім'я</label>
             </li>
@@ -1273,11 +1276,12 @@
         
             <li class="modal-form-item">
               <textarea
-                class="modal-form-input"
+                class="modal-form-input input-message"
                 id="input-message"
                 name="user_message"
                 rows="5"
                 placeholder=" "
+                required
               ></textarea>
               <label class="modal-form-label" for="input-message">
                 Ваше запитання
