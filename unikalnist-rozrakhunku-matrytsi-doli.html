@@ -29,14 +29,6 @@
 <meta property="og:locale" content="uk_UA">
 <meta property="og:site_name" content="esoterichka.com.ua">
 
-<!-- 🐦 Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Один розрахунок — на все життя. Чому дата народження не застаріває">
-<meta name="twitter:description" content="Чому матриця долі за датою народження працює все життя та не втрачає актуальності. Принципи, значення та вплив дати народження на ваш життєвий шлях.">
-<meta name="twitter:image" content="https://esoterichka.com.ua/img/hero.jpg">
-     <meta name="twitter:site" content="@твій_нікнейм_в_Twitter">
-
-     
      <!-- 📱 Mobile -->
      <meta name="theme-color" content="#d7c1a3">
 
@@ -341,6 +333,8 @@
             
               <!-- Час створення форми -->
               <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+              <input type="hidden" name="page_url">
+<input type="hidden" name="time_on_page">
               <button class="form-btn base-btn" type="submit">
                 Відправити
               </button>
@@ -399,6 +393,7 @@
     <script src="./js/inputmask.js" type="module" defer></script>
     <script src="./js/dataInputMask.js" type="module" defer></script>
     <script src="./js/valid-tel.js" type="module" defer></script>
+    <script defer type="module" src="./js/telegram-data.js"></script>
     <script src="./js/menu-btn.js" type="module" defer></script>
     <script src="./js/year.js" type="module" defer></script>
 

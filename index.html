@@ -576,46 +576,27 @@
               </a>
             </li>
             <li class="work-item">
-              <h3 class="work-subtitle">Чому таро "працює"</h3>
-              <a href="./chomu-taro-pratsiuie.html" target="_blank" rel="noopener noreferrer">
+              <h3 class="work-subtitle">Що таке руни?</h3>
+              <a href="./shcho-take-runy.html">
                 <picture>
                   <source
                     srcset="
-                      ./img/works/taro/taro-1.webp 360w,
-                      ./img/works/taro/taro-1.webp 720w,
-                      ./img/works/taro/taro-1.webp 1080w
+                      ./img/works/runy/runy-1.webp 360w,
+                      ./img/works/runy/runy-1.webp 720w,
+                      ./img/works/runy/runy-1.webp 1080w
                     "
                     sizes="(max-width: 768px) 100vw, 250px"
                     type="image/webp"
                   />
                   <img
                     class="work-img"
-                    src="./img/works/taro/taro-1.webp"
+                    src="./img/works/runy/runy-1.webp"
                     alt="Розклади таро в Києві"
                     width="250"
                     height="350"
                     fetchpriority="high"
                   />
                 </picture>
-                <!-- <picture>
-                  <source
-                    srcset="
-                      ./img/works/work-4-amp-360.webp 360w,
-                      ./img/works/work-4-amp-720.webp 720w,
-                      ./img/works/work-4-amp-1080.webp 1080w
-                    "
-                    sizes="(max-width: 768px) 100vw, 250px"
-                    type="image/webp"
-                  />
-                  <img
-                    class="work-img"
-                    src="./img/works/work-4-amp.webp"
-                    alt="Руни рунічний розклад"
-                    width="250"
-                    height="350"
-                    loading="lazy"
-                  />
-                </picture> -->
               </a>
             </li>
             <li class="work-item">
@@ -1188,6 +1169,8 @@
           
             <!-- Час створення форми -->
             <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+            <input type="hidden" name="page_url">
+            <input type="hidden" name="time_on_page">
           
             <button class="modal-form-btn base-btn" type="submit">
               Відправити
@@ -1300,6 +1283,8 @@
         
           <!-- Час створення форми -->
           <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+          <input type="hidden" name="page_url">
+          <input type="hidden" name="time_on_page">
         
           <button class="modal-form-btn base-btn" type="submit">
             Відправити
@@ -1401,6 +1386,7 @@
     <script defer src="./js/for-me-card.js" type="module"></script>
     <script defer src="./js/question.js" type="module"></script>
     <script defer src="./js/skills-slider.js" type="module"></script>
+    <script defer src="./js/telegram-data.js" type="module"></script>
     <script defer src="./js/year.js" type="module"></script>
 
 

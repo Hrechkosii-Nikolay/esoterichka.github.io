@@ -179,8 +179,21 @@
             <p class="center-txt">Обирай тему, яка тобі відкликається, та занурюйся у світ самопізнання!</p>
           <ul class="work-list">
             <li class="work-item">
+              <h3 class="work-subtitle">Що таке руни?</h3>
+              <a href="./shcho-take-runy.html">
+                <img
+                  class="work-img"
+                  src="./img/works/runy/runy-4.webp"
+                  alt="Розклади таро в Києві"
+                  width="150"
+                  height="250"
+                  fetchpriority="high"
+                />
+              </a>
+            </li>
+            <li class="work-item">
               <h3 class="work-subtitle">Звідки взялися карти таро</h3>
-              <a href="./istoriy-taro.html" target="_blank" rel="noopener noreferrer">
+              <a href="./istoriy-taro.html">
                 <img
                   class="work-img"
                   src="./img/works/taro/taro-6.webp"
@@ -193,7 +206,7 @@
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Чому таро "працює"</h3>
-              <a href="./chomu-taro-pratsiuie.html" target="_blank" rel="noopener noreferrer">
+              <a href="./chomu-taro-pratsiuie.html">
                 <img
                   class="work-img"
                   src="./img/works/taro/taro-1.webp"
@@ -206,7 +219,7 @@
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Як правильно поставити питання для розкладу</h3>
-              <a href="./yak-postavyty-pytannia-taro.html" target="_blank" rel="noopener noreferrer">
+              <a href="./yak-postavyty-pytannia-taro.html">
                 <img
                   class="work-img"
                   src="./img/works/taro/taro-4.webp"
@@ -219,7 +232,7 @@
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Звідки взялася матриця долі</h3>
-              <a href="./zvidky-vzialasia-matrytsia-doli.html" target="_blank" rel="noopener noreferrer">
+              <a href="./zvidky-vzialasia-matrytsia-doli.html">
                 <img
                   class="work-img"
                   src="./img/works/matrusa-doli/matrusa-doli-2.webp"
@@ -232,7 +245,7 @@
             </li>
             <li class="work-item">
               <h3 class="work-subtitle"> Матриця долі. Один розрахунок — на все життя.</h3>
-              <a href="./unikalnist-rozrakhunku-matrytsi-doli.html" target="_blank" rel="noopener noreferrer">
+              <a href="./unikalnist-rozrakhunku-matrytsi-doli.html">
                 <img
                   class="work-img"
                   src="./img/works/matrusa-doli/matrusa-doli-3.webp"
@@ -245,7 +258,7 @@
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Програмні свічки</h3>
-              <a href="./prohramni-svichky.html" target="_blank" rel="noopener noreferrer">
+              <a href="./prohramni-svichky.html">
                 <img
                   class="work-img"
                   src="./img/works/svichku/svichku-2.webp"
@@ -392,6 +405,8 @@
             
               <!-- Час створення форми -->
               <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+              <input type="hidden" name="page_url">
+<input type="hidden" name="time_on_page">
               <button class="form-btn base-btn" type="submit">
                 Відправити
               </button>
@@ -450,6 +465,7 @@
     <script src="./js/inputmask.js" type="module" defer></script>
     <script src="./js/dataInputMask.js" type="module" defer></script>
     <script src="./js/valid-tel.js" type="module" defer></script>
+    <script defer type="module" src="./js/telegram-data.js"></script>
     <script src="./js/menu-btn.js" type="module" defer></script>
     <script src="./js/year.js" type="module" defer></script>
 
