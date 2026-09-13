@@ -52,7 +52,7 @@ h4,
 .logo-txt {
   font-family: "FuturaPT-Medium";
   font-weight: 300;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   color: rgb(255, 140, 0);
   margin-top: 0;
   margin-bottom: 0;
@@ -83,8 +83,8 @@ button {
 body {
   font-family: "FuturaPT-Light";
   font-weight: 200;
-  letter-spacing: 1px;
-  line-height: 1.5em;
+  letter-spacing: 0.4px;
+  line-height: 1.6em;
   background-color: #ffffff;
   font-size: 17px;
   color: #2a2a2a;
@@ -132,23 +132,26 @@ main > section:not(:first-child) {
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
-  padding: 17px 30px;
+  padding: 14px 26px;
   text-transform: uppercase;
   outline: 0;
   background-color: transparent;
   border: 0.5px solid #2a2a2a;
   border-radius: 76px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 24px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: inherit;
 }
 .base-btn:hover {
   transform: scale(1.01);
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 14px 26px;
   background-color: rgb(255, 140, 0);
   color: #ffffff;
   cursor: pointer;
+}
+.base-btn:focus-visible {
+  outline: 2px solid rgba(255, 140, 0, 0.55);
+  outline-offset: 4px;
 }
 
 .title {
@@ -199,10 +202,10 @@ main > section:not(:first-child) {
   border: none;
   transition: 300ms;
   display: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
 }
 .back-to-top:hover, .back-to-top:focus {
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 14px 26px;
   border: 0.5px solid #2a2a2a;
   background-color: rgb(255, 140, 0);
   scale: 0.9;
@@ -460,7 +463,7 @@ header {
     display: inline-block;
     align-items: center;
     width: 715px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 }
 .hero-btn {
@@ -491,7 +494,7 @@ header {
 }
 .for-me-img {
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
   border-radius: 20px;
   display: block;
   max-width: 100%;
@@ -532,8 +535,8 @@ header {
   padding: 15px;
   margin: 0 auto;
   margin-top: 35px;
-  border-radius: 35px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
 }
 @media screen and (min-width: 768px) {
   .for-me-item {
@@ -630,11 +633,23 @@ header {
 }
 
 .subject-txt {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
   padding: 15px;
+  border-radius: 10px;
+  text-transform: inherit;
 }
 
-.subject-txt:hover {
+.subject-txt:hover,
+.subject-txt:focus {
   color: rgb(255, 140, 0);
+}
+.subject-txt:focus-visible {
+  outline: 2px solid rgba(255, 140, 0, 0.55);
+  outline-offset: 3px;
 }
 
 /* WORK */
@@ -680,14 +695,13 @@ header {
   aspect-ratio: 3/4;
   border: none;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 12px 28px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 15px;
 }
 .work-item:hover, .work-item:focus {
-  transform: scale(1.01);
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  transform: translateY(-2px);
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 18px 34px;
   cursor: pointer;
 }
 
@@ -695,13 +709,13 @@ header {
   content: "";
   position: absolute;
   inset: 0; /* скорочено: top: 0; right: 0; bottom: 0; left: 0; */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 65%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.08) 65%);
   z-index: 1;
   transition: opacity 0.3s ease;
 }
 @media screen and (max-width: 768px) {
   .work-item a::after {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.08) 60%);
   }
 }
 
@@ -823,14 +837,14 @@ details[open] summary::before {
   margin-bottom: 10px;
   border: 0.5px solid #2a2a2a;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faq-item:hover {
-  transform: scale(1.01);
+  transform: translateY(-2px);
   transition: transform 0.3s ease;
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 18px 34px;
 }
 
 .faq-item > p {
@@ -911,7 +925,7 @@ details[open] summary::before {
 
 .skills-img {
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
   display: block;
   margin: 0 auto;
 }
@@ -935,7 +949,7 @@ details[open] summary::before {
   border: none;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -944,7 +958,7 @@ details[open] summary::before {
   padding: 0;
 }
 .slider-btn:hover {
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 14px 26px;
   border: 0.5px solid #2a2a2a;
   background-color: rgb(255, 140, 0);
   scale: 0.95;
@@ -1019,7 +1033,7 @@ details[open] summary::before {
   padding: 35px;
   max-width: 440px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
   border-radius: 15px;
   display: block;
   margin: 15px auto;
@@ -1177,6 +1191,7 @@ details[open] summary::before {
   top: 8px;
   left: 16px;
   color: #777779;
+  letter-spacing: 0.5px;
   transition: 300ms;
 }
 @media screen and (max-width: 1023px) {
@@ -1187,35 +1202,38 @@ details[open] summary::before {
   }
 }
 .form-input {
-  padding: 12px 16px;
-  border: none;
+  box-sizing: border-box;
+  padding: 11px 16px;
+  border: 1px solid rgba(42, 42, 42, 0.12);
   background-color: #ffffff;
   outline: none;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: 300ms;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
 }
 .form-input:focus {
-  border-color: rgba(28, 52, 234, 0.506);
+  border-color: rgb(255, 140, 0);
+  box-shadow: rgba(255, 140, 0, 0.12) 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 8px 24px;
 }
 .form-input:not(:-moz-placeholder) ~ .form-label {
-  top: -25px;
+  top: -22px;
   color: rgb(255, 140, 0);
   font-size: 15.5px;
 }
 .form-input:focus ~ .form-label, .form-input:not(:placeholder-shown) ~ .form-label {
-  top: -25px;
+  top: -22px;
   color: rgb(255, 140, 0);
   font-size: 15.5px;
 }
 .form-message {
+  box-sizing: border-box;
   resize: none;
-  padding: 12px 16px;
+  padding: 11px 16px;
 }
 @media screen and (max-width: 767px) {
   .form-message {
-    height: 200px;
+    height: 180px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1228,7 +1246,7 @@ details[open] summary::before {
   .form-btn {
     display: block;
     margin: 0 auto;
-    width: 320px;
+    width: min(100%, 320px);
   }
 }
 
@@ -1249,7 +1267,7 @@ details[open] summary::before {
   overflow: hidden;
   border: none;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
 }
 @media screen and (min-width: 1024px) {
   .map {
@@ -1272,12 +1290,13 @@ details[open] summary::before {
 }
 
 .backdrop {
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(119, 119, 121, 0.6784313725);
+  background-color: rgba(42, 42, 42, 0.48);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1285,6 +1304,9 @@ details[open] summary::before {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 
 .backdrop.is-open {
@@ -1295,21 +1317,24 @@ details[open] summary::before {
 .backdrop.is-close {
   opacity: 0;
   pointer-events: none;
-  scale: 1.2;
 }
 
 .modal {
+  box-sizing: border-box;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 370px;
-  min-height: 570px;
-  padding: 30px;
+  width: min(92vw, 430px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 24px;
   border: none;
-  border-radius: 15px;
+  border-radius: 14px;
   background-color: #fff;
-  box-shadow: rgba(255, 255, 255, 0.6) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 24px 60px;
   z-index: 1010;
 }
 
@@ -1341,20 +1366,22 @@ details[open] summary::before {
   pointer-events: none;
 }
 .modal-form-input {
+  box-sizing: border-box;
   display: block;
   width: 100%;
-  padding: 6px;
-  margin-bottom: 25px;
-  border: none;
+  padding: 10px 14px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(42, 42, 42, 0.12);
   background-color: #ffffff;
   outline: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: 300ms;
-  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 22px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
   resize: none;
 }
 .modal-form-input:focus {
-  border-color: rgba(28, 52, 234, 0.506);
+  border-color: rgb(255, 140, 0);
+  box-shadow: rgba(255, 140, 0, 0.12) 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 8px 22px;
 }
 .modal-form-input:not(:-moz-placeholder) ~ .modal-form-label {
   top: -23px;
@@ -1369,9 +1396,10 @@ details[open] summary::before {
   color: rgb(255, 140, 0);
 }
 .modal-form-btn {
+  box-sizing: border-box;
   display: block;
   margin: 0 auto;
-  width: 320px;
+  width: min(100%, 300px);
 }
 
 .modal-contacts {
@@ -1380,9 +1408,26 @@ details[open] summary::before {
   margin-top: 25px;
 }
 
+.modal-contacts .contacts-list {
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.modal-contacts .contacts-link {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.modal-contacts .contacts-icon {
+  flex-shrink: 0;
+}
+
 .close-modal {
-  margin-left: 90%;
-  margin-bottom: 15px;
+  margin-left: auto;
+  margin-bottom: 14px;
   width: 30px;
   height: 30px;
   padding: 7px;
@@ -1392,14 +1437,24 @@ details[open] summary::before {
   stroke: #2a2a2a;
   border-radius: 50%;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 8px 20px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-modal:hover {
-  scale: 1.1;
+  transform: scale(1.05);
   stroke: #2a2a2a;
   background-color: rgb(255, 140, 0);
   stroke: #fff;
-  box-shadow: rgb(54, 57, 60) 0px 10px 20px -3px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 10px 20px -3px;
+}
+
+@media screen and (max-width: 480px) {
+  .backdrop {
+    padding: 12px;
+  }
+  .modal {
+    width: calc(100vw - 24px);
+    padding: 20px 16px;
+  }
 }/*# sourceMappingURL=style.css.map */

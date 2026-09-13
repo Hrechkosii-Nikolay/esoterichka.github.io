@@ -162,18 +162,4 @@
     <lastmod>2026-06-26</lastmod>
     <priority>0.7</priority>
   </url>
-
-
-
-  <!-- Сторінка подяки -->
-  <url>
-    <loc>https://esoterichka.com.ua/thank-you.html</loc>
-    <lastmod>2025-11-09</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://esoterichka.com.ua/404.html</loc>
-    <lastmod>2025-11-09</lastmod>
-    <priority>0.2</priority>
-  </url>
 </urlset>

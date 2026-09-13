@@ -1,1 +1,61 @@
-const detailsElements=document.querySelectorAll("details");detailsElements.forEach(e=>{let t=Array.from(e.children).find(e=>"summary"!==e.tagName.toLowerCase());function n(){detailsElements.forEach(t=>{t!==e&&t.open&&(t.open=!1,i(t.querySelector(":scope > *:not(summary)")))});let n=t.getBoundingClientRect().height,o=t.scrollHeight;t.style.height=n+"px",requestAnimationFrame(()=>{t.style.height=o+"px"}),t.addEventListener("transitionend",function n(){e.open&&(t.style.height="auto"),t.removeEventListener("transitionend",n)})}function i(e){let t=e.getBoundingClientRect().height;e.style.height=t+"px",requestAnimationFrame(()=>{e.style.height="0px"})}e.addEventListener("toggle",()=>{e.open?n():i(t)}),t.addEventListener("click",()=>{e.open&&(e.open=!1)})});
+const detailsElements = document.querySelectorAll("details");
+
+function collapseContent(content) {
+  if (!content) return;
+
+  const currentHeight = content.getBoundingClientRect().height;
+  content.style.height = `${currentHeight}px`;
+
+  requestAnimationFrame(() => {
+    content.style.height = "0px";
+  });
+}
+
+function expandContent(details, content) {
+  if (!content) return;
+
+  detailsElements.forEach((item) => {
+    if (item === details || !item.open) return;
+
+    item.open = false;
+    collapseContent(item.querySelector(":scope > *:not(summary)"));
+  });
+
+  const currentHeight = content.getBoundingClientRect().height;
+  const targetHeight = content.scrollHeight;
+
+  content.style.height = `${currentHeight}px`;
+
+  requestAnimationFrame(() => {
+    content.style.height = `${targetHeight}px`;
+  });
+
+  content.addEventListener(
+    "transitionend",
+    () => {
+      if (details.open) content.style.height = "auto";
+    },
+    { once: true }
+  );
+}
+
+detailsElements.forEach((details) => {
+  const content = Array.from(details.children).find(
+    (child) => child.tagName.toLowerCase() !== "summary"
+  );
+
+  if (!content) return;
+
+  details.addEventListener("toggle", () => {
+    if (details.open) {
+      expandContent(details, content);
+      return;
+    }
+
+    collapseContent(content);
+  });
+
+  content.addEventListener("click", () => {
+    if (details.open) details.open = false;
+  });
+});

@@ -52,7 +52,7 @@ h4,
 .logo-txt {
   font-family: "FuturaPT-Medium";
   font-weight: 300;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   color: rgb(255, 140, 0);
   margin-top: 0;
   margin-bottom: 0;
@@ -83,8 +83,8 @@ button {
 body {
   font-family: "FuturaPT-Light";
   font-weight: 200;
-  letter-spacing: 1px;
-  line-height: 1.5em;
+  letter-spacing: 0.4px;
+  line-height: 1.6em;
   background-color: #ffffff;
   font-size: 17px;
   color: #2a2a2a;
@@ -132,23 +132,26 @@ main > section:not(:first-child) {
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
-  padding: 17px 30px;
+  padding: 14px 26px;
   text-transform: uppercase;
   outline: 0;
   background-color: transparent;
   border: 0.5px solid #2a2a2a;
   border-radius: 76px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: inherit;
 }
 .base-btn:hover {
   transform: scale(1.01);
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 14px 26px;
   background-color: rgb(255, 140, 0);
   color: #ffffff;
   cursor: pointer;
+}
+.base-btn:focus-visible {
+  outline: 2px solid rgba(255, 140, 0, 0.55);
+  outline-offset: 4px;
 }
 
 .title {
@@ -199,10 +202,10 @@ main > section:not(:first-child) {
   border: none;
   transition: 300ms;
   display: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
 }
 .back-to-top:hover, .back-to-top:focus {
-  box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+  box-shadow: rgba(54, 57, 60, 0.22) 0px 14px 26px;
   border: 0.5px solid #2a2a2a;
   background-color: rgb(255, 140, 0);
   scale: 0.9;
@@ -316,49 +319,56 @@ main > section:not(:first-child) {
   top: 8px;
   left: 16px;
   color: #777779;
+  letter-spacing: 0.5px;
   transition: 300ms;
 }
 @media screen and (max-width: 1023px) {
   .form-input {
+  box-sizing: border-box;
     margin-bottom: 30px;
     display: block;
     width: 100%;
   }
 }
 .form-input {
-  padding: 12px 16px;
-  border: none;
+  box-sizing: border-box;
+  padding: 11px 16px;
+  border: 1px solid rgba(42, 42, 42, 0.12);
   background-color: #ffffff;
   outline: none;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: 300ms;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
 }
 .form-input:focus {
-  border-color: rgba(28, 52, 234, 0.506);
+  border-color: rgb(255, 140, 0);
+  box-shadow: rgba(255, 140, 0, 0.12) 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 8px 24px;
 }
 .form-input:not(:-moz-placeholder) ~ .form-label {
-  top: -25px;
+  top: -22px;
   color: rgb(255, 140, 0);
   font-size: 15.5px;
 }
 .form-input:focus ~ .form-label, .form-input:not(:placeholder-shown) ~ .form-label {
-  top: -25px;
+  top: -22px;
   color: rgb(255, 140, 0);
   font-size: 15.5px;
 }
 .form-message {
+  box-sizing: border-box;
   resize: none;
-  padding: 12px 16px;
+  padding: 11px 16px;
 }
 @media screen and (max-width: 767px) {
   .form-message {
-    height: 200px;
+  box-sizing: border-box;
+    height: 180px;
   }
 }
 @media screen and (min-width: 1024px) {
   .form-message {
+  box-sizing: border-box;
     flex: 0 0 100%;
     width: 100%;
   }
@@ -367,7 +377,7 @@ main > section:not(:first-child) {
   .form-btn {
     display: block;
     margin: 0 auto;
-    width: 320px;
+    width: min(100%, 320px);
   }
 }
 
@@ -388,7 +398,7 @@ main > section:not(:first-child) {
   overflow: hidden;
   border: none;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
 }
 @media screen and (min-width: 1024px) {
   .map {

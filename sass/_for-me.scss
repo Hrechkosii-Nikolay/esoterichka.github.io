@@ -17,7 +17,7 @@
   
   &-img{
     border: $main-border;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
     border-radius: 20px;
     display: block;
 
@@ -67,8 +67,8 @@
     margin: 0 auto;
     margin-top: 35px;
 
-    border-radius: 35px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
     
     @media screen and (min-width: 768px) {
       margin-top: 15px;
@@ -178,10 +178,23 @@ margin-bottom: 15px;
     }
 
     .subject-txt{
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
       padding: 15px;
+      border-radius: 10px;
+      text-transform: inherit;
     }
 
-    .subject-txt:hover{
+    .subject-txt:hover,
+    .subject-txt:focus{
 
       color: $main-color;;
+    }
+
+    .subject-txt:focus-visible{
+      outline: 2px solid rgba(255, 140, 0, 0.55);
+      outline-offset: 3px;
     }

@@ -433,16 +433,17 @@ p.center-txt{
   border: 1px solid $main-bg-cl;
   overflow: hidden;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 12px 28px;
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   border-radius: $border-radius;
   
   
   &:hover, &:focus{
-    transform: scale(1.01);
-    box-shadow: rgb(54, 57, 60) 0px 20px 30px -10px;
+    transform: translateY(-2px);
+    box-shadow: rgba(54, 57, 60, 0.22) 0px 18px 34px;
     cursor: pointer;
   }
  
@@ -538,6 +539,5 @@ padding-top: 5px;
 .footer-txt {
   text-align: center;
 }
-
 
 

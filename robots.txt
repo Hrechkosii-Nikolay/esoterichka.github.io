@@ -6,10 +6,6 @@ Allow: /
 Disallow: /thank-you.html
 Disallow: /404.html
 Disallow: /telegram.php
-Disallow: /js/
-Disallow: /css/
-Disallow: /img/
-Disallow: /fonts/
 
 # Затримка між запитами для зменшення навантаження
 # Crawl-delay: 10

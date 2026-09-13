@@ -20,5 +20,11 @@ const pageOpened = Date.now();
               timeInput.value = `${minutes} хв ${sec} с`;
           }
       });
+
+      form.addEventListener('formdata', function () {
+          setTimeout(function () {
+              form.reset();
+          }, 0);
+      });
   
   });

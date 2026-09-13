@@ -1,1 +1,88 @@
-document.addEventListener("DOMContentLoaded",()=>{let e=document.querySelector(".skills-list"),t=Array.from(document.querySelectorAll(".skills-item")),l=document.querySelector(".next"),n=document.querySelector(".prev"),i=d(),r=Math.ceil(t.length/i),s=0,a=[];function d(){return window.innerWidth<768?4:8}function c(){let l=document.createDocumentFragment();a=[];for(let n=0;n<r;n++){let s=document.createElement("li");s.classList.add("skills-page");let d=t.slice(n*i,(n+1)*i);d.forEach(e=>s.appendChild(e.cloneNode(!0))),Object.assign(s.style,{display:0===n?"flex":"none",flexWrap:"wrap",justifyContent:"center",alignItems:n===r-1?"flex-start":"center",minWidth:"100%"}),a.push(s),l.appendChild(s)}requestAnimationFrame(()=>{e.innerHTML="",e.style.display="flex",e.style.transition="transform 0.3s ease",e.appendChild(l)})}function o(){requestAnimationFrame(()=>{a.forEach((e,t)=>{e.style.display=t===s?"flex":"none"})})}l.addEventListener("click",()=>{s=(s+1)%r,o()}),n.addEventListener("click",()=>{s=(s-1+r)%r,o()}),c(),o();let f;window.addEventListener("resize",()=>{clearTimeout(f),f=setTimeout(()=>{let e=d();e!==i&&(i=e,r=Math.ceil(t.length/i),s=0,c(),o())},200)})});
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsList = document.querySelector(".skills-list");
+  const skillsItems = Array.from(document.querySelectorAll(".skills-item"));
+  const nextButton = document.querySelector(".next");
+  const prevButton = document.querySelector(".prev");
+
+  if (!skillsList || !skillsItems.length || !nextButton || !prevButton) return;
+
+  let itemsPerPage = getItemsPerPage();
+  let pagesCount = Math.ceil(skillsItems.length / itemsPerPage);
+  let currentPage = 0;
+  let pages = [];
+
+  function getItemsPerPage() {
+    return window.innerWidth < 768 ? 4 : 8;
+  }
+
+  function buildPages() {
+    const fragment = document.createDocumentFragment();
+    pages = [];
+
+    for (let pageIndex = 0; pageIndex < pagesCount; pageIndex += 1) {
+      const page = document.createElement("li");
+      const pageItems = skillsItems.slice(
+        pageIndex * itemsPerPage,
+        (pageIndex + 1) * itemsPerPage
+      );
+
+      page.classList.add("skills-page");
+      pageItems.forEach((item) => page.appendChild(item.cloneNode(true)));
+
+      Object.assign(page.style, {
+        display: pageIndex === currentPage ? "flex" : "none",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: pageIndex === pagesCount - 1 ? "flex-start" : "center",
+        minWidth: "100%",
+      });
+
+      pages.push(page);
+      fragment.appendChild(page);
+    }
+
+    requestAnimationFrame(() => {
+      skillsList.innerHTML = "";
+      skillsList.style.display = "flex";
+      skillsList.style.transition = "transform 0.3s ease";
+      skillsList.appendChild(fragment);
+    });
+  }
+
+  function showCurrentPage() {
+    requestAnimationFrame(() => {
+      pages.forEach((page, index) => {
+        page.style.display = index === currentPage ? "flex" : "none";
+      });
+    });
+  }
+
+  nextButton.addEventListener("click", () => {
+    currentPage = (currentPage + 1) % pagesCount;
+    showCurrentPage();
+  });
+
+  prevButton.addEventListener("click", () => {
+    currentPage = (currentPage - 1 + pagesCount) % pagesCount;
+    showCurrentPage();
+  });
+
+  buildPages();
+  showCurrentPage();
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const nextItemsPerPage = getItemsPerPage();
+
+      if (nextItemsPerPage === itemsPerPage) return;
+
+      itemsPerPage = nextItemsPerPage;
+      pagesCount = Math.ceil(skillsItems.length / itemsPerPage);
+      currentPage = 0;
+      buildPages();
+      showCurrentPage();
+    }, 200);
+  });
+});
