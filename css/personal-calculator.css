@@ -1,0 +1,512 @@
+.calculator-hero {
+  min-height: 620px;
+}
+
+.calculator-section {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 243, 0.95), rgba(255, 255, 255, 0.98)),
+    url("../img/bg-for-me.svg") center/contain no-repeat;
+}
+
+.calculator-lead {
+  max-width: 860px;
+  margin: 0 auto 28px;
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.calculator-shell {
+  display: grid;
+  gap: 24px;
+}
+
+@media screen and (min-width: 1120px) {
+  .calculator-shell {
+    grid-template-columns: minmax(300px, 380px) 1fr;
+    align-items: start;
+  }
+}
+
+.calculator-panel,
+.matrix-panel,
+.result-panel {
+  border: 1px solid rgba(42, 42, 42, 0.08);
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    rgba(0, 0, 0, 0.14) 0px 18px 38px,
+    rgba(255, 255, 255, 0.75) 0px 1px 0px inset;
+}
+
+.calculator-panel {
+  padding: 24px;
+}
+
+.calculator-form {
+  display: grid;
+  gap: 18px;
+}
+
+.calculator-field {
+  display: grid;
+  gap: 8px;
+}
+
+.calculator-label {
+  font-family: "FuturaPT-Book", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.calculator-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(42, 42, 42, 0.16);
+  border-radius: 12px;
+  background-color: #fff;
+  color: #2a2a2a;
+  font: inherit;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.calculator-input:focus {
+  border-color: #ff8c00;
+  box-shadow: rgba(255, 140, 0, 0.14) 0px 0px 0px 4px, rgba(0, 0, 0, 0.1) 0px 8px 20px;
+}
+
+.calculator-note {
+  color: #626262;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.calculator-error {
+  min-height: 24px;
+  color: #b42318;
+  font-family: "FuturaPT-Book", sans-serif;
+}
+
+.calculator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.calculator-actions .base-btn {
+  width: min(100%, 260px);
+}
+
+.calculator-link {
+  color: #ff8c00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.matrix-panel {
+  padding: clamp(18px, 3vw, 34px);
+  overflow: visible;
+}
+
+.matrix-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.matrix-person {
+  font-family: "FuturaPT-Medium", sans-serif;
+  text-transform: uppercase;
+  color: #ff8c00;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.2;
+}
+
+.matrix-date {
+  color: #626262;
+  text-align: right;
+}
+
+.matrix-grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media screen and (min-width: 960px) {
+  .matrix-grid {
+    grid-template-columns: minmax(520px, 720px) 1fr;
+  }
+}
+
+.matrix-chart {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.matrix-outer,
+.matrix-square,
+.matrix-inner-circle {
+  fill: none;
+  stroke: rgba(42, 42, 42, 0.85);
+  stroke-width: 1.4;
+}
+
+.matrix-inner-circle {
+  stroke-width: 2;
+}
+
+.matrix-line,
+.matrix-soft-line {
+  fill: none;
+  stroke: rgba(42, 42, 42, 0.35);
+  stroke-width: 1.2;
+}
+
+.matrix-soft-line {
+  stroke-dasharray: 7 7;
+  stroke: rgba(255, 140, 0, 0.45);
+}
+
+.matrix-family-line {
+  fill: none;
+  stroke-width: 2.3;
+}
+
+.male-line {
+  stroke: #1521a8;
+}
+
+.female-line {
+  stroke: #ff5476;
+}
+
+.matrix-dashed-path {
+  fill: none;
+  stroke: #111;
+  stroke-width: 2.2;
+  stroke-dasharray: 18 18;
+}
+
+.matrix-node {
+  fill: #fff;
+  stroke: #2a2a2a;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.14));
+}
+
+.matrix-node.accent {
+  fill: #fff;
+  stroke: #f5ff19;
+  stroke-width: 7;
+}
+
+.matrix-node.decade {
+  stroke-width: 2.2;
+}
+
+.matrix-node.purple {
+  stroke: #bd82bd;
+  stroke-width: 7;
+}
+
+.matrix-node.red {
+  stroke: #d33b36;
+  stroke-width: 7;
+}
+
+.matrix-node.blue {
+  stroke: #1f4c9a;
+  stroke-width: 4;
+}
+
+.matrix-node.cyan {
+  stroke: #58add1;
+  stroke-width: 4;
+}
+
+.matrix-node.green {
+  stroke: #55ba43;
+  stroke-width: 4;
+}
+
+.matrix-node.orange {
+  stroke: #ff9518;
+  stroke-width: 4;
+}
+
+.center-node {
+  filter: drop-shadow(0 14px 18px rgba(245, 255, 25, 0.26));
+}
+
+.matrix-value {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  fill: #2a2a2a;
+}
+
+.matrix-value.light {
+  fill: #000;
+}
+
+.decade-value {
+  font-size: 38px;
+}
+
+.center-value {
+  font-size: 44px;
+}
+
+.mini-value {
+  font-size: 25px;
+}
+
+.small-value {
+  font-size: 18px;
+}
+
+.matrix-label {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  text-anchor: middle;
+  fill: #555;
+}
+
+.decade-label,
+.age-label,
+.age-value,
+.matrix-caption,
+.matrix-axis-label,
+.matrix-icon {
+  font-family: Arial, sans-serif;
+  fill: #111;
+}
+
+.decade-label {
+  font-size: 14px;
+}
+
+.edge-label {
+  text-anchor: middle;
+}
+
+.age-label {
+  font-size: 11px;
+}
+
+.age-value {
+  font-size: 12px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.age-dot {
+  fill: #111;
+}
+
+.matrix-caption {
+  font-size: 18px;
+  text-anchor: middle;
+}
+
+.matrix-axis-label {
+  font-size: 14px;
+  text-anchor: middle;
+}
+
+.male-text {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+
+.female-text {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(-45deg);
+}
+
+.matrix-icon {
+  font-size: 30px;
+  font-weight: 700;
+  fill: #009b35;
+}
+
+.matrix-icon.heart {
+  fill: #f13258;
+  font-size: 36px;
+}
+
+.matrix-summary {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-card {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(42, 42, 42, 0.08);
+  background-color: rgba(255, 250, 243, 0.75);
+}
+
+.summary-title {
+  margin-bottom: 6px;
+  font-family: "FuturaPT-Medium", sans-serif;
+  color: #ff8c00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-value {
+  font-size: 30px;
+  line-height: 1;
+  color: #2a2a2a;
+}
+
+.summary-text {
+  margin-top: 8px;
+  color: #555;
+  line-height: 1.55;
+}
+
+.result-panel {
+  margin-top: 24px;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.result-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media screen and (min-width: 980px) {
+  .result-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.health-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+  font-size: 15px;
+}
+
+.health-table th,
+.health-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.08);
+  text-align: center;
+}
+
+.health-table th:first-child,
+.health-table td:first-child {
+  text-align: left;
+}
+
+.health-table th {
+  background-color: #2a2a2a;
+  color: #fff;
+  font-family: "FuturaPT-Book", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.health-table tr:nth-child(even) td {
+  background-color: rgba(255, 140, 0, 0.06);
+}
+
+.program-list {
+  display: grid;
+  gap: 12px;
+}
+
+.program-item {
+  padding: 14px 16px;
+  border-left: 3px solid #ff8c00;
+  border-radius: 12px;
+  background-color: rgba(255, 250, 243, 0.85);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 18px;
+}
+
+.program-item span {
+  display: block;
+  color: #ff8c00;
+  font-family: "FuturaPT-Medium", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.calculator-disclaimer {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  color: #555;
+  background-color: rgba(42, 42, 42, 0.05);
+}
+
+.matrix-empty .matrix-value,
+.matrix-empty .age-value,
+.matrix-empty .matrix-icon {
+  opacity: 0;
+}
+
+.matrix-empty .matrix-summary,
+.matrix-empty .result-panel,
+.matrix-empty .matrix-date {
+  display: none;
+}
+
+.calculator-hidden {
+  display: none;
+}
+
+.calculator-cta {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 640px) {
+  .matrix-panel {
+    padding: 14px 6px;
+  }
+
+  .matrix-chart {
+    min-width: 620px;
+  }
+
+  .matrix-grid {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .matrix-date {
+    width: 100%;
+    text-align: left;
+  }
+
+  .health-table {
+    font-size: 13px;
+  }
+
+  .health-table th,
+  .health-table td {
+    padding: 9px 6px;
+  }
+}
