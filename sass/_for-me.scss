@@ -53,7 +53,8 @@
 
     position: relative;
     min-height: 490px; /* підібрати під найвищий блок */
-    overflow: hidden;
+    padding-bottom: 36px;
+    overflow: visible;
   }
 
   &-item{

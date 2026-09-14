@@ -523,7 +523,8 @@ header {
   text-indent: 25px;
   position: relative;
   min-height: 490px; /* підібрати під найвищий блок */
-  overflow: hidden;
+  padding-bottom: 36px;
+  overflow: visible;
 }
 .for-me-item {
   opacity: 0;
@@ -647,6 +648,7 @@ header {
 .subject-txt:focus {
   color: rgb(255, 140, 0);
 }
+
 .subject-txt:focus-visible {
   outline: 2px solid rgba(255, 140, 0, 0.55);
   outline-offset: 3px;
@@ -693,16 +695,32 @@ header {
   position: relative;
   margin-bottom: 15px;
   aspect-ratio: 3/4;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.72);
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 12px 28px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #1d1712;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 18px 34px, rgba(0, 0, 0, 0.12) 0px 4px 10px, rgba(255, 255, 255, 0.45) 0px 1px 0px inset;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 15px;
 }
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 34%, rgba(255, 255, 255, 0) 56%), radial-gradient(circle at 50% 110%, rgba(255, 140, 0, 0.22), rgba(255, 140, 0, 0) 45%);
+  opacity: 0.85;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .work-item:hover, .work-item:focus {
-  transform: translateY(-2px);
-  box-shadow: rgba(54, 57, 60, 0.22) 0px 18px 34px;
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(255, 140, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 28px 48px, rgba(255, 140, 0, 0.16) 0px 10px 28px, rgba(255, 255, 255, 0.55) 0px 1px 0px inset;
   cursor: pointer;
+}
+.work-item:hover::before, .work-item:focus::before {
+  opacity: 1;
 }
 
 .work-item a::after {
@@ -719,12 +737,27 @@ header {
   }
 }
 
+.work-item > a,
+.work-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .work-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 450ms cubic-bezier(0.4, 0, 0.2, 1), filter 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-item:hover .work-img,
+.work-item:focus .work-img {
+  transform: scale(1.07);
+  filter: contrast(1.04) saturate(1.05);
 }
 
 @media screen and (min-width: 768px) {
@@ -902,6 +935,8 @@ details[open] summary::before {
   overflow: hidden;
   width: 100%;
   position: relative;
+  padding: 8px 4px 38px;
+  box-sizing: border-box;
 }
 
 .skills-list {
@@ -925,7 +960,7 @@ details[open] summary::before {
 
 .skills-img {
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 28px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 18px 36px, rgba(0, 0, 0, 0.08) 0px 4px 10px;
   display: block;
   margin: 0 auto;
 }
@@ -1194,6 +1229,9 @@ details[open] summary::before {
   letter-spacing: 0.5px;
   transition: 300ms;
 }
+.form-input {
+  box-sizing: border-box;
+}
 @media screen and (max-width: 1023px) {
   .form-input {
     margin-bottom: 30px;
@@ -1202,7 +1240,6 @@ details[open] summary::before {
   }
 }
 .form-input {
-  box-sizing: border-box;
   padding: 11px 16px;
   border: 1px solid rgba(42, 42, 42, 0.12);
   background-color: #ffffff;
@@ -1305,8 +1342,7 @@ details[open] summary::before {
   align-items: center;
   z-index: 1000;
   padding: 20px;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 
 .backdrop.is-open {
