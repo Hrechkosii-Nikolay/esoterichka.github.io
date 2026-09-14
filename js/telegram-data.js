@@ -1,13 +1,82 @@
 const pageOpened = Date.now();
+
+const socialClickEndpoint = './social-click.php';
+const trackedSocialHosts = {
+    'instagram.com': 'Instagram',
+    'www.instagram.com': 'Instagram',
+    'tiktok.com': 'TikTok',
+    'www.tiktok.com': 'TikTok',
+    't.me': 'Telegram',
+    'telegram.me': 'Telegram',
+};
+
+function getTrackedSocialLink(link) {
+    try {
+        const url = new URL(link.href);
+        const platform = trackedSocialHosts[url.hostname.toLowerCase()];
+
+        if (!platform) {
+            return null;
+        }
+
+        return {
+            platform,
+            url: url.href,
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+function getTimeOnPage() {
+    const seconds = Math.floor((Date.now() - pageOpened) / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+
+    return `${minutes} хв ${sec} с`;
+}
+
+document.addEventListener('click', event => {
+    const target = event.target instanceof Element ? event.target : null;
+    const link = target ? target.closest('a[href]') : null;
+
+    if (!link) {
+        return;
+    }
+
+    const socialLink = getTrackedSocialLink(link);
+
+    if (!socialLink) {
+        return;
+    }
+
+    const payload = new URLSearchParams({
+        platform: socialLink.platform,
+        target_url: socialLink.url,
+        page_url: window.location.href,
+        page_title: document.title,
+        referrer: document.referrer,
+        time_on_page: getTimeOnPage(),
+        screen: `${window.screen.width}x${window.screen.height}`,
+        language: navigator.language || '',
+    });
+
+    if (navigator.sendBeacon) {
+        navigator.sendBeacon(socialClickEndpoint, payload);
+        return;
+    }
+
+    fetch(socialClickEndpoint, {
+        method: 'POST',
+        body: payload,
+        keepalive: true,
+        credentials: 'same-origin',
+    }).catch(() => {});
+});
   
   document.querySelectorAll('form').forEach(form => {
   
       form.addEventListener('submit', function () {
-  
-          const seconds = Math.floor((Date.now() - pageOpened) / 1000);
-  
-          const minutes = Math.floor(seconds / 60);
-          const sec = seconds % 60;
   
           const pageInput = form.querySelector('input[name="page_url"]');
           const timeInput = form.querySelector('input[name="time_on_page"]');
@@ -17,7 +86,7 @@ const pageOpened = Date.now();
           }
   
           if (timeInput) {
-              timeInput.value = `${minutes} хв ${sec} с`;
+              timeInput.value = getTimeOnPage();
           }
       });
 
