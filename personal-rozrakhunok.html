@@ -64,7 +64,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="calculator-page-header">
       <div class="container">
         <nav>
           <a class="logo-link" href="./index.html">
@@ -104,27 +104,25 @@
     </header>
 
     <main>
-      <section class="section hero matrusa calculator-hero">
-        <div class="container">
-          <h1 class="hero-title">Персональний розрахунок Матриці долі онлайн</h1>
-          <p class="hero-txt">
-            Введіть дату народження, щоб побачити базові енергії вашої матриці, карту здоров'я,
-            силу роду та внутрішній код. Це попередній розрахунок для самознайомства.
-          </p>
-          <br>
-          <a class="base-btn hero-btn" href="#calculator">Розрахувати</a>
+      <section class="section hero calculator-hero">
+        <div class="container calculator-hero-container">
+          <div class="calculator-hero-copy">
+            <p class="calculator-hero-kicker">Онлайн калькулятор</p>
+            <h1 class="hero-title">Персональний розрахунок Матриці долі</h1>
+            <p class="hero-txt">
+              Калькулятор показує основу матриці за датою народження. Повний розбір включає контекст вашого запиту,
+              життєві періоди, сильні сторони, блоки та практичні рекомендації.
+            </p>
+            <div class="calculator-hero-actions">
+              <a class="base-btn hero-btn" href="#calculator">Розрахувати</a>
+              <a class="calculator-hero-link" href="./main-matrusa-doli.html">Про Матрицю долі</a>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section calculator-section" id="calculator">
         <div class="container">
-          <img class="section-logo" src="./img/logo_dark.svg" alt="Логотип Esoterichka" width="102" height="102" />
-          <h2 class="title">Персональний розрахунок</h2>
-          <p class="calculator-lead">
-            Калькулятор показує основу матриці за датою народження. Повний розбір включає контекст вашого запиту,
-            життєві періоди, сильні сторони, блоки та практичні рекомендації.
-          </p>
-
           <div class="calculator-shell">
             <aside class="calculator-panel">
               <form class="calculator-form" data-calculator-form>
@@ -374,32 +372,136 @@
 
       <section class="section contacts" id="contacts">
         <div class="container">
-          <img class="section-logo" src="./img/logo_dark.svg" alt="Логотип Esoterichka" width="102" height="102" />
+          <img
+            class="section-logo"
+            src="./img/logo_dark.svg"
+            alt="Логотип Езотерички Анастасії"
+            width="102"
+            height="102"
+          />
           <h2 class="title">Контакти</h2>
-          <p class="calculator-lead">
-            Якщо хочете повний розбір Матриці долі, напишіть мені у Telegram або Instagram.
-            Консультації проходять онлайн по всьому світу.
-          </p>
-          <ul class="contacts-list">
-            <li class="contacts-item icon-instagram">
-              <a class="contacts-link" target="_blank" rel="noopener noreferrer" href="https://instagram.com/hrechkosii_anastasiia">
-                <svg class="contacts-icon" width="20" height="20"><use href="./img/icons/svg-sprite.svg#instagram"></use></svg>
-                @hrechkosii_anastasiia
-              </a>
-            </li>
-            <li class="contacts-item icon-telegram">
-              <a class="contacts-link" target="_blank" rel="noopener noreferrer" href="https://t.me/nastiia_esoterichka">
-                <svg class="contacts-icon" width="20" height="20"><use href="./img/icons/svg-sprite.svg#telegram"></use></svg>
-                @nastiia_esoterichka
-              </a>
-            </li>
-            <li class="contacts-item icon-telegram">
-              <a class="contacts-link" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1">
-                <svg class="contacts-icon" width="20" height="20"><use href="./img/icons/svg-sprite.svg#tik-tok"></use></svg>
-                @nastiia_esoterichka
-              </a>
-            </li>
-          </ul>
+          <div class="contacts-wrap">
+            <div class="contacts-wrap-txt">
+              <p class="contacts-txt">
+                Напишіть мені зручним для вас способом, і я обов'язково з вами зв'яжуся.
+                Проводжу консультації онлайн для клієнтів по всьому світу.
+                Детально розберу вашу ситуацію і підкажу, які кроки варто зробити. Пишіть!
+              </p>
+              <ul class="contacts-list">
+                <li class="contacts-item icon-instagram">
+                  <a
+                    class="contacts-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://instagram.com/hrechkosii_anastasiia"
+                  >
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#instagram"></use>
+                    </svg>
+                    @hrechkosii_anastasiia
+                  </a>
+                </li>
+                <li class="contacts-item icon-telegram">
+                  <a
+                    class="contacts-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://t.me/nastiia_esoterichka"
+                  >
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#telegram"></use>
+                    </svg>
+                    @nastiia_esoterichka
+                  </a>
+                </li>
+                <li class="contacts-item icon-telegram">
+                  <a
+                    class="contacts-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.tiktok.com/@nastiia_esoterichka?_t=ZM-90XiSsuNBmu&_r=1"
+                  >
+                    <svg class="contacts-icon" width="20" height="20">
+                      <use href="./img/icons/svg-sprite.svg#tik-tok"></use>
+                    </svg>
+                    @nastiia_esoterichka
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <form
+              action="telegram.php"
+              method="post"
+              class="form"
+              id="contact-form"
+            >
+              <ul class="form-list form-list--top">
+                <li class="form-item">
+                  <input
+                    class="form-input input-name"
+                    type="text"
+                    pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s]+"
+                    name="user_name"
+                    id="contact-input-name"
+                    placeholder=" "
+                    title="Тільки літери"
+                    required
+                  />
+                  <label class="form-label" for="contact-input-name">Ім'я</label>
+                </li>
+
+                <li class="form-item">
+                  <input
+                    class="form-input input-age"
+                    name="user_age"
+                    id="contact-input-age"
+                    placeholder=" "
+                  />
+                  <label class="form-label" for="contact-input-age">Дата народження</label>
+                </li>
+
+                <li class="form-item">
+                  <input
+                    class="form-input input-tel"
+                    type="tel"
+                    name="user_phone"
+                    id="contact-input-tel"
+                    placeholder=" "
+                  />
+                  <label class="form-label" for="contact-input-tel">Телефон</label>
+                </li>
+              </ul>
+
+              <ul class="form-list form-list--bottom">
+                <li class="form-item">
+                  <textarea
+                    class="form-input form-message input-message"
+                    id="contact-input-message"
+                    name="user_message"
+                    rows="5"
+                    placeholder=" "
+                    required
+                  ></textarea>
+                  <label class="form-label" for="contact-input-message">Ваше запитання</label>
+                </li>
+              </ul>
+
+              <div style="position:absolute; left:-9999px; opacity:0;">
+                <input
+                  type="text"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+              <input type="hidden" name="page_url">
+              <input type="hidden" name="time_on_page">
+
+              <button class="form-btn base-btn" type="submit">Відправити</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
