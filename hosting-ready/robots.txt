@@ -1,0 +1,14 @@
+User-agent: *
+# Дозволяємо індексацію всіх сторінок
+Allow: /
+
+# Блокуємо службові та технічні файли, які не мають індексуватись
+Disallow: /thank-you.html
+Disallow: /404.html
+Disallow: /telegram.php
+
+# Затримка між запитами для зменшення навантаження
+# Crawl-delay: 10
+
+# Посилання на карту сайту
+Sitemap: https://esoterichka.com.ua/sitemap.xml
