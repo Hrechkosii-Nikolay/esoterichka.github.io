@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Esoterichka | Glass concept 03</title>
+    <style>
+      @font-face {
+        font-family: "FuturaPT";
+        src: url("./fonts/FuturaPT-Book.woff2") format("woff2");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "FuturaPT";
+        src: url("./fonts/FuturaPT-Bold.woff2") format("woff2");
+        font-weight: 700;
+      }
+      :root {
+        --ink: #29272c;
+        --muted: #77727c;
+        --paper: #f7f5f3;
+        --lilac: #d9d4e7;
+        --sage: #cad8ce;
+        --blush: #ead6d6;
+        --blue: #cddce3;
+        --white: rgba(255, 255, 255, 0.68);
+        --line: rgba(255, 255, 255, 0.78);
+        --shadow: 0 24px 70px rgba(53, 49, 60, 0.13);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "FuturaPT", Arial, sans-serif;
+        line-height: 1.45;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(120deg, rgba(217,212,231,.72), transparent 34%),
+          linear-gradient(300deg, rgba(202,216,206,.62), transparent 38%),
+          var(--paper);
+      }
+      button, input, textarea { font: inherit; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; width: 100%; }
+      h1, h2, h3, p { margin-top: 0; }
+      .wrap { width: min(1240px, calc(100% - 40px)); margin-inline: auto; }
+      .glass {
+        border: 1px solid var(--line);
+        background: linear-gradient(145deg, rgba(255,255,255,.78), rgba(255,255,255,.4));
+        box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.88);
+        -webkit-backdrop-filter: blur(22px) saturate(120%);
+        backdrop-filter: blur(22px) saturate(120%);
+      }
+      .nav {
+        position: fixed;
+        z-index: 20;
+        top: 16px;
+        left: 50%;
+        width: min(1240px, calc(100% - 40px));
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 9px 12px 9px 18px;
+        border-radius: 18px;
+        transform: translateX(-50%);
+      }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+      .brand img { width: 38px; height: 38px; filter: invert(1); }
+      .links { display: flex; gap: 28px; color: var(--muted); }
+      .nav-end { display: flex; gap: 8px; }
+      .icon-button, .arrow-button {
+        width: 42px;
+        height: 42px;
+        display: inline-grid;
+        place-items: center;
+        border: 1px solid rgba(40,39,44,.1);
+        border-radius: 50%;
+        background: rgba(255,255,255,.62);
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .main-button {
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 0 21px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .hero { min-height: 100svh; display: grid; align-items: center; padding: 110px 0 44px; }
+      .hero-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 18px; min-height: 720px; }
+      .hero-copy {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding: clamp(30px, 6vw, 76px);
+        border-radius: 34px;
+      }
+      .hero-copy::after {
+        content: "✦";
+        position: absolute;
+        right: 36px;
+        bottom: 22px;
+        color: rgba(41,39,44,.08);
+        font-family: Georgia, serif;
+        font-size: 150px;
+      }
+      .kicker { margin-bottom: 18px; color: var(--muted); font-size: 14px; text-transform: uppercase; }
+      h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: 0; }
+      h1 { margin-bottom: 26px; font-size: clamp(52px, 7vw, 96px); line-height: .92; }
+      .hero-copy > p:not(.kicker) { max-width: 530px; color: var(--muted); font-size: 20px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+      .text-link { display: inline-flex; align-items: center; padding: 0 14px; color: var(--muted); }
+      .visual {
+        position: relative;
+        overflow: hidden;
+        border-radius: 34px;
+        background: var(--lilac);
+      }
+      .visual > img { height: 100%; object-fit: cover; object-position: 51% center; }
+      .visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 42%, rgba(31,28,34,.24));
+      }
+      .visual-badge {
+        position: absolute;
+        z-index: 2;
+        top: 24px;
+        right: 24px;
+        width: 170px;
+        padding: 18px;
+        border-radius: 22px;
+      }
+      .visual-badge strong { display: block; font-size: 30px; }
+      .visual-badge span { color: var(--muted); }
+      .visual-card {
+        position: absolute;
+        z-index: 2;
+        right: 24px;
+        bottom: 24px;
+        left: 24px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px;
+        border-radius: 24px;
+        color: #fff;
+        background: rgba(255,255,255,.17);
+        border: 1px solid rgba(255,255,255,.38);
+        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(18px);
+      }
+      .visual-card h3 { margin-bottom: 4px; font-size: 28px; }
+      .visual-card p { max-width: 410px; margin-bottom: 0; color: rgba(255,255,255,.8); }
+
+      .section { padding: 86px 0; }
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 32px;
+      }
+      h2 { margin-bottom: 0; font-size: clamp(42px, 6vw, 72px); line-height: 1; }
+      .section-heading p { max-width: 430px; margin-bottom: 0; color: var(--muted); font-size: 19px; }
+      .service-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+      .service-card {
+        position: relative;
+        min-height: 440px;
+        overflow: hidden;
+        border-radius: 28px;
+      }
+      .service-card:nth-child(1) { grid-column: span 5; background: var(--blush); }
+      .service-card:nth-child(2) { grid-column: span 3; background: var(--sage); }
+      .service-card:nth-child(3) { grid-column: span 4; background: var(--blue); }
+      .service-card:nth-child(4) { grid-column: span 12; min-height: 340px; background: var(--lilac); }
+      .service-card:nth-child(4) img { object-position: center 44%; }
+      .service-card img { height: 100%; object-fit: cover; }
+      .service-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 30%, rgba(35,30,35,.56));
+      }
+      .service-label {
+        position: absolute;
+        z-index: 2;
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 16px 16px 16px 19px;
+        border: 1px solid rgba(255,255,255,.32);
+        border-radius: 20px;
+        background: rgba(255,255,255,.18);
+        color: #fff;
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+      }
+      .service-label h3 { margin-bottom: 2px; font-size: 25px; }
+      .service-label p { margin-bottom: 0; color: rgba(255,255,255,.75); }
+
+      .about { display: grid; grid-template-columns: .78fr 1.22fr; gap: 16px; }
+      .portrait { min-height: 650px; overflow: hidden; border-radius: 30px; }
+      .portrait img { height: 100%; object-fit: cover; }
+      .about-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(30px, 6vw, 76px); border-radius: 30px; }
+      .about-copy h2 { margin-bottom: 24px; }
+      .about-copy > p:not(.kicker) { max-width: 640px; color: var(--muted); font-size: 20px; }
+      .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 28px 0 32px; }
+      .principle { min-height: 130px; padding: 17px; border-radius: 18px; background: rgba(255,255,255,.48); }
+      .principle strong { display: block; margin-bottom: 12px; font-size: 18px; }
+      .principle span { color: var(--muted); }
+
+      .calculator {
+        display: grid;
+        grid-template-columns: 1fr .82fr;
+        gap: 40px;
+        align-items: center;
+        overflow: hidden;
+        padding: clamp(30px, 6vw, 70px);
+        border-radius: 32px;
+      }
+      .calculator h2 { margin-bottom: 22px; }
+      .calculator-copy > p { max-width: 590px; color: var(--muted); font-size: 19px; }
+      .check-list { display: grid; gap: 10px; margin: 26px 0 30px; padding: 0; list-style: none; }
+      .check-list li { display: flex; gap: 11px; align-items: center; }
+      .check-list li::before {
+        content: "✓";
+        display: grid;
+        place-items: center;
+        width: 25px;
+        height: 25px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        background: var(--sage);
+      }
+      .matrix {
+        position: relative;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at center, rgba(255,255,255,.84) 0 13%, transparent 13.5%),
+          repeating-conic-gradient(from 22.5deg, rgba(255,255,255,.18) 0 1deg, transparent 1deg 45deg),
+          conic-gradient(var(--lilac), var(--blue), var(--sage), var(--blush), var(--lilac));
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.75), 0 24px 60px rgba(73,65,82,.14);
+      }
+      .matrix::before, .matrix::after {
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        border: 1px solid rgba(41,39,44,.2);
+        transform: rotate(45deg);
+      }
+      .matrix::after { border-radius: 50%; transform: none; }
+      .matrix-core {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.82);
+        font-family: Georgia, serif;
+        font-size: 38px;
+      }
+
+      .faq-list { display: grid; gap: 10px; }
+      .faq-item { overflow: hidden; border-radius: 20px; }
+      .faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 24px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+        list-style: none;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after { content: "+"; font-size: 28px; font-weight: 400; }
+      .faq-item[open] summary::after { content: "−"; }
+      .faq-item p { max-width: 940px; margin: 0; padding: 0 24px 24px; color: var(--muted); font-size: 18px; }
+
+      .article-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+      .article-card {
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 22px;
+        border-radius: 24px;
+      }
+      .article-card:nth-child(1) { background: rgba(234,214,214,.68); }
+      .article-card:nth-child(2) { background: rgba(202,216,206,.7); }
+      .article-card:nth-child(3) { background: rgba(205,220,227,.72); }
+      .article-card:nth-child(4) { background: rgba(217,212,231,.72); }
+      .article-number { color: var(--muted); font-size: 14px; }
+      .article-card h3 { margin-bottom: 18px; font-family: Georgia, serif; font-size: 29px; font-weight: 400; line-height: 1.05; }
+
+      .certificate-strip {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(280px, 32%);
+        gap: 14px;
+        overflow-x: auto;
+        padding: 2px 2px 18px;
+        scroll-snap-type: x mandatory;
+        scrollbar-color: rgba(41,39,44,.22) transparent;
+      }
+      .certificate {
+        overflow: hidden;
+        aspect-ratio: 1.42;
+        border-radius: 20px;
+        scroll-snap-align: start;
+        background: #fff;
+      }
+      .certificate img { height: 100%; object-fit: cover; }
+
+      .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .review { padding: 24px; border-radius: 24px; }
+      .review-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+      .review-head img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+      .review-head strong { display: block; font-size: 20px; }
+      .review-head span, .review > p { color: var(--muted); }
+      .review > p { margin-bottom: 0; font-size: 17px; }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        padding: clamp(30px, 6vw, 70px);
+        border-radius: 32px;
+      }
+      .contact h2 { margin-bottom: 20px; }
+      .contact p { color: var(--muted); font-size: 19px; }
+      .form { display: grid; gap: 11px; }
+      .field {
+        width: 100%;
+        min-height: 52px;
+        padding: 13px 15px;
+        border: 1px solid rgba(41,39,44,.12);
+        border-radius: 15px;
+        outline: 0;
+        background: rgba(255,255,255,.58);
+        color: var(--ink);
+      }
+      textarea.field { min-height: 116px; resize: vertical; }
+      .field:focus { border-color: #8a819d; box-shadow: 0 0 0 3px rgba(138,129,157,.13); }
+      footer { padding: 28px 0 36px; color: var(--muted); }
+      .footer-row { display: flex; justify-content: space-between; gap: 20px; }
+
+      .modal-layer {
+        position: fixed;
+        z-index: 50;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        background: rgba(39,37,43,.24);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        opacity: 0;
+        visibility: hidden;
+        transition: .2s ease;
+      }
+      .modal-layer.open { opacity: 1; visibility: visible; }
+      .modal {
+        width: min(450px, 100%);
+        padding: 24px;
+        border-radius: 28px;
+        transform: translateY(14px);
+        transition: transform .2s ease;
+      }
+      .modal-layer.open .modal { transform: none; }
+      .modal-head { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+      .modal-head h3 { margin-bottom: 0; font-family: Georgia, serif; font-size: 34px; font-weight: 400; }
+      .modal > p { margin: 12px 0 20px; color: var(--muted); }
+
+      @media (max-width: 920px) {
+        .links { display: none; }
+        .hero-layout, .about, .calculator, .contact { grid-template-columns: 1fr; }
+        .hero-copy { min-height: 520px; }
+        .visual { min-height: 640px; }
+        .service-card:nth-child(1), .service-card:nth-child(2), .service-card:nth-child(3), .service-card:nth-child(4) { grid-column: span 6; }
+        .article-grid, .review-grid { grid-template-columns: repeat(2, 1fr); }
+        .certificate-strip { grid-auto-columns: minmax(280px, 55%); }
+      }
+      @media (max-width: 620px) {
+        .wrap { width: min(100% - 20px, 1240px); }
+        .nav { top: 10px; width: calc(100% - 20px); border-radius: 16px; }
+        .brand span { max-width: 100px; font-size: 14px; line-height: 1; }
+        .nav-end .icon-button { display: none; }
+        .hero { padding-top: 92px; }
+        .hero-layout { min-height: auto; }
+        .hero-copy { min-height: 570px; padding: 30px 24px; border-radius: 26px; }
+        h1 { font-size: 54px; }
+        .visual { min-height: 620px; border-radius: 26px; }
+        .visual-badge { top: 14px; right: 14px; }
+        .visual-card { right: 14px; bottom: 14px; left: 14px; align-items: center; padding: 18px; }
+        .visual-card p { display: none; }
+        .section { padding: 62px 0; }
+        .section-heading { display: block; }
+        .section-heading p { margin-top: 14px; }
+        .service-grid { display: grid; grid-template-columns: 1fr; }
+        .service-card:nth-child(1), .service-card:nth-child(2), .service-card:nth-child(3), .service-card:last-child { grid-column: auto; }
+        .service-card { min-height: 430px; }
+        .portrait { min-height: 540px; }
+        .principles { grid-template-columns: 1fr; }
+        .principle { min-height: auto; }
+        .calculator { gap: 30px; }
+        .matrix { width: min(100%, 430px); margin-inline: auto; }
+        .article-grid, .review-grid { grid-template-columns: 1fr; }
+        .article-card { min-height: 240px; }
+        .certificate-strip { grid-auto-columns: 86%; }
+        .contact { gap: 26px; border-radius: 26px; }
+        .footer-row { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav glass">
+      <a class="brand" href="#">
+        <img src="./img/logo_dark.svg" alt="" />
+        <span>Езотерик Анастасія</span>
+      </a>
+      <nav class="links" aria-label="Головна навігація">
+        <a href="#services">Послуги</a>
+        <a href="#about">Про мене</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <div class="nav-end">
+        <a class="icon-button" href="#" aria-label="Instagram">ig</a>
+        <button class="main-button" type="button" data-open>Записатися <span>↗</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-layout">
+          <div class="hero-copy glass">
+            <p class="kicker">Консультації онлайн по всьому світу</p>
+            <h1>Ясність у важливих питаннях</h1>
+            <p>Делікатний погляд на стосунки, вибір, роботу та внутрішні зміни через Таро, руни й матрицю долі.</p>
+            <div class="actions">
+              <button class="main-button" type="button" data-open>Поставити питання <span>→</span></button>
+              <a class="text-link" href="#services">Обрати послугу</a>
+            </div>
+          </div>
+          <div class="visual">
+            <img src="./img/photo-amp-4.webp" alt="Езотерик Анастасія" />
+            <div class="visual-badge glass"><strong>5 років</strong><span>практики та навчання</span></div>
+            <div class="visual-card">
+              <div><h3>Без тиску та осуду</h3><p>Конфіденційний простір, у якому рішення завжди залишається за вами.</p></div>
+              <a class="arrow-button" href="#about" aria-label="Докладніше">↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Напрями роботи</h2>
+            <p>Кожен інструмент дає інший кут зору. Разом оберемо формат, який відповідає саме вашому запиту.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card">
+              <img src="./img/hero-taro.webp" alt="Карти Таро" />
+              <div class="service-label"><div><h3>Таро</h3><p>Ситуації та сценарії</p></div><span class="arrow-button">↗</span></div>
+            </article>
+            <article class="service-card">
+              <img src="./img/hero-runy.webp" alt="Руни" />
+              <div class="service-label"><div><h3>Руни</h3><p>Напрям і порада</p></div><span class="arrow-button">↗</span></div>
+            </article>
+            <article class="service-card">
+              <img src="./img/hero-matrusa.webp" alt="Матриця долі" />
+              <div class="service-label"><div><h3>Матриця долі</h3><p>Потенціал і цикли</p></div><span class="arrow-button">↗</span></div>
+            </article>
+            <article class="service-card">
+              <img src="./img/hero-svichku.webp" alt="Програмні свічки" />
+              <div class="service-label"><div><h3>Програмні свічки</h3><p>Намір, очищення, захист і підтримка</p></div><span class="arrow-button">↗</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap about">
+          <div class="portrait"><img src="./img/photo-amp-5.webp" alt="Анастасія за роботою" /></div>
+          <div class="about-copy glass">
+            <p class="kicker">Мій підхід</p>
+            <h2>Не передбачати замість вас, а допомагати побачити</h2>
+            <p>Я перекладаю символи простою мовою, ставлю точні запитання й допомагаю зібрати розрізнені відчуття у зрозумілу картину.</p>
+            <div class="principles">
+              <div class="principle"><strong>Етично</strong><span>Без залякувань і категоричних вироків.</span></div>
+              <div class="principle"><strong>Конфіденційно</strong><span>Усе сказане залишається між нами.</span></div>
+              <div class="principle"><strong>Зрозуміло</strong><span>Конкретні висновки без зайвого туману.</span></div>
+            </div>
+            <div><button class="main-button" type="button" data-open>Зв'язатися <span>→</span></button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="calculator">
+        <div class="wrap calculator glass">
+          <div class="calculator-copy">
+            <p class="kicker">Онлайн-інструмент</p>
+            <h2>Персональний розрахунок Матриці долі</h2>
+            <p>Дізнайтеся базові енергії за датою народження: внутрішній код, родові лінії, ключові сильні сторони та теми, на які варто звернути увагу.</p>
+            <ul class="check-list">
+              <li>Розрахунок за датою народження</li>
+              <li>Схема матриці одразу після введення дати</li>
+              <li>Можливість замовити повний розбір</li>
+            </ul>
+            <a class="main-button" href="./personal-rozrakhunok.html">Відкрити калькулятор <span>→</span></a>
+          </div>
+          <div class="matrix" aria-hidden="true"><span class="matrix-core">14</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="questions">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Популярні питання</h2>
+            <p>Коротко про формат роботи, підготовку до консультації та важливі обмеження.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item glass" open>
+              <summary>Як проходить консультація?</summary>
+              <p>Консультація проходить онлайн у текстовому форматі. Для Таро або рун я надсилаю пояснення та фото розкладу. Для Матриці долі ви отримуєте текстовий файл, додаткові матеріали та мою підтримку.</p>
+            </details>
+            <details class="faq-item glass">
+              <summary>Що потрібно підготувати?</summary>
+              <p>Сформулюйте запит, вкажіть імена та вік учасників ситуації, а також важливі деталі. Для нумерологічного розрахунку потрібна дата народження.</p>
+            </details>
+            <details class="faq-item glass">
+              <summary>З якими питаннями можна звертатися?</summary>
+              <p>Стосунки, робота, фінанси, вибір між варіантами, самореалізація, повторювані сценарії, внутрішні стани та напрям розвитку.</p>
+            </details>
+            <details class="faq-item glass">
+              <summary>З якими запитами ви не працюєте?</summary>
+              <p>Я не працюю з практиками, спрямованими на шкоду, примус або втручання у волю іншої людини. Мій підхід базується на усвідомленні, підтримці та відповідальності за власний вибір.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="articles">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Таємниці</h2>
+            <p>Матеріали про символи, інструменти та підготовку до консультації.</p>
+          </div>
+          <div class="article-grid">
+            <a class="article-card" href="./taro.html"><span class="article-number">01 · Таро</span><div><h3>Звідки взялися карти Таро</h3><span>Читати статтю →</span></div></a>
+            <a class="article-card" href="./runes.html"><span class="article-number">02 · Руни</span><div><h3>Що таке руни?</h3><span>Читати статтю →</span></div></a>
+            <a class="article-card" href="./quest.html"><span class="article-number">03 · Практика</span><div><h3>Як правильно поставити питання для розкладу</h3><span>Читати статтю →</span></div></a>
+            <a class="article-card" href="./matrusa.html"><span class="article-number">04 · Числа</span><div><h3>Звідки взялася Матриця долі</h3><span>Читати статтю →</span></div></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="achievements">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Мої досягнення</h2>
+            <p>Я постійно вдосконалюю знання, щоб кожна консультація була глибшою, точнішою й кориснішою.</p>
+          </div>
+          <div class="certificate-strip" aria-label="Сертифікати">
+            <div class="certificate glass"><img src="./img/skills/certificate-1.webp" alt="Сертифікат з Таро" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-2.webp" alt="Сертифікат про навчання" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-3.webp" alt="Сертифікат з Матриці долі" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-4.webp" alt="Сертифікат з програмних свічок" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-5.webp" alt="Сертифікат езотерика" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-6.webp" alt="Сертифікат про навчання" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-7.webp" alt="Сертифікат таролога" /></div>
+            <div class="certificate glass"><img src="./img/skills/certificate-8.webp" alt="Сертифікат курсу Таро" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Відгуки клієнтів</h2>
+            <p>Ваш відгук — найкраща подяка за мою роботу. Щиро дякую за довіру.</p>
+          </div>
+          <div class="review-grid">
+            <article class="review glass">
+              <div class="review-head"><img src="./img/clients/client-1.webp" alt="Іван" /><div><strong>Іван</strong><span>Київ</span></div></div>
+              <p>Звернувся з питанням про стосунки. Анастасія показала ситуацію з боку, якого я не бачив, і дала конкретні поради. Після розмови з’явилась ясність.</p>
+            </article>
+            <article class="review glass">
+              <div class="review-head"><img src="./img/clients/client-2.webp" alt="Марія" /><div><strong>Марія</strong><span>Буча</span></div></div>
+              <p>Розклад допоміг побачити перспективи кожного кар’єрного варіанта. Отримала чіткі й практичні рекомендації. Вдячна за професійний підхід.</p>
+            </article>
+            <article class="review glass">
+              <div class="review-head"><img src="./img/clients/client-3.webp" alt="Жанна" /><div><strong>Жанна</strong><span>Львів</span></div></div>
+              <p>Консультація допомогла структурувати думки та знайти внутрішній спокій. Поради стали корисними для прийняття важливого рішення.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacts">
+        <div class="wrap contact glass">
+          <div>
+            <p class="kicker">Зворотний зв'язок</p>
+            <h2>Розкажіть, що вас турбує</h2>
+            <p>Залиште контакт і коротко опишіть питання. Я напишу вам та допоможу обрати формат консультації.</p>
+          </div>
+          <form class="form">
+            <input class="field" type="text" placeholder="Ваше ім'я" />
+            <input class="field" type="tel" placeholder="Телефон або Telegram" />
+            <textarea class="field" placeholder="Ваше питання"></textarea>
+            <button class="main-button" type="button">Надіслати <span>→</span></button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="wrap footer-row"><span>© 2026 Езотерик Анастасія</span><span>Instagram · Telegram</span></div></footer>
+
+    <div class="modal-layer" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal glass">
+        <div class="modal-head">
+          <h3 id="modal-title">Ваше питання</h3>
+          <button class="icon-button" type="button" aria-label="Закрити" data-close>×</button>
+        </div>
+        <p>Залиште контакти, і я напишу вам найближчим часом.</p>
+        <form class="form">
+          <input class="field" type="text" placeholder="Ваше ім'я" />
+          <input class="field" type="tel" placeholder="Телефон або Telegram" />
+          <textarea class="field" placeholder="Коротко про ситуацію"></textarea>
+          <button class="main-button" type="button">Надіслати <span>→</span></button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.querySelector("[data-modal]");
+      document.querySelectorAll("[data-open]").forEach((button) => {
+        button.addEventListener("click", () => modal.classList.add("open"));
+      });
+      document.querySelector("[data-close]").addEventListener("click", () => modal.classList.remove("open"));
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) modal.classList.remove("open");
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") modal.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>

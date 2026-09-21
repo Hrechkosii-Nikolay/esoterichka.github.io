@@ -17,6 +17,7 @@ function openModal() {
   if (!backdrop) return;
 
   lastFocusedElement = document.activeElement;
+  backdrop.inert = false;
   backdrop.classList.add("is-open");
   backdrop.classList.remove("is-close");
   backdrop.setAttribute("aria-hidden", "false");
@@ -33,12 +34,13 @@ function closeModal() {
 
   backdrop.classList.remove("is-open");
   backdrop.classList.add("is-close");
-  backdrop.setAttribute("aria-hidden", "true");
   document.body.classList.remove("body-no-scroll");
 
   if (lastFocusedElement) {
     lastFocusedElement.focus();
   }
+  backdrop.setAttribute("aria-hidden", "true");
+  backdrop.inert = true;
 }
 
 function keepFocusInsideModal(event) {

@@ -1,88 +1,135 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const skillsList = document.querySelector(".skills-list");
-  const skillsItems = Array.from(document.querySelectorAll(".skills-item"));
-  const nextButton = document.querySelector(".next");
-  const prevButton = document.querySelector(".prev");
+function initCertificatesMarquee() {
+  const slider = document.querySelector(".skills-slider");
+  const wrapper = document.querySelector(".skills-wrapper");
+  const list = document.querySelector(".skills-list");
+  const originalItems = Array.from(list?.querySelectorAll(".skills-item") || []);
 
-  if (!skillsList || !skillsItems.length || !nextButton || !prevButton) return;
+  if (!slider || !wrapper || !list || !originalItems.length || list.dataset.marqueeReady) return;
+  list.dataset.marqueeReady = "true";
 
-  let itemsPerPage = getItemsPerPage();
-  let pagesCount = Math.ceil(skillsItems.length / itemsPerPage);
-  let currentPage = 0;
-  let pages = [];
+  slider.querySelectorAll(".slider-btn").forEach((button) => {
+    button.hidden = true;
+  });
 
-  function getItemsPerPage() {
-    return window.innerWidth < 768 ? 4 : 8;
+  const fragment = document.createDocumentFragment();
+  originalItems.forEach((item) => fragment.appendChild(item.cloneNode(true)));
+  list.appendChild(fragment);
+  list.classList.add("skills-marquee");
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "certificate-lightbox";
+  lightbox.setAttribute("aria-hidden", "true");
+  lightbox.innerHTML = `
+    <div class="certificate-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Перегляд сертифіката">
+      <button class="certificate-lightbox-close" type="button" aria-label="Закрити">×</button>
+      <img class="certificate-lightbox-image" width="640" height="453" alt="" />
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector(".certificate-lightbox-image");
+  const closeButton = lightbox.querySelector(".certificate-lightbox-close");
+  let isPaused = false;
+  let offset = 0;
+  let previousTime = performance.now();
+  let loopPoint = 0;
+
+  function measureLoopPoint() {
+    loopPoint = list.children[originalItems.length].offsetLeft - list.children[0].offsetLeft;
   }
 
-  function buildPages() {
-    const fragment = document.createDocumentFragment();
-    pages = [];
+  function getLargestImageSource(image) {
+    const candidates = image.srcset
+      .split(",")
+      .map((candidate) => candidate.trim().split(/\s+/))
+      .map(([src, width]) => ({ src, width: Number.parseInt(width, 10) || 0 }))
+      .sort((a, b) => b.width - a.width);
 
-    for (let pageIndex = 0; pageIndex < pagesCount; pageIndex += 1) {
-      const page = document.createElement("li");
-      const pageItems = skillsItems.slice(
-        pageIndex * itemsPerPage,
-        (pageIndex + 1) * itemsPerPage
-      );
+    return candidates[0]?.src || image.currentSrc || image.src;
+  }
 
-      page.classList.add("skills-page");
-      pageItems.forEach((item) => page.appendChild(item.cloneNode(true)));
+  function openCertificate(image) {
+    isPaused = true;
+    lightboxImage.src = getLargestImageSource(image);
+    lightboxImage.alt = image.alt;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("body-no-scroll");
+    closeButton.focus();
+  }
 
-      Object.assign(page.style, {
-        display: pageIndex === currentPage ? "flex" : "none",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alignItems: pageIndex === pagesCount - 1 ? "flex-start" : "center",
-        minWidth: "100%",
-      });
+  function closeCertificate() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("body-no-scroll");
+    isPaused = false;
+    previousTime = performance.now();
+  }
 
-      pages.push(page);
-      fragment.appendChild(page);
+  list.querySelectorAll(".skills-item").forEach((item) => {
+    const image = item.querySelector("img");
+    if (!image) return;
+
+    item.setAttribute("role", "button");
+    item.setAttribute("tabindex", "0");
+    item.setAttribute("aria-label", `Відкрити: ${image.alt || "сертифікат"}`);
+    item.addEventListener("click", () => openCertificate(image));
+    item.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openCertificate(image);
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", closeCertificate);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeCertificate();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+      closeCertificate();
+    }
+  });
+
+  function animate(currentTime) {
+    const elapsed = Math.min(currentTime - previousTime, 40);
+    previousTime = currentTime;
+
+    if (!isPaused) {
+      offset += elapsed * 0.035;
+      if (loopPoint > 0 && offset >= loopPoint) offset %= loopPoint;
+      list.style.transform = `translate3d(${-offset}px, 0, 0)`;
     }
 
-    requestAnimationFrame(() => {
-      skillsList.innerHTML = "";
-      skillsList.style.display = "flex";
-      skillsList.style.transition = "transform 0.3s ease";
-      skillsList.appendChild(fragment);
-    });
+    requestAnimationFrame(animate);
   }
 
-  function showCurrentPage() {
-    requestAnimationFrame(() => {
-      pages.forEach((page, index) => {
-        page.style.display = index === currentPage ? "flex" : "none";
-      });
-    });
+  const resizeObserver = new ResizeObserver(measureLoopPoint);
+  resizeObserver.observe(wrapper);
+  measureLoopPoint();
+  requestAnimationFrame(animate);
+}
+
+function initMarqueeWhenVisible() {
+  const slider = document.querySelector(".skills-slider");
+  if (!slider) return;
+
+  if (!("IntersectionObserver" in window)) {
+    initCertificatesMarquee();
+    return;
   }
 
-  nextButton.addEventListener("click", () => {
-    currentPage = (currentPage + 1) % pagesCount;
-    showCurrentPage();
-  });
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    observer.disconnect();
+    initCertificatesMarquee();
+  }, { rootMargin: "300px" });
+  observer.observe(slider);
+}
 
-  prevButton.addEventListener("click", () => {
-    currentPage = (currentPage - 1 + pagesCount) % pagesCount;
-    showCurrentPage();
-  });
-
-  buildPages();
-  showCurrentPage();
-
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      const nextItemsPerPage = getItemsPerPage();
-
-      if (nextItemsPerPage === itemsPerPage) return;
-
-      itemsPerPage = nextItemsPerPage;
-      pagesCount = Math.ceil(skillsItems.length / itemsPerPage);
-      currentPage = 0;
-      buildPages();
-      showCurrentPage();
-    }, 200);
-  });
-});
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMarqueeWhenVisible, { once: true });
+} else {
+  initMarqueeWhenVisible();
+}

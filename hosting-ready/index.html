@@ -87,213 +87,8 @@
         );
       }
     </script>
-    <style>
-
-      body, h1, h2, p { margin: 0; padding: 0;}
-      .hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.2;}
-      header { position: absolute; top: 0; width: 100%; z-index: 10; }
-      .home-calculator {
-        background:
-          linear-gradient(180deg, rgba(255, 250, 243, 0.92), rgba(255, 255, 255, 0.98)),
-          url("./img/bg-for-me.svg") center/contain no-repeat;
-      }
-
-      .home-calculator-card {
-        display: grid;
-        gap: 24px;
-        align-items: center;
-        padding: clamp(22px, 4vw, 44px);
-        border: 1px solid rgba(42, 42, 42, 0.08);
-        border-radius: 18px;
-        background-color: rgba(255, 255, 255, 0.94);
-        box-shadow:
-          rgba(0, 0, 0, 0.14) 0px 18px 38px,
-          rgba(255, 255, 255, 0.75) 0px 1px 0px inset;
-      }
-
-      @media screen and (min-width: 980px) {
-        .home-calculator-card {
-          grid-template-columns: minmax(0, 1fr) 360px;
-        }
-      }
-
-      .home-calculator-title {
-        margin-bottom: 16px;
-        color: #ff8c00;
-        text-transform: uppercase;
-        font-size: clamp(26px, 3.6vw, 44px);
-        line-height: 1.15;
-      }
-
-      .home-calculator-txt {
-        max-width: 760px;
-        margin-bottom: 24px;
-        color: #555;
-        font-size: 19px;
-        line-height: 1.65;
-      }
-
-      .home-calculator-list {
-        display: grid;
-        gap: 10px;
-        margin-bottom: 28px;
-        color: #2a2a2a;
-      }
-
-      .home-calculator-list li {
-        position: relative;
-        padding-left: 22px;
-      }
-
-      .home-calculator-list li::before {
-        content: "";
-        position: absolute;
-        top: 0.72em;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: #ff8c00;
-      }
-
-      .home-calculator-preview {
-        position: relative;
-        display: grid;
-        place-items: center;
-        min-height: 320px;
-        overflow: hidden;
-      }
-
-      .home-calculator-illustration {
-        display: block;
-        width: min(100%, 360px);
-        height: auto;
-        overflow: visible;
-      }
-
-      .home-calculator-illustration .chart-line {
-        fill: none;
-        stroke: rgba(42, 42, 42, 0.7);
-        stroke-width: 1.2;
-      }
-
-      .home-calculator-illustration .chart-soft-line {
-        fill: none;
-        stroke: rgba(42, 42, 42, 0.32);
-        stroke-width: 1;
-      }
-
-      .home-calculator-illustration .male-line {
-        stroke: #1521a8;
-        stroke-width: 3;
-      }
-
-      .home-calculator-illustration .female-line {
-        stroke: #ff5476;
-        stroke-width: 3;
-      }
-
-      .home-calculator-illustration .money-line {
-        stroke: #111;
-        stroke-width: 3;
-        stroke-dasharray: 12 12;
-      }
-
-      .home-calculator-illustration .node {
-        fill: #fff;
-        stroke: #2a2a2a;
-        stroke-width: 3;
-        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.12));
-      }
-
-      .home-calculator-illustration .node-purple {
-        stroke: #bd82bd;
-        stroke-width: 8;
-      }
-
-      .home-calculator-illustration .node-red {
-        stroke: #d33b36;
-        stroke-width: 8;
-      }
-
-      .home-calculator-illustration .node-blue {
-        stroke: #1f4c9a;
-        stroke-width: 5;
-      }
-
-      .home-calculator-illustration .node-cyan {
-        stroke: #58add1;
-        stroke-width: 5;
-      }
-
-      .home-calculator-illustration .node-green {
-        stroke: #55ba43;
-        stroke-width: 5;
-      }
-
-      .home-calculator-illustration .node-orange {
-        stroke: #ff9518;
-        stroke-width: 5;
-      }
-
-      .home-calculator-illustration .node-center {
-        stroke: #efff00;
-        stroke-width: 9;
-      }
-
-      .home-calculator-illustration text {
-        font-family: Arial, sans-serif;
-        fill: #111;
-      }
-
-      .home-calculator-illustration .node-value {
-        font-size: 24px;
-        font-weight: 700;
-        text-anchor: middle;
-        dominant-baseline: middle;
-      }
-
-      .home-calculator-illustration .big-value {
-        font-size: 44px;
-      }
-
-      .home-calculator-illustration .center-value {
-        font-size: 42px;
-      }
-
-      .home-calculator-illustration .age-label {
-        font-size: 18px;
-        font-weight: 700;
-      }
-
-      .home-calculator-illustration .small-age,
-      .home-calculator-illustration .small-value {
-        font-size: 11px;
-        font-weight: 700;
-      }
-
-      .home-calculator-illustration .axis-label {
-        font-size: 17px;
-        text-anchor: middle;
-      }
-
-      .home-calculator-illustration .comfort-label {
-        font-size: 21px;
-        text-anchor: middle;
-      }
-
-      .home-calculator-illustration .money-icon {
-        fill: #009b35;
-        font-size: 34px;
-        font-weight: 700;
-      }
-
-      .home-calculator-illustration .heart-icon {
-        fill: #f13258;
-        font-size: 34px;
-      }
-    
-    </style>
+    <link rel="stylesheet" href="./css/main.min.css?v=20260918-2" />
+    <style>:root { --glass-muted: #59545f; }</style>
 
     <link rel="canonical" href="https://esoterichka.com.ua/" />
     <link rel="amphtml" href="https://esoterichka.com.ua/amp/index.html" />
@@ -387,16 +182,33 @@
     </header>
     <main>
       <section class="section hero">
-        <div class="container">
-          <h1 class="is-fan">Таролог онлайн по всьому світу</h1>
-          <h2 class="hero-title">Таро, матриця долі, руни та свічки</h2>
-          <p class="hero-txt section-txt">
-            Допомагаю розібратися у стосунках, виборі, роботі <br>та внутрішніх сумнівах.
-            Консультації проходять <br>лише онлайн по всьому світу.
-          </p>
-          <button type="button" class="hero-btn base-btn" data-open-modal>
-            Зворотний зв'язок
-          </button>
+        <div class="container hero-layout">
+          <div class="hero-copy-panel glass-panel">
+            <p class="hero-kicker">Консультації онлайн по всьому світу</p>
+            <h1 class="hero-title">Ясність у важливих питаннях</h1>
+            <p class="hero-txt section-txt">
+              Делікатний погляд на стосунки, вибір, роботу та внутрішні зміни через Таро, руни й матрицю долі.
+            </p>
+            <div class="hero-actions">
+              <button type="button" class="hero-btn base-btn" data-open-modal>
+                Поставити питання <span aria-hidden="true">→</span>
+              </button>
+              <a class="hero-services-link" href="#work">Обрати послугу</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="./img/photo-amp-4.jpg" alt="Езотерик Анастасія" width="625" height="938" loading="lazy" decoding="async" />
+            <div class="hero-experience glass-panel">
+              <strong data-experience-years>5 років</strong>
+              <span>практики та<br />навчання</span>
+            </div>
+            <div class="hero-note">
+              <div>
+                <h2>Без тиску та осуду</h2>
+                <p>Конфіденційний простір, у якому рішення завжди залишається за вами.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section for-me" id="for-me">
@@ -410,19 +222,19 @@
         />
           <h2 class="title">Про мене та мій підхід</h2>
           <ul class="subject-list">
-            <li><button type="button" class="subject-txt" data-target="card-1" aria-controls="card-1" aria-selected="true">Я - Анастасія</button></li>
-            <li><button type="button" class="subject-txt" data-target="card-5" aria-controls="card-5" aria-selected="false">Мій шлях у світ Таро</button></li>
-            <li><button type="button" class="subject-txt" data-target="card-4" aria-controls="card-4" aria-selected="false">Метод "Матриця долі" та числа</button></li>
-            <li><button type="button" class="subject-txt" data-target="card-2" aria-controls="card-2" aria-selected="false">Моє покликання</button></li>
-            <li><button type="button" class="subject-txt" data-target="card-3" aria-controls="card-3" aria-selected="false">Мої енергетичні інструменти</button></li>
-            <li><button type="button" class="subject-txt" data-target="card-6" aria-controls="card-6" aria-selected="false">Місце, де ви знайдете відповіді</button></li>
+            <li><button type="button" class="subject-txt" data-target="card-1" aria-controls="card-1" aria-pressed="true">Я - Анастасія</button></li>
+            <li><button type="button" class="subject-txt" data-target="card-5" aria-controls="card-5" aria-pressed="false">Мій шлях у світ Таро</button></li>
+            <li><button type="button" class="subject-txt" data-target="card-4" aria-controls="card-4" aria-pressed="false">Метод "Матриця долі" та числа</button></li>
+            <li><button type="button" class="subject-txt" data-target="card-2" aria-controls="card-2" aria-pressed="false">Моє покликання</button></li>
+            <li><button type="button" class="subject-txt" data-target="card-3" aria-controls="card-3" aria-pressed="false">Мої енергетичні інструменти</button></li>
+            <li><button type="button" class="subject-txt" data-target="card-6" aria-controls="card-6" aria-pressed="false">Місце, де ви знайдете відповіді</button></li>
           </ul>
           <ul class="for-me-list">
             <li class="for-me-item" id="card-1">
               <img
               loading="lazy"
                 class="for-me-img"
-                src="./img/photo-amp-4.webp"
+                src="./img/photo-amp-6.webp"
                 alt="Езотерик, нумеролог"
                 width="330"
                 height="450"
@@ -431,7 +243,6 @@
                   <h3 class="subject-card-title" >Я - Анастасія</h3>
                   <p class="subject-card-txt">Вітаю! Я практикуючий езотерик, таролог і нумеролог. З 2022 року консультую людей з питань стосунків, вибору, роботи, фінансів, особистого розвитку та внутрішніх станів.</p>
                     <p class="subject-card-txt">На консультації я допомагаю подивитися на ситуацію спокійніше: побачити причини, можливі сценарії, сильні сторони та кроки, які можна зробити вже зараз.</p>
-                <button class="for-me-btn base-btn" data-open-modal>Зворотний зв'язок</button>
               </div>
             </li>
       
@@ -449,7 +260,6 @@
                 <p class="subject-card-txt">Моє покликання - допомагати вам краще розуміти себе, свої рішення та наслідки цих рішень.</p>
                 <p class="subject-card-txt">Я не обіцяю гарантованого майбутнього, бо воно залежить від ваших виборів і дій. Але можу показати, які варіанти відкриті, де є ризики, а де - ресурс і точка опори.
                   Кожна консультація - це конфіденційний простір, де можна чесно проговорити запит без осуду.</p>
-                <button class="for-me-btn base-btn" data-open-modal>Зворотний зв'язок</button>
               </div>
             </li>
       
@@ -471,7 +281,6 @@
                 <p class="subject-card-txt">• Руни - для розкладів, формул, амулетів і талісманів, коли потрібна коротка, сильна підказка або енергетична підтримка.</p>
                 <p class="subject-card-txt">Кожен інструмент я підбираю індивідуально, залежно від вашого запиту.</p>
                 <p class="subject-card-txt">Не роблю привороти, підклади, переклади, мороки, опої, окорми, відвороти та практики на шкоду іншим. Мій підхід - етична робота через усвідомлення, очищення, захист і підтримку власної сили людини.</p>
-                <button class="for-me-btn base-btn" data-open-modal>Зворотний зв'язок</button>
               </div>
             </li>
       
@@ -490,7 +299,6 @@
                   Числа - це код, у якому закладені наші сильні й слабкі сторони, карма, таланти, фінансові можливості та навіть доленосні дати.
                   Використовуючи цей метод, я допомагаю зрозуміти свої задачі, природні сильні сторони, фінансові теми, стосунки та напрям для розвитку.</p>
                 
-                <button class="for-me-btn base-btn" data-open-modal>Зворотний зв'язок</button>
               </div>
             </li>
       
@@ -508,7 +316,6 @@
                 <p class="subject-card-txt">Все почалося ще в дитинстві, коли я відчувала особливий зв’язок із символами й енергіями.
                   Згодом це переросло у професійну практику: карти стали моїм інструментом, що відображає внутрішні процеси й допомагає побачити приховане.
                   Таро для мене - це не просто «ворожіння», а спосіб уважно подивитися на ситуацію, побачити приховані мотиви, можливості та наслідки різних рішень.</p>
-                <button class="for-me-btn base-btn" data-open-modal>Зворотний зв'язок</button>
               </div>
             </li>
       
@@ -516,7 +323,7 @@
               <img
                 loading="lazy"
                 class="for-me-img"
-                src="./img/photo-amp-6.webp"
+                src="./img/photo-amp-4.webp"
                 alt="Відповіді на питання клієнтів"
                 width="330"
                 height="450"
@@ -526,7 +333,6 @@
                 <p class="subject-card-txt">Робота зі мною - це конфіденційний простір, де можна розкласти ситуацію «по поличках» і зрозуміти, що відбувається насправді.</p>
                 <p class="subject-card-txt">До мене звертаються з питаннями про стосунки, фінанси, роботу, самореалізацію, духовний розвиток, повторювані сценарії та відчуття внутрішнього застою.</p>
                   <p class="subject-card-txt">Після консультації ви отримуєте не тільки відповідь, а й зрозумілі орієнтири: на що звернути увагу, чого уникати та який наступний крок буде найбільш доречним.</p>
-                <button class="for-me-btn base-btn" data-open-modal>Зворотний зв'язок</button>
               </div>
             </li>
           </ul>
@@ -549,10 +355,9 @@
                   <source
                     srcset="
                       ./img/works/work-1-amp-360.webp 360w,
-                      ./img/works/work-1-amp-720.webp 720w,
-                      ./img/works/work-1-amp-1080.webp 1080w
+                      ./img/works/work-1-amp-720.webp 720w
                     "
-                    sizes="(max-width: 768px) 100vw, 250px"
+                    sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1440px) calc((100vw - 100px) / 4), 335px"
                     type="image/webp"
                   />
                   <img
@@ -561,7 +366,7 @@
                     alt="Розклади таро онлайн"
                     width="250"
                     height="350"
-                    fetchpriority="high"
+                    loading="lazy"
                   />
                 </picture>
               </a>
@@ -619,7 +424,7 @@
             </li>
           
             <li class="work-item">
-              <h3 class="work-subtitle">Рунічний розклад</h3>
+              <h3 class="work-subtitle">Руни</h3>
               <a href="./main-runy.html">
                 <picture>
                   <source
@@ -680,7 +485,7 @@
                 <li>Схема матриці одразу після введення дати.</li>
                 <li>Повний розбір можна замовити окремо.</li>
               </ul>
-              <a class="base-btn" href="./personal-rozrakhunok.html">Відкрити калькулятор</a>
+              <a class="base-btn" href="./personal-rozrakhunok.html">Відкрити калькулятор <span aria-hidden="true">→</span></a>
             </div>
             <div class="home-calculator-preview" aria-hidden="true">
               <svg class="home-calculator-illustration" viewBox="0 0 700 700" role="img" aria-label="Приклад Матриці долі">
@@ -866,7 +671,7 @@
           онлайн-консультації, доступні для клієнтів з усього світу.
           
         </p>
-        <button type="button" class="question-btn base-btn" data-open-modal>Задати питання</button>
+        <button type="button" class="question-btn base-btn" data-open-modal>Задати питання <span aria-hidden="true">→</span></button>
         
       </div>
    </div>
@@ -885,15 +690,14 @@
           <ul class="work-list">
             <li class="work-item">
               <h3 class="work-subtitle">Звідки взялися карти таро</h3>
-              <a href="./istoriy-taro.html">
+              <a href="./istoriy-taro.html" aria-label="Читати: Звідки взялися карти таро">
                 <picture>
                   <source
                     srcset="
                       ./img/works/work-1-amp-360.webp 360w,
-                      ./img/works/work-1-amp-720.webp 720w,
-                      ./img/works/work-1-amp-1080.webp 1080w
+                      ./img/works/work-1-amp-720.webp 720w
                     "
-                    sizes="(max-width: 768px) 100vw, 250px"
+                    sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1440px) calc((100vw - 100px) / 4), 335px"
                     type="image/webp"
                   />
                   <img
@@ -902,30 +706,30 @@
                     alt="Розклади таро онлайн"
                     width="250"
                     height="350"
-                    fetchpriority="high"
+                    loading="lazy"
                   />
                 </picture>
               </a>
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Що таке руни?</h3>
-              <a href="./shcho-take-runy.html">
+              <a href="./shcho-take-runy.html" aria-label="Читати: Що таке руни?">
                 <picture>
                   <source
                     srcset="
-                      ./img/works/runy/runy-1.webp 360w,
-                      ./img/works/runy/runy-1.webp 720w,
-                      ./img/works/runy/runy-1.webp 1080w
+                      ./img/works/runy/runy-1-360.webp 360w,
+                      ./img/works/runy/runy-1-720.webp 720w
                     "
-                    sizes="(max-width: 768px) 100vw, 250px"
+                    sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1440px) calc((100vw - 100px) / 4), 335px"
                     type="image/webp"
                   />
                   <img
                     class="work-img"
                     src="./img/works/runy/runy-1.webp"
-                    alt="Розклади таро онлайн"
+                    alt="Руни та їх значення"
                     width="250"
                     height="350"
+                    loading="eager"
                     fetchpriority="high"
                   />
                 </picture>
@@ -933,15 +737,14 @@
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Як правильно поставити питання для розкладу</h3>
-              <a href="./yak-postavyty-pytannia-taro.html">
+              <a href="./yak-postavyty-pytannia-taro.html" aria-label="Читати: Як правильно поставити питання для розкладу">
                 <picture>
                   <source
                     srcset="
-                      ./img/works/taro/taro-3.webp 360w,
-                      ./img/works/taro/taro-3.webp 720w,
-                      ./img/works/taro/taro-3.webp 1080w
+                      ./img/works/taro/taro-3-360.webp 360w,
+                      ./img/works/taro/taro-3-720.webp 720w
                     "
-                    sizes="(max-width: 768px) 100vw, 250px"
+                    sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1440px) calc((100vw - 100px) / 4), 335px"
                     type="image/webp"
                   />
                   <img
@@ -950,14 +753,14 @@
                     alt="Розклади таро онлайн"
                     width="250"
                     height="350"
-                    fetchpriority="high"
+                    loading="lazy"
                   />
                 </picture>
               </a>
             </li>
             <li class="work-item">
               <h3 class="work-subtitle">Звідки взялася матриця долі</h3>
-              <a href="./zvidky-vzialasia-matrytsia-doli.html">
+              <a href="./zvidky-vzialasia-matrytsia-doli.html" aria-label="Читати: Звідки взялася матриця долі">
                 <picture>
                   <source
                     srcset="
@@ -1004,7 +807,7 @@
             width="102"
             height="102"
           />
-          <h2 class="title">мої досягнення</h2>
+          <h2 class="title">Мої досягнення</h2>
           <p class="skills-txt section-txt">
             Я постійно вдосконалюю свої знання та навички, щоб кожна консультація була ще глибшою, точнішою й кориснішою для вас.
           </p>
@@ -1327,9 +1130,9 @@
           </p>
           <ul class="clients-list">
             <li class="clients-item">
-              <img class="clients-img" src="./img/clients/client-1.webp" width="150" height="150"  alt="Чоловік в окулярах та капелюсі">
+              <img class="clients-img" src="./img/clients/client-1-128.webp" srcset="./img/clients/client-1-64.webp 64w, ./img/clients/client-1-128.webp 128w" sizes="64px" width="64" height="64" loading="lazy" decoding="async" alt="Чоловік в окулярах та капелюсі">
               <p class="clients-name">Іван</p>
-              <p class="clients-location">Онлайн</p>
+              <p class="clients-location">Київ</p>
               <p class="clients-story">
                 Дякую Анастасії за консультацію. Звернувся з питанням про стосунки - не знав, як діяти далі. 
                 Вона розклала карти і показала ситуацію з боку, який я не бачив. Дала конкретні поради, що робити. 
@@ -1337,7 +1140,7 @@
               </p>
             </li>
             <li class="clients-item">
-              <img class="clients-img" src="./img/clients/client-2.webp" width="150" height="150" alt="Дівчина з яскравою помадою">
+              <img class="clients-img" src="./img/clients/client-2-128.webp" srcset="./img/clients/client-2-64.webp 64w, ./img/clients/client-2-128.webp 128w" sizes="64px" width="64" height="64" loading="lazy" decoding="async" alt="Дівчина з яскравою помадою">
               <p class="clients-name">Марія</p>
               <p class="clients-location">Буча</p>
               <p class="clients-story">
@@ -1348,7 +1151,7 @@
               </p>
             </li>
             <li class="clients-item">
-              <img class="clients-img" src="./img/clients/client-3.webp" width="150" height="150" alt="Рудоволоса дівчина яка посміхається">
+              <img class="clients-img" src="./img/clients/client-3-128.webp" srcset="./img/clients/client-3-64.webp 64w, ./img/clients/client-3-128.webp 128w" sizes="64px" width="64" height="64" loading="lazy" decoding="async" alt="Рудоволоса дівчина яка посміхається">
               <p class="clients-name">Жанна</p>
               <p class="clients-location">Львів</p>
               <p class="clients-story">
@@ -1405,7 +1208,7 @@
                     @nastiia_esoterichka</a
                   >
                 </li>
-                <li class="contacts-item icon-telegram">
+                <li class="contacts-item icon-tiktok">
                   <a class="contacts-link"  
                   target="_blank"
                   rel="noopener noreferrer" 
@@ -1483,10 +1286,11 @@
             ========================== -->
           
             <!-- Honeypot (боти його заповнюють) -->
-            <div style="position:absolute; left:-9999px; opacity:0;">
+            <div class="is-fan">
               <input
                 type="text"
                 name="website"
+                aria-label="Залишити це поле порожнім"
                 tabindex="-1"
                 autocomplete="off"
               />
@@ -1498,7 +1302,7 @@
             <input type="hidden" name="time_on_page">
           
             <button class="modal-form-btn base-btn" type="submit">
-              Відправити
+              Відправити <span aria-hidden="true">→</span>
             </button>
           
           </form>
@@ -1519,7 +1323,7 @@
         </div>
       </section> 
 
-      <div class="backdrop is-close" data-backdrop style="display: none;" aria-hidden="true">
+      <div class="backdrop is-close" data-backdrop aria-hidden="true" inert>
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
           <button class="close-modal" type="button" data-close-modal aria-label="Закрити модальне вікно">
             <svg
@@ -1532,6 +1336,7 @@
             </svg>
           </button>
           <h3 class="modal-txt" id="feedback-modal-title">Зворотний зв'язок</h3>
+          <p class="modal-description">Залиште контакти, і я напишу вам найближчим часом.</p>
           <form
           action="telegram.php"
           method="post"
@@ -1597,10 +1402,11 @@
           ========================== -->
         
           <!-- Honeypot (боти його заповнюють) -->
-          <div style="position:absolute; left:-9999px; opacity:0;">
-            <input
-              type="text"
-              name="website"
+          <div class="is-fan">
+              <input
+                type="text"
+                name="website"
+                aria-label="Залишити це поле порожнім"
               tabindex="-1"
               autocomplete="off"
             />
@@ -1612,7 +1418,7 @@
           <input type="hidden" name="time_on_page">
         
           <button class="modal-form-btn base-btn" type="submit">
-            Відправити
+            Відправити <span aria-hidden="true">→</span>
           </button>
         
         </form>
@@ -1662,11 +1468,11 @@
         </div>
       </div>
     </main>
-    <div class="back-to-top">
-      <svg class="back-icon" width="35" height="35">
+    <button class="back-to-top" type="button" aria-label="Повернутися нагору">
+      <svg class="back-icon" width="22" height="22" aria-hidden="true">
         <use href="./img/icons/svg-sprite.svg#back3"></use>
       </svg>
-    </div>
+    </button>
     <footer class="footer">
       <div class="container">
         <p class="footer-txt">  &#169; Всі права захищені | 2022 - <span id="year"></span></p>
@@ -1691,7 +1497,7 @@
         });
       }
     </script>
-    <script src="./js/backToTop.js"></script>
+    <script defer src="./js/backToTop.js"></script>
     <script defer src="./js/imask.js" type="module"></script>
     <script defer src="./js/inputmask.js" type="module"></script>
     <script defer src="./js/dataInputMask.js" type="module"></script>
@@ -1703,6 +1509,7 @@
     <script defer src="./js/question.js" type="module"></script>
     <script defer src="./js/skills-slider.js" type="module"></script>
     <script defer src="./js/telegram-data.js?v=20260916-2" type="module"></script>
+    <script defer src="./js/experience-years.js"></script>
     <script defer src="./js/year.js" type="module"></script>
 
 

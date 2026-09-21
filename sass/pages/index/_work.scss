@@ -1,0 +1,140 @@
+/* Services */
+body .work {
+  background: transparent;
+}
+
+body .work-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+body .work-item {
+  position: relative;
+  display: block;
+  height: 430px;
+  min-height: 0;
+  aspect-ratio: auto;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 28px;
+  background: var(--glass-blush);
+  transform: none;
+}
+
+body .work-item:nth-child(1),
+body .work-item:nth-child(2),
+body .work-item:nth-child(3),
+body .work-item:nth-child(4) {
+  grid-column: auto;
+  min-height: 0;
+}
+
+body .work-item a,
+body .work-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body .work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+  transform: none;
+}
+
+body .work-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(35, 30, 35, 0.56));
+  pointer-events: none;
+}
+
+body .work-item::before {
+  display: none;
+  content: none;
+}
+
+body .work-subtitle {
+  position: absolute;
+  z-index: 2;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 25px;
+  text-align: left;
+  text-transform: none;
+  transform: none;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+body .work .work-subtitle {
+  display: grid;
+  place-items: center;
+  height: 96px;
+  padding: 12px 16px;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body .work-txt-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--glass-line);
+  border-radius: 22px;
+  background: var(--glass-white);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+body .work-txt-wrapper .section-txt {
+  width: 100%;
+  max-width: 900px;
+  margin: 0;
+}
+
+body .work-txt-wrapper .download-btn {
+  width: auto;
+  min-width: max-content;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+body .work-txt-wrapper .download-btn.read {
+  width: auto;
+}
+
+body .download-btn p {
+  color: inherit;
+}
+
+body .download-icon {
+  fill: none;
+  stroke: currentColor;
+  color: #fff;
+}
+
+body .download-btn:hover .download-icon,
+body .download-btn:focus-visible .download-icon {
+  fill: none;
+  stroke: #fff;
+}
+

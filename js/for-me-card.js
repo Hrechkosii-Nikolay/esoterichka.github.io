@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!targetCard) return;
 
-      tabs.forEach((item) => item.setAttribute("aria-selected", "false"));
-      tab.setAttribute("aria-selected", "true");
+      tabs.forEach((item) => item.setAttribute("aria-pressed", "false"));
+      tab.setAttribute("aria-pressed", "true");
 
       cards.forEach((card) => {
         card.classList.remove("active");

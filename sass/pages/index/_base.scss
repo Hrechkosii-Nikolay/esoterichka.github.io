@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "GlassSerif";
+  src: local("Georgia");
+}
+
+:root {
+  --glass-ink: #29272c;
+  --glass-muted: #59545f;
+  --glass-paper: #f7f5f3;
+  --glass-lilac: #d9d4e7;
+  --glass-sage: #cad8ce;
+  --glass-blush: #ead6d6;
+  --glass-blue: #cddce3;
+  --glass-accent: #67566f;
+  --glass-accent-hover: #51445a;
+  --glass-accent-soft: rgba(103, 86, 111, 0.14);
+  --glass-accent-focus: rgba(103, 86, 111, 0.32);
+  --glass-white: rgba(255, 255, 255, 0.68);
+  --glass-line: rgba(255, 255, 255, 0.78);
+  --glass-shadow: 0 24px 70px rgba(53, 49, 60, 0.13);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--glass-ink);
+  background:
+    linear-gradient(120deg, rgba(217, 212, 231, 0.72), transparent 32%) fixed,
+    linear-gradient(300deg, rgba(202, 216, 206, 0.62), transparent 38%) fixed,
+    var(--glass-paper);
+  font-family: "FuturaPT", Arial, sans-serif;
+  line-height: 1.45;
+}
+
+body.body-no-scroll {
+  overflow: hidden;
+}
+
+body a {
+  color: inherit;
+}
+
+body .container {
+  width: min(1240px, calc(100% - 40px));
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+body .section {
+  padding: 86px 0;
+  background: transparent;
+}
+
+body .title,
+body .home-calculator-title {
+  margin: 0 0 34px;
+  color: var(--glass-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+  line-height: 1;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+body .section-logo {
+  display: none;
+}
+
+body .section-txt {
+  color: var(--glass-muted);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+body .base-btn,
+body .download-btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: auto;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--glass-accent);
+  color: #fff;
+  font-size: 17px;
+  text-transform: none;
+  box-shadow: none;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+body .base-btn:hover,
+body .base-btn:focus-visible,
+body .download-btn:hover,
+body .download-btn:focus-visible {
+  color: #fff;
+  background: var(--glass-accent-hover);
+  transform: translateY(-2px);
+}
+
+body .base-btn:focus-visible,
+body .download-btn:focus-visible,
+body .menu-item a:focus-visible,
+body .social-link:focus-visible,
+body .contacts-link:focus-visible,
+body .subject-txt:focus-visible,
+body .slider-btn:focus-visible,
+body .close-modal:focus-visible {
+  outline: 3px solid var(--glass-accent-focus);
+  outline-offset: 3px;
+}

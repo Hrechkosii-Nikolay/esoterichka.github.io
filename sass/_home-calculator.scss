@@ -1,0 +1,231 @@
+.home-calculator {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 243, 0.92), rgba(255, 255, 255, 0.98)),
+    url("../img/bg-for-me.svg") center/contain no-repeat;
+}
+
+.home-calculator-card {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid rgba(42, 42, 42, 0.08);
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    rgba(0, 0, 0, 0.14) 0px 18px 38px,
+    rgba(255, 255, 255, 0.75) 0px 1px 0px inset;
+}
+
+@media screen and (min-width: 980px) {
+  .home-calculator-card {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+}
+
+.home-calculator-title {
+  margin-bottom: 16px;
+  color: #ff8c00;
+  text-transform: uppercase;
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.15;
+}
+
+.home-calculator-txt {
+  max-width: 760px;
+  margin-bottom: 24px;
+  color: #555;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.home-calculator-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 28px;
+  color: #2a2a2a;
+}
+
+.home-calculator-list li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.home-calculator-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ff8c00;
+}
+
+.home-calculator .base-btn {
+  border-color: #ff8c00;
+  background-color: #ff8c00;
+  color: #fff;
+  animation: home-calculator-pulse 1.8s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@keyframes home-calculator-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      rgba(0, 0, 0, 0.18) 0 10px 24px,
+      rgba(0, 0, 0, 0) 0 0 0 0;
+  }
+
+  50% {
+    transform: scale(1.045);
+    box-shadow:
+      rgba(0, 0, 0, 0.24) 0 16px 32px,
+      rgba(0, 0, 0, 0.16) 0 0 26px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-calculator .base-btn {
+    animation: none;
+  }
+}
+
+.home-calculator-preview {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.home-calculator-illustration {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  overflow: visible;
+}
+
+.home-calculator-illustration .chart-line {
+  fill: none;
+  stroke: rgba(42, 42, 42, 0.7);
+  stroke-width: 1.2;
+}
+
+.home-calculator-illustration .chart-soft-line {
+  fill: none;
+  stroke: rgba(42, 42, 42, 0.32);
+  stroke-width: 1;
+}
+
+.home-calculator-illustration .male-line {
+  stroke: #1521a8;
+  stroke-width: 3;
+}
+
+.home-calculator-illustration .female-line {
+  stroke: #ff5476;
+  stroke-width: 3;
+}
+
+.home-calculator-illustration .money-line {
+  stroke: #111;
+  stroke-width: 3;
+  stroke-dasharray: 12 12;
+}
+
+.home-calculator-illustration .node {
+  fill: #fff;
+  stroke: #2a2a2a;
+  stroke-width: 3;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.12));
+}
+
+.home-calculator-illustration .node-purple {
+  stroke: #bd82bd;
+  stroke-width: 8;
+}
+
+.home-calculator-illustration .node-red {
+  stroke: #d33b36;
+  stroke-width: 8;
+}
+
+.home-calculator-illustration .node-blue {
+  stroke: #1f4c9a;
+  stroke-width: 5;
+}
+
+.home-calculator-illustration .node-cyan {
+  stroke: #58add1;
+  stroke-width: 5;
+}
+
+.home-calculator-illustration .node-green {
+  stroke: #55ba43;
+  stroke-width: 5;
+}
+
+.home-calculator-illustration .node-orange {
+  stroke: #ff9518;
+  stroke-width: 5;
+}
+
+.home-calculator-illustration .node-center {
+  stroke: #efff00;
+  stroke-width: 9;
+}
+
+.home-calculator-illustration text {
+  font-family: Arial, sans-serif;
+  fill: #111;
+}
+
+.home-calculator-illustration .node-value {
+  font-size: 24px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.home-calculator-illustration .big-value {
+  font-size: 44px;
+}
+
+.home-calculator-illustration .center-value {
+  font-size: 42px;
+}
+
+.home-calculator-illustration .age-label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.home-calculator-illustration .small-age,
+.home-calculator-illustration .small-value {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.home-calculator-illustration .axis-label {
+  font-size: 17px;
+  text-anchor: middle;
+}
+
+.home-calculator-illustration .comfort-label {
+  font-size: 21px;
+  text-anchor: middle;
+}
+
+.home-calculator-illustration .money-icon {
+  fill: #009b35;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.home-calculator-illustration .heart-icon {
+  fill: #f13258;
+  font-size: 34px;
+}
+    

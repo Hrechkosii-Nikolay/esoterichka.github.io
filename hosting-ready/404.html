@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>404 - Сторінку не знайдено</title>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    function aload(t) {
+      'use strict';
+      var e = 'data-aload';
+      return (
+        (t = t || window.document.querySelectorAll('[' + e + ']')),
+        void 0 === t.length && (t = [t]),
+        [].forEach.call(t, function (t) {
+          (t['LINK' !== t.tagName ? 'src' : 'href'] = t.getAttribute(e)),
+            t.removeAttribute(e);
+        }),
+        t
+      );
+    }
+  </script>
   <style>
     body {
       font-family: 'FuturaPT-Light', sans-serif;
@@ -28,8 +44,9 @@
       border-bottom: 1px solid #999;
     }
   </style>
+  <link rel="stylesheet" href="./css/site-pages.css?v=20260921-2">
 </head>
-<body>
+<body class="site-secondary site-not-found">
   <h1>404</h1>
   <p>Схоже, цієї сторінки не існує.</p>
   <p><a href="/">Повернутися на головну</a></p>

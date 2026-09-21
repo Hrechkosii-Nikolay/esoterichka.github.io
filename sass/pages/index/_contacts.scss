@@ -1,0 +1,194 @@
+/* Contacts */
+body .contacts {
+  background: transparent;
+}
+
+body .contacts-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.95fr);
+  gap: 18px;
+  align-items: start;
+  padding: clamp(30px, 6vw, 66px);
+  border: 1px solid var(--glass-line);
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.42));
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+}
+
+body .contacts-wrap-txt {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+body .contacts-txt {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 0 24px;
+  color: var(--glass-muted);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+body .contacts-list {
+  display: grid;
+  gap: 10px;
+  width: fit-content;
+  margin: 0;
+}
+
+body .contacts-item {
+  margin: 0;
+}
+
+body .contacts-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 11px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--glass-accent);
+  font-size: 17px;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+body .contacts-icon {
+  flex: 0 0 auto;
+  color: currentColor;
+  fill: currentColor;
+  stroke: none;
+  transition: transform 180ms ease;
+}
+
+body .icon-instagram .contacts-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+body .icon-telegram .contacts-icon {
+  fill: currentColor;
+  stroke: none !important;
+}
+
+body .icon-tiktok .contacts-icon {
+  fill: none;
+  stroke: currentColor !important;
+  stroke-width: 1.1 !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+body .icon-telegram .contacts-link:hover .contacts-icon,
+body .icon-telegram .contacts-link:focus-visible .contacts-icon {
+  fill: currentColor;
+  stroke: none !important;
+}
+
+body .icon-instagram .contacts-link:hover .contacts-icon,
+body .icon-instagram .contacts-link:focus-visible .contacts-icon,
+body .icon-tiktok .contacts-link:hover .contacts-icon,
+body .icon-tiktok .contacts-link:focus-visible .contacts-icon {
+  fill: none;
+  stroke: currentColor !important;
+}
+
+body .contacts-link:hover,
+body .contacts-link:focus-visible {
+  color: var(--glass-accent-hover);
+  border-color: var(--glass-accent-focus);
+  background: var(--glass-accent-soft);
+  transform: translateX(5px);
+}
+
+body .contacts-link:hover .contacts-icon,
+body .contacts-link:focus-visible .contacts-icon {
+  transform: scale(1.12);
+}
+
+body .modal-form-list {
+  display: grid;
+  gap: 11px;
+  margin: 0 0 14px;
+}
+
+body .form {
+  width: 100%;
+  max-width: 560px;
+  min-width: 0;
+  justify-self: center;
+}
+
+body .modal-form-item {
+  position: relative;
+  margin: 0;
+}
+
+body .modal-form-input {
+  width: 100%;
+  min-height: 54px;
+  margin: 0;
+  padding: 19px 15px 7px;
+  border: 1px solid rgba(41, 39, 44, 0.12);
+  border-radius: 15px;
+  outline: 0;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--glass-ink);
+}
+
+body textarea.modal-form-input {
+  min-height: 118px;
+  resize: vertical;
+}
+
+body .modal-form-input:focus {
+  border-color: var(--glass-accent);
+  box-shadow: 0 0 0 3px var(--glass-accent-focus);
+}
+
+body .modal-form-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: var(--glass-muted);
+  pointer-events: none;
+  transition: 150ms ease;
+}
+
+body .modal-form-input:focus + .modal-form-label,
+body .modal-form-input:not(:placeholder-shown) + .modal-form-label {
+  top: 5px;
+  color: var(--glass-accent);
+  font-size: 11px;
+}
+
+body .modal-form-input:focus ~ .modal-form-label,
+body .modal-form-input:not(:placeholder-shown) ~ .modal-form-label {
+  color: var(--glass-accent);
+}
+
+body .modal-form-btn {
+  width: 100%;
+}
+
+body .map {
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 28px;
+  filter: saturate(0.65) contrast(0.92);
+}
+
+body .map iframe {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+}
+
