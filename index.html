@@ -43,12 +43,11 @@
       />
     </noscript>
     <link rel="stylesheet" href="./css/style.min.css">
-    <link rel="preload" href="./css/style.min.css" as="style">
-    <link rel="preload" href="fonts/FuturaPT-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./css/main.min.css?v=20260922-1" />
+    <link rel="preload" href="./img/photo-amp-4-420.webp" as="image" type="image/webp" media="(max-width: 640px)" fetchpriority="high">
+    <link rel="preload" href="./img/photo-amp-4.webp" as="image" type="image/webp" media="(min-width: 641px)" fetchpriority="high">
     <link rel="preload" href="fonts/FuturaPT-Book.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/FuturaPT-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/FuturaPT-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
 
     <noscript>
       <link rel="stylesheet" href="./css/style.min.css" />
@@ -62,7 +61,7 @@
     
 
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5SHD550S58"></script>
+<script defer src="./js/analytics-loader.js?v=20260922-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -87,7 +86,6 @@
         );
       }
     </script>
-    <link rel="stylesheet" href="./css/main.min.css?v=20260918-2" />
     <style>:root { --glass-muted: #59545f; }</style>
 
     <link rel="canonical" href="https://esoterichka.com.ua/" />
@@ -197,7 +195,10 @@
             </div>
           </div>
           <div class="hero-visual">
-            <img src="./img/photo-amp-4.jpg" alt="Езотерик Анастасія" width="625" height="938" loading="lazy" decoding="async" />
+            <picture class="hero-picture">
+              <source media="(max-width: 640px)" srcset="./img/photo-amp-4-420.webp" />
+              <img src="./img/photo-amp-4.webp" alt="Езотерик Анастасія" width="625" height="938" loading="eager" fetchpriority="high" decoding="async" />
+            </picture>
             <div class="hero-experience glass-panel">
               <strong data-experience-years>5 років</strong>
               <span>практики та<br />навчання</span>
@@ -234,10 +235,10 @@
               <img
               loading="lazy"
                 class="for-me-img"
-                src="./img/photo-amp-6.webp"
+                src="./img/photo-amp-6-420.webp"
                 alt="Езотерик, нумеролог"
-                width="330"
-                height="450"
+                width="420"
+                height="631"
               />
               <div>
                   <h3 class="subject-card-title" >Я - Анастасія</h3>
@@ -729,8 +730,7 @@
                     alt="Руни та їх значення"
                     width="250"
                     height="350"
-                    loading="eager"
-                    fetchpriority="high"
+                    loading="lazy"
                   />
                 </picture>
               </a>
@@ -1497,20 +1497,54 @@
         });
       }
     </script>
-    <script defer src="./js/backToTop.js"></script>
-    <script defer src="./js/imask.js" type="module"></script>
-    <script defer src="./js/inputmask.js" type="module"></script>
-    <script defer src="./js/dataInputMask.js" type="module"></script>
-    <script defer src="./js/valid-tel.js" type="module"></script>
-    <script defer src="./js/close-modal.js" type="module"></script>
-    <script defer src="./js/noScrollModal.js" type="module"></script>
-    <script defer src="./js/menu-btn.js" type="module"></script>
-    <script defer src="./js/for-me-card.js" type="module"></script>
-    <script defer src="./js/question.js" type="module"></script>
-    <script defer src="./js/skills-slider.js" type="module"></script>
-    <script defer src="./js/telegram-data.js?v=20260916-2" type="module"></script>
-    <script defer src="./js/experience-years.js"></script>
-    <script defer src="./js/year.js" type="module"></script>
+    <script async src="./js/backToTop.js?v=20260922-1"></script>
+    <script async src="./js/dataInputMask.js" type="module"></script>
+    <script async src="./js/valid-tel.js" type="module"></script>
+    <script async src="./js/noScrollModal.js" type="module"></script>
+    <script async src="./js/menu-btn.js" type="module"></script>
+    <script async src="./js/for-me-card.js?v=20260922-1" type="module"></script>
+    <script async src="./js/question.js" type="module"></script>
+    <script async src="./js/telegram-data.js?v=20260916-2" type="module"></script>
+    <script async src="./js/experience-years.js"></script>
+    <script type="module">
+      const yearElement = document.getElementById('year');
+      if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+      let phoneMaskPromise;
+      function loadPhoneMask() {
+        if (!phoneMaskPromise) {
+          phoneMaskPromise = import('./js/imask.js')
+            .then(() => import('./js/inputmask.js'))
+            .catch(() => { phoneMaskPromise = null; });
+        }
+        return phoneMaskPromise;
+      }
+
+      document.addEventListener('click', (event) => {
+        if (event.target.closest('[data-open-modal]')) loadPhoneMask();
+      }, { capture: true });
+      document.addEventListener('focusin', (event) => {
+        if (event.target.matches('.input-tel')) loadPhoneMask();
+      }, { capture: true });
+
+      function loadWhenNear(selector, load) {
+        const element = document.querySelector(selector);
+        if (!element) return;
+        if (!('IntersectionObserver' in window)) {
+          load();
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries[0].isIntersecting) return;
+          observer.disconnect();
+          load();
+        }, { rootMargin: '400px' });
+        observer.observe(element);
+      }
+
+      loadWhenNear('#contacts', loadPhoneMask);
+      loadWhenNear('.skills-slider', () => import('./js/skills-slider.js'));
+    </script>
 
 
     <script>

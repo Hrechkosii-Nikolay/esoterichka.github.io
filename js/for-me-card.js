@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initForMeCards() {
   const tabs = document.querySelectorAll(".subject-txt");
   const cards = document.querySelectorAll(".for-me-item");
 
@@ -32,4 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initForMeCards, { once: true });
+} else {
+  initForMeCards();
+}

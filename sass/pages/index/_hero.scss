@@ -121,7 +121,14 @@ body .hero-visual {
   background: var(--glass-lilac);
 }
 
-body .hero-visual > img {
+body .hero-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body .hero-visual > img,
+body .hero-picture > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -221,4 +228,3 @@ body .hero-note > a {
   background: rgba(255, 255, 255, 0.72);
   color: var(--glass-accent);
 }
-

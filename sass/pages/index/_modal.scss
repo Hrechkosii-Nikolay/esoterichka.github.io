@@ -102,6 +102,7 @@ body .modal-contacts .contacts-list {
   display: grid;
   gap: 7px;
   justify-items: center;
+  margin-inline: auto;
 }
 
 body .modal-contacts .contacts-item {
@@ -128,6 +129,13 @@ body .modal-contacts .contacts-icon {
   stroke-width: 1.1 !important;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+body .modal-contacts .icon-telegram .contacts-icon,
+body .modal-contacts .icon-telegram .contacts-link:hover .contacts-icon,
+body .modal-contacts .icon-telegram .contacts-link:focus-visible .contacts-icon {
+  fill: currentColor;
+  stroke: none !important;
 }
 
 body .modal-contacts .contacts-link:hover .contacts-icon,
@@ -163,4 +171,3 @@ body .modal .modal-form-btn {
   min-height: 46px;
   margin-top: 2px;
 }
-

@@ -18,6 +18,18 @@ RewriteCond %{THE_REQUEST} \s/+index\.html [NC]
 RewriteRule ^(.*?)(index\.html)?$ https://esoterichka.com.ua/$1 [R=301,L]
 RewriteRule ^amp\.html$ /amp/ [R=301,L]
 
+# Старі URL розділу "Знання" перенаправляємо безпосередньо
+# на актуальні канонічні сторінки.
+RewriteRule ^znanny/?$ /znanny.html [R=301,L]
+RewriteRule ^znanny/zvidky-vzyalysya-karty-taro/?$ /istoriy-taro.html [R=301,L]
+RewriteRule ^znanny/chomu-taro-pratsyuye/?$ /chomu-taro-pratsiuie.html [R=301,L]
+RewriteRule ^znanny/prohramni-svichky/?$ /prohramni-svichky.html [R=301,L]
+RewriteRule ^znanny/shcho-take-runy/?$ /shcho-take-runy.html [R=301,L]
+RewriteRule ^znanny/matrytsia-doli-odin-rozrakhunok-na-vse-zhyttya/?$ /unikalnist-rozrakhunku-matrytsi-doli.html [R=301,L]
+RewriteRule ^znanny/unikalnist-rozrakhunku-matrytsi-doli/?$ /unikalnist-rozrakhunku-matrytsi-doli.html [R=301,L]
+RewriteRule ^znanny/yak-pravylno-postavyty-pytannya-dlya-rozkladu/?$ /yak-postavyty-pytannia-taro.html [R=301,L]
+RewriteRule ^znanny/zvidky-vzyalasya-matrytsia-doli/?$ /zvidky-vzialasia-matrytsia-doli.html [R=301,L]
+
 # Прибираємо слеш у кінці (окрім головної)
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -122,10 +134,6 @@ AddType application/manifest+json .webmanifest
 ErrorDocument 404 /404.html
 ErrorDocument 403 /index.html
 ErrorDocument 500 /index.html
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^.*$ /index.html [L,R=302]
 
 # # ------------------------------
 # # 🌍 SEO: Sitemap + Robots
