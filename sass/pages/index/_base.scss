@@ -55,6 +55,13 @@ body .section {
   background: transparent;
 }
 
+// The section already has top padding; this only clears the fixed navigation.
+body #articles,
+body #skills,
+body #contacts {
+  scroll-margin-top: 16px;
+}
+
 body .title,
 body .home-calculator-title {
   margin: 0 0 34px;
