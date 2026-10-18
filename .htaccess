@@ -4,22 +4,88 @@
 
 AddDefaultCharset UTF-8
 Options -Indexes
+
 RewriteEngine On
 
-# ------------------------------
-# 🔁 Редиректи для SEO
-# ------------------------------
 
-# Одним правилом об’єднуємо HTTPS, без www та видалення index.html
-RewriteEngine On
+# ==============================
+# 🔒 БАЗОВИЙ ЗАХИСТ
+# ==============================
+
+# ------------------------------------------------
+# Заборона доступу до прихованих файлів і каталогів
+# ------------------------------------------------
+# Блокує:
+# /.git/
+# /.env
+# /.env.production
+# /.htpasswd
+# /.svn/
+# тощо.
+#
+# /.well-known/ залишаємо доступним для SSL / Let's Encrypt.
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
+RewriteRule "(^|/)\." - [F,L]
+
+
+# ------------------------------------------------
+# Git / SVN / Mercurial
+# ------------------------------------------------
+
+RedirectMatch 403 "(?i)/\.(git|svn|hg)(/|$)"
+
+
+# ------------------------------------------------
+# Службові, резервні та конфігураційні файли
+# ------------------------------------------------
+
+<FilesMatch "(?i)(^\.env|\.htaccess$|\.htpasswd$|\.(ini|log|sh|bak|env)$)">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "(?i)(composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|pnpm-lock\.yaml|\.DS_Store|.*\.(sql|sqlite|backup|old|orig|save|swp|dist))$">
+    Require all denied
+</FilesMatch>
+
+
+# ------------------------------------------------
+# Заборона прямого доступу до Telegram loader
+# ------------------------------------------------
+# PHP через require/include цей файл використовувати зможе.
+
+<Files "telegram-config-loader.php">
+    Require all denied
+</Files>
+
+
+# ------------------------------------------------
+# Заборона доступу до потенційних секретних файлів
+# ------------------------------------------------
+
+<FilesMatch "(?i)^(credentials|secrets|config|configuration)\.(json|txt|ini|yml|yaml|bak|backup)$">
+    Require all denied
+</FilesMatch>
+
+
+# ==============================
+# 🔁 РЕДИРЕКТИ ДЛЯ SEO
+# ==============================
+
+# HTTPS + без www + видалення index.html
+
 RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{THE_REQUEST} \s/+index\.html [NC]
 RewriteRule ^(.*?)(index\.html)?$ https://esoterichka.com.ua/$1 [R=301,L]
+
 RewriteRule ^amp\.html$ /amp/ [R=301,L]
 
-# Старі URL розділу "Знання" перенаправляємо безпосередньо
-# на актуальні канонічні сторінки.
+
+# ------------------------------------------------
+# Старі URL розділу "Знання"
+# ------------------------------------------------
+
 RewriteRule ^znanny/?$ /znanny.html [R=301,L]
 RewriteRule ^znanny/zvidky-vzyalysya-karty-taro/?$ /istoriy-taro.html [R=301,L]
 RewriteRule ^znanny/chomu-taro-pratsyuye/?$ /chomu-taro-pratsiuie.html [R=301,L]
@@ -30,120 +96,178 @@ RewriteRule ^znanny/unikalnist-rozrakhunku-matrytsi-doli/?$ /unikalnist-rozrakhu
 RewriteRule ^znanny/yak-pravylno-postavyty-pytannya-dlya-rozkladu/?$ /yak-postavyty-pytannia-taro.html [R=301,L]
 RewriteRule ^znanny/zvidky-vzyalasya-matrytsia-doli/?$ /zvidky-vzialasia-matrytsia-doli.html [R=301,L]
 
-# Прибираємо слеш у кінці (окрім головної)
+
+# ------------------------------------------------
+# Прибираємо слеш у кінці
+# Окрім головної сторінки та реальних директорій
+# ------------------------------------------------
+
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 
-
-# # ------------------------------
-# # 🚀 Кешування
-# # ------------------------------
+# ==============================
+# 🚀 КЕШУВАННЯ
+# ==============================
 
 <IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresDefault "access plus 1 month"
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType text/css "access plus 1 year"
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType font/woff "access plus 1 year"
-  ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType text/html "access plus 0 seconds"
+
+    ExpiresActive On
+
+    ExpiresDefault "access plus 1 month"
+
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+
+    ExpiresByType text/css "access plus 1 year"
+
+    ExpiresByType application/javascript "access plus 1 year"
+
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+
+    ExpiresByType text/html "access plus 0 seconds"
+
 </IfModule>
+
 
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|jpg|jpeg|png|gif|svg|webp|woff|woff2)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-  <FilesMatch "\.(html)$">
-    Header set Cache-Control "no-cache, must-revalidate"
-  </FilesMatch>
+
+    <FilesMatch "\.(js|css|jpg|jpeg|png|gif|svg|webp|avif|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+
 </IfModule>
 
-# # ------------------------------
-# # 🪶 Компресія
-# # ------------------------------
+
+# ==============================
+# 🪶 КОМПРЕСІЯ
+# ==============================
 
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
-  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
-  AddOutputFilterByType DEFLATE image/svg+xml
+
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+
+    AddOutputFilterByType DEFLATE image/svg+xml
+
 </IfModule>
+
 
 <IfModule mod_brotli.c>
-  BrotliCompressionQuality 5
+    BrotliCompressionQuality 5
 </IfModule>
 
-# # ------------------------------
-# # 🔒 Безпека та CSP
-# # ------------------------------
 
- <IfModule mod_headers.c>
-# #   Header always set X-Frame-Options "SAMEORIGIN"
-# #   Header always set X-Content-Type-Options "nosniff"
-# #   Header always set X-XSS-Protection "1; mode=block"
-# #   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-# #   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-# #   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-# #   Header always set Cross-Origin-Embedder-Policy "require-corp"
-# #   Header always set Cross-Origin-Opener-Policy "same-origin"
-# #   Header always set Cross-Origin-Resource-Policy "cross-origin"
+# ==============================
+# 🛡️ HTTP SECURITY HEADERS
+# ==============================
 
-# #   # ✅ Повна CSP з дозволом inline, eval і зовнішніх ресурсів
-   Header always set Content-Security-Policy "default-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://maps.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://maps.gstatic.com https://lh3.googleusercontent.com https://*.googleusercontent.com https://*.ggpht.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com;"
- </IfModule>
+<IfModule mod_headers.c>
 
-# # ------------------------------
-# # 🚫 Заборона доступу до системних файлів
-# # ------------------------------
+    Header always set X-Content-Type-Options "nosniff"
 
-<FilesMatch "(\.(htaccess|htpasswd|ini|log|sh|bak|env))$">
-  Require all denied
-</FilesMatch>
+    Header always set X-Frame-Options "SAMEORIGIN"
 
-# # ------------------------------
-# # 📨 PHP-файли
-# # ------------------------------
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
-<Files "telegram.php">
-  Require all granted
-</Files>
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 
-# # ------------------------------
-# # 🪄 MIME типи
-# # ------------------------------
+</IfModule>
+
+
+# ==============================
+# 🔐 CONTENT SECURITY POLICY
+# ==============================
+
+<IfModule mod_headers.c>
+
+    Header always set Content-Security-Policy "default-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://maps.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://maps.gstatic.com https://lh3.googleusercontent.com https://*.googleusercontent.com https://*.ggpht.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com;"
+
+</IfModule>
+
+
+# ==============================
+# 📨 TELEGRAM PHP
+# ==============================
+
+# telegram.php залишається доступним,
+# оскільки вебформа повинна мати можливість робити POST-запити.
+#
+# Обмеження тільки POST додамо окремо після перевірки,
+# що жодна частина сайту не використовує GET до цього файла.
+
+
+# ==============================
+# 🪄 MIME ТИПИ
+# ==============================
 
 AddType image/avif .avif
 AddType image/webp .webp
+
 AddType font/woff2 .woff2
 AddType font/woff .woff
+
 AddType application/javascript .js
 AddType text/css .css
+
 AddType application/manifest+json .webmanifest
 
-# # ------------------------------
-# # ⚠️ Обробка помилок
-# # ------------------------------
+
+# ==============================
+# ⚠️ ОБРОБКА ПОМИЛОК
+# ==============================
 
 ErrorDocument 404 /404.html
 ErrorDocument 403 /index.html
 ErrorDocument 500 /index.html
 
-# # ------------------------------
-# # 🌍 SEO: Sitemap + Robots
-# # ------------------------------
+
+# ==============================
+# 🌍 SITEMAP
+# ==============================
 
 <IfModule mod_rewrite.c>
-  RewriteCond %{REQUEST_URI} ^/sitemap\.xml$ [NC]
-  RewriteRule ^ - [L]
+
+    RewriteCond %{REQUEST_URI} ^/sitemap\.xml$ [NC]
+    RewriteRule ^ - [L]
+
 </IfModule>
 
-# # ==============================
-# # ✅ Кінець конфігурації
-# # ==============================
+
+# ==============================
+# 🚫 БЛОКУВАННЯ ВІДОМИХ IP
+# ==============================
+
+<RequireAll>
+
+    Require all granted
+
+    Require not ip 205.147.17.19
+    Require not ip 205.147.17.18
+    Require not ip 205.147.17.17
+    Require not ip 72.251.221.10
+    Require not ip 149.40.62.15
+
+</RequireAll>
+
+
+# ==============================
+# ✅ КІНЕЦЬ КОНФІГУРАЦІЇ
+# ==============================

@@ -4,6 +4,9 @@ ini_set('log_errors', '1');
 error_reporting(E_ALL);
 ignore_user_abort(true);
 
+require_once __DIR__ . '/telegram-config-loader.php';
+require_once __DIR__ . '/request-rate-limit.php';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   http_response_code(405);
   exit;
@@ -75,6 +78,13 @@ if (!$target_url || !$platform) {
   exit;
 }
 
+$ip = get_ip();
+
+if (is_request_rate_limited('social-click', $ip, 5, 600)) {
+  http_response_code(429);
+  exit;
+}
+
 $posted_platform = clean_value($platform, 80);
 $page_url = clean_value($_POST['page_url'] ?? '', 500);
 $page_title = clean_value($_POST['page_title'] ?? '', 200);
@@ -85,7 +95,6 @@ $referrer = clean_value($_POST['referrer'] ?? '', 500);
 $target_url_safe = clean_value($target_url, 500);
 
 $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
-$ip = get_ip();
 
 $country = 'Невідомо';
 $city = 'Невідомо';
@@ -113,8 +122,16 @@ if ($geo_res) {
 date_default_timezone_set('Europe/Kyiv');
 $time = date('d.m.Y H:i:s');
 
-$token = getenv('TELEGRAM_BOT_TOKEN') ?: '7680012686:AAGxHZxUCmNh3Pd6iWzYvVTRFk7DTkLDrO8';
-$chat_id = getenv('TELEGRAM_CHAT_ID') ?: '-1002272598043';
+$telegramConfig = load_telegram_config();
+
+if ($telegramConfig === null) {
+  error_log('Social click tracking: Telegram configuration is unavailable or invalid.');
+  http_response_code(503);
+  exit;
+}
+
+$token = $telegramConfig['bot_token'];
+$chat_id = $telegramConfig['chat_id'];
 
 $txt = "🔗 <b>Перехід у соцмережу</b>\n\n";
 $txt .= "📲 <b>Куди:</b> {$posted_platform}\n";

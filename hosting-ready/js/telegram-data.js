@@ -36,6 +36,14 @@ function getTimeOnPage() {
     return `${minutes} хв ${sec} с`;
 }
 
+function setFormStartedAt(form) {
+    const formTimeInput = form.querySelector('input[name="form_time"]');
+
+    if (formTimeInput) {
+        formTimeInput.value = String(Math.floor(Date.now() / 1000));
+    }
+}
+
 function sendSocialClick(payload) {
     const body = payload.toString();
 
@@ -86,6 +94,7 @@ document.addEventListener('click', event => {
 }, { capture: true });
   
   document.querySelectorAll('form').forEach(form => {
+      setFormStartedAt(form);
   
       form.addEventListener('submit', function () {
   
@@ -104,6 +113,7 @@ document.addEventListener('click', event => {
       form.addEventListener('formdata', function () {
           setTimeout(function () {
               form.reset();
+              setFormStartedAt(form);
           }, 0);
       });
   
